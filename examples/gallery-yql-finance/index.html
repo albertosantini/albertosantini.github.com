@@ -6,7 +6,10 @@
 	<title>Test gallery-yql-finance</title>
 
 <style>
-    .highlight { background-color: yellow; }
+    .progress {
+        background-image: url(progress.gif);
+        background-repeat: no-repeat;
+    }
 </style>
 
 <script src="http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js"></script>
@@ -16,11 +19,15 @@
 
 	<h1>Test gallery-yql-finance</h1>
 
-	<div id="quotes"></div>
-    <br />
-	<div id="histQuotes"></div>
-    <br />
-	<div id="histQuotes2"></div>
+    <div id="cHistQuotes">
+        <div id="histQuotes"></div><br />
+    </div>
+    <div id="cHistQuotes2">
+        <div id="histQuotes2"></div><br />
+    </div>
+    <div id="cQuotes">
+        <div id="quotes"></div><br />
+    </div>
 
 <script type="text/javascript">
 /*global YUI */
@@ -47,16 +54,26 @@ YUI({
                 content += "<br />";
             }
         }
-        c.setContent(content);    
+        if (content === "") {
+            c.setContent("Not available");    
+        } else {
+            c.setContent(content);    
+        }
     }
 
+    Y.one("#cHistQuotes").addClass('progress');
+    Y.one("#cHistQuotes2").addClass('progress');
+    Y.one("#cQuotes").addClass('progress');
+
     Y.YQL.Finance.getHistoricalQuotes(symbols, function (prices) {
+        Y.one("#cHistQuotes").removeClass('progress');
         display("#histQuotes", prices);
     }, {
         columns: ["Close", "Date"]
     });
 
     Y.YQL.Finance.getHistoricalQuotes(symbols, function (prices) {
+        Y.one("#cHistQuotes2").removeClass('progress');
         display("#histQuotes2", prices);
     }, {
         columns: ["Close", "Date"],
@@ -66,6 +83,7 @@ YUI({
     });
 
     Y.YQL.Finance.getQuotes(symbols, function (prices) {
+        Y.one("#cQuotes").removeClass('progress');
         display("#quotes", prices);
     }, {
         columns: ["Change", "LastTradeDate"]

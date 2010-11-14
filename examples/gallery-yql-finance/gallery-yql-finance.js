@@ -1,5 +1,8 @@
-YUI.add('gallery-yql-finance', function(Y) {
+/*global YUI */
 
+"use strict";
+
+YUI.add('gallery-yql-finance', function (Y) {
 
     var YQLFinance = function (symbols, callback, params) {
         if (!params) {
@@ -58,9 +61,16 @@ YUI.add('gallery-yql-finance', function(Y) {
                 SYMBOLS: symbolList
             });
 
+            Y.log('yql query: ' + query);
             Y.YQL(query, function (data) {
-                var prices = Y.YQL.Finance.makeArray(symbols,
-                        params.columns, data.query.results.quote);
+                var prices = null;
+
+                if (!data.hasOwnProperty("error") &&
+                    data.query.hasOwnProperty("results") &&
+                    data.query.results) {
+                    prices = Y.YQL.Finance.makeArray(symbols,
+                            params.columns, data.query.results.quote);
+                }
                 callback(prices);
             });
         },
@@ -113,9 +123,16 @@ YUI.add('gallery-yql-finance', function(Y) {
                 SORT_DESC: params.sortDesc
             });
 
+            Y.log('yql query: ' + query);
             Y.YQL(query, function (data) {
-                var prices = Y.YQL.Finance.makeArray(symbols,
-                        params.columns, data.query.results.row);
+                var prices = null;
+
+                if (!data.hasOwnProperty("error") &&
+                    data.query.hasOwnProperty("results") &&
+                    data.query.results) {
+                    prices = Y.YQL.Finance.makeArray(symbols,
+                            params.columns, data.query.results.row);
+                }
                 callback(prices);
             });
         }
@@ -123,92 +140,4 @@ YUI.add('gallery-yql-finance', function(Y) {
 
     Y.YQL.Finance = new YQLFinance();
 
-//~     Y.YQL.Finance.COLUMN_QUOTE = [
-//~         "symbol",
-//~         "Ask",
-//~         "AverageDailyVolume",
-//~         "Bid",
-//~         "AskRealtime",
-//~         "BidRealtime",
-//~         "BookValue",
-//~         "Change_PercentChange",
-//~         "Change",
-//~         "Commission",
-//~         "ChangeRealtime",
-//~         "AfterHoursChangeRealtime",
-//~         "DividendShare",
-//~         "LastTradeDate",
-//~         "TradeDate",
-//~         "EarningsShare",
-//~         "ErrorIndicationreturnedforsymbolchangedinvalid",
-//~         "EPSEstimateCurrentYear",
-//~         "EPSEstimateNextYear",
-//~         "EPSEstimateNextQuarter",
-//~         "DaysLow",
-//~         "DaysHigh",
-//~         "YearLow",
-//~         "YearHigh",
-//~         "HoldingsGainPercent",
-//~         "AnnualizedGain",
-//~         "HoldingsGain",
-//~         "HoldingsGainPercentRealtime",
-//~         "HoldingsGainRealtime",
-//~         "MoreInfo",
-//~         "OrderBookRealtime",
-//~         "MarketCapitalization",
-//~         "MarketCapRealtime",
-//~         "EBITDA",
-//~         "ChangeFromYearLow",
-//~         "PercentChangeFromYearLow",
-//~         "LastTradeRealtimeWithTime",
-//~         "ChangePercentRealtime",
-//~         "ChangeFromYearHigh",
-//~         "PercebtChangeFromYearHigh",
-//~         "LastTradeWithTime",
-//~         "LastTradePriceOnly",
-//~         "HighLimit",
-//~         "LowLimit",
-//~         "DaysRange",
-//~         "DaysRangeRealtime",
-//~         "FiftydayMovingAverage",
-//~         "TwoHundreddayMovingAverage",
-//~         "ChangeFromTwoHundreddayMovingAverage",
-//~         "PercentChangeFromTwoHundreddayMovingAverage",
-//~         "ChangeFromFiftydayMovingAverage",
-//~         "PercentChangeFromFiftydayMovingAverage",
-//~         "Name",
-//~         "Notes",
-//~         "Open",
-//~         "PreviousClose",
-//~         "PricePaid",
-//~         "ChangeinPercent",
-//~         "PriceSales",
-//~         "PriceBook",
-//~         "ExDividendDate",
-//~         "PERatio",
-//~         "DividendPayDate",
-//~         "PERatioRealtime",
-//~         "PEGRatio",
-//~         "PriceEPSEstimateCurrentYear",
-//~         "PriceEPSEstimateNextYear",
-//~         "Symbol",
-//~         "SharesOwned",
-//~         "ShortRatio",
-//~         "LastTradeTime",
-//~         "TickerTrend",
-//~         "OneyrTargetPrice",
-//~         "Volume",
-//~         "HoldingsValue",
-//~         "HoldingsValueRealtime",
-//~         "YearRange",
-//~         "DaysValueChange",
-//~         "DaysValueChangeRealtime",
-//~         "StockExchange",
-//~         "DividendYield",
-//~         "PercentChange"
-//~     ];
-
-
-
-
-}, '@VERSION@' ,{requires:['substitute','yql']});
+}, '@VERSION@', { requires: ['substitute', 'yql']});
