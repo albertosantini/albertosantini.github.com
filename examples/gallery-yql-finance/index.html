@@ -35,12 +35,13 @@
 "use strict";
 
 YUI({
-    modules: {
-        "gallery-yql-finance": {
-            fullpath: "./gallery-yql-finance.js",
-            requires: ["substitute", "yql"]
-        }
-    }
+//~     modules: {
+//~         "gallery-yql-finance": {
+//~             fullpath: "./gallery-yql-finance.js",
+//~             requires: ["substitute", "yql"]
+//~         }
+//~     }
+    gallery: 'gallery-2010.11.17-21-32'
 }).use("node", "json", "gallery-yql-finance", function (Y) {
     var symbols = ["IBM", "MSFT", "YHOO", "^GSPC", "EUR=X"];
 
@@ -86,7 +87,7 @@ YUI({
         Y.one("#cQuotes").removeClass('progress');
         display("#quotes", prices);
     }, {
-        columns: ["Change", "LastTradeDate"]
+        columns: ["Change", "LastTradePriceOnly"]
     });
 });
 </script>
