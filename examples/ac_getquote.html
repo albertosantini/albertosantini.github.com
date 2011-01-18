@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+<title>Yahoo! Finance Get Quotes AutoComplete Example</title> 
+ 
+<style type="text/css"> 
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+
+#ac-input {
+    width: 35em;
+}
+.yui3-aclist {
+    width: 35em;
+}
+
+</style> 
+ 
+<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" /> 
+<script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
+ 
+</head> 
+ 
+<body class="yui3-skin-sam  yui-skin-sam"> 
+ 
+<h1>Yahoo! Finance Get Quotes AutoComplete Example</h1> 
+ 
+<div class="exampleIntro"> 
+<p> 
+This example demonstrates how to provide autocomplete suggestions from a remote JSONP API. 
+In this case, we're using <a href="http://finance.yahoo.com/">Yahoo! Finance Get Quotes AutoComplete</a> to suggest assets.
+</p> 
+ 
+<p> 
+Try typing a name of an asset: yahoo, ibm, oracle, etc. 
+</p> 
+			
+</div> 
+ 
+<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== --> 
+ 
+<div id="demo"> 
+  <label for="ac-input">Enter an asset (for instance, YAHOO):</label><br> 
+  <input id="ac-input" type="text"> 
+</div> 
+ 
+<script> 
+YUI({ 
+    filter: 'raw' 
+}).use("datasource-get", "datasource-jsonschema", "autocomplete", function (Y) {
+
+    var oDS, acNode = Y.one('#ac-input');
+
+    oDS = new Y.DataSource.Get({
+        source: "http://d.yimg.com/aq/autoc?query=",
+        generateRequestCallback: function (id) {
+            YAHOO = {}, YAHOO.util = {}, YAHOO.util.ScriptNodeDataSource = {};
+            YAHOO.util.ScriptNodeDataSource.callbacks = 
+                YUI.Env.DataSource.callbacks[id];
+            return "&callback=YAHOO.util.ScriptNodeDataSource.callbacks";
+        }
+    });
+    oDS.plug(Y.Plugin.DataSourceJSONSchema, {
+        schema: {
+            resultListLocator: "ResultSet.Result",
+            resultFields: ["symbol", "name", "exch", "type", "exchDisp"]
+        }
+    });
+
+    acNode.plug(Y.Plugin.AutoComplete, {
+        maxResults: 10,
+        resultTextLocator: 'symbol',
+        resultFormatter: function (query, results) {
+            return Y.Array.map(results, function (result) {
+                var asset = result.raw;
+             
+                return asset.symbol +
+                    " " + asset.name +
+                    " (" + asset.type +
+                    " - " + asset.exchDisp + ")";
+            });
+        },
+        source: oDS
+    });
+
+    acNode.ac.on('select', function (e) {
+        alert(e.result.raw.name);
+    });
+});
+</script> 
+ 
+<!--END SOURCE CODE FOR EXAMPLE =============================== --> 
+ 
