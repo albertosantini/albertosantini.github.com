@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+<title>Google Finance Get Quotes AutoComplete Example</title> 
+ 
+<style type="text/css"> 
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+
+#ac-input {
+    width: 50em;
+}
+.yui3-aclist {
+    width: 50em;
+}
+
+</style> 
+ 
+<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" /> 
+<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
+ 
+</head> 
+ 
+<body class="yui3-skin-sam  yui-skin-sam"> 
+ 
+<h1>Google Finance Get Quotes AutoComplete Example</h1> 
+ 
+<div class="exampleIntro"> 
+<p> 
+This example demonstrates how to provide autocomplete suggestions using a YQL query as the source. 
+In this case, we're using <a href="http://www.google.com/finance">Google Finance Get Quotes AutoComplete</a> to suggest assets.
+</p> 
+ 
+<p> 
+Try typing a name of an asset: yahoo, ibm, oracle, etc. 
+</p> 
+			
+</div> 
+ 
+<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== --> 
+ 
+<div id="demo"> 
+  <label for="ac-input">Enter an asset (for instance, GOOGLE):</label><br> 
+  <input id="ac-input" type="text"> 
+</div> 
+ 
+<script> 
+/*global YUI, alert */
+
+YUI({ 
+    filter: 'raw' 
+}).use("autocomplete", function (Y) {
+    var acNode = Y.one('#ac-input');
+
+    acNode.plug(Y.Plugin.AutoComplete, {
+        maxResults: 10,
+        resultTextLocator: 't',
+        resultListLocator: 'query.results.json.matches',
+        resultFormatter: function (query, results) {
+            return Y.Array.map(results, function (result) {
+                var asset = result.raw;
+             
+                return asset.t + " - " + asset.n + " - " + asset.e;
+            });
+        },
+        source: 'select * from json where url="http://www.google.com/finance/match?q={query}"'
+    });
+
+    acNode.ac.on('select', function (e) {
+        alert(e.result.raw.n);
+    });
+});
+</script> 
+ 
+<!--END SOURCE CODE FOR EXAMPLE =============================== --> 
+ 
+</body>
+</html>

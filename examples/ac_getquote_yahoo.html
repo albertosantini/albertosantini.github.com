@@ -25,7 +25,7 @@ body {
 </style> 
  
 <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" /> 
-<script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
+<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
  
 </head> 
  
@@ -53,6 +53,8 @@ Try typing a name of an asset: yahoo, ibm, oracle, etc.
 </div> 
  
 <script> 
+/*global YUI, YAHOO:true, alert */
+
 YUI({ 
     filter: 'raw' 
 }).use("datasource-get", "datasource-jsonschema", "autocomplete", function (Y) {
@@ -62,7 +64,9 @@ YUI({
     oDS = new Y.DataSource.Get({
         source: "http://d.yimg.com/aq/autoc?query=",
         generateRequestCallback: function (id) {
-            YAHOO = {}, YAHOO.util = {}, YAHOO.util.ScriptNodeDataSource = {};
+            YAHOO = {}; 
+            YAHOO.util = {}; 
+            YAHOO.util.ScriptNodeDataSource = {};
             YAHOO.util.ScriptNodeDataSource.callbacks = 
                 YUI.Env.DataSource.callbacks[id];
             return "&callback=YAHOO.util.ScriptNodeDataSource.callbacks";
@@ -88,6 +92,7 @@ YUI({
                     " - " + asset.exchDisp + ")";
             });
         },
+        requestTemplate:  "{query}&region=US&lang=en-US",
         source: oDS
     });
 
@@ -99,3 +104,5 @@ YUI({
  
 <!--END SOURCE CODE FOR EXAMPLE =============================== --> 
  
+</body>
+</html>
