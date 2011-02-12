@@ -72,6 +72,11 @@ YUI({
         goButton.set("disabled", true);
         goButton.set('text', 'Loading topics...');
 
+        Y.one("#cloud1").empty();
+        Y.one("#cloud2").empty();
+
+        counterTopics = 0;
+
         getTopics(forumEdit.get('value'), function (topics) {
             var i, q = new Y.AsyncQueue();
 
