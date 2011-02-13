@@ -75,6 +75,8 @@ YUI({
         Y.one("#cloud1").empty();
         Y.one("#cloud2").empty();
 
+        authors = [];
+        tags = [];
         counterTopics = 0;
 
         getTopics(forumEdit.get('value'), function (topics) {
