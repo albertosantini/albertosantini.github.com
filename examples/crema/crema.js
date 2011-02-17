@@ -2,6 +2,7 @@
 /*globals YUI, jQuery */
 
 YUI({
+    gallery: 'gallery-2011.02.16-20-31',
     filter: 'raw'
 }).use('node', 'async-queue', 'yql', 'gallery-tagcloud',
     function (Y) {
