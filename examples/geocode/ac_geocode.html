@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+<title>Google GeoCode AutoComplete Example</title> 
+ 
+<style type="text/css"> 
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+
+</style> 
+ 
+<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" /> 
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
+ 
+</head> 
+ 
+<body class="yui3-skin-sam  yui-skin-sam"> 
+ 
+<h1>Google GeoCode AutoComplete Example</h1> 
+ 
+<div class="exampleIntro"> 
+<p> 
+This example demonstrates how to provide autocomplete suggestions in geocode example. 
+</p> 
+ 
+</div> 
+ 
+<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== --> 
+ 
+<div id="demo"> 
+  <label for="ac-input">Enter an address:</label><br> 
+  <input id="ac-input" type="text"> 
+</div> 
+ 
+<script> 
+/*global YUI, alert, google */
+
+YUI({ 
+    filter: 'raw' 
+}).use("autocomplete", function (Y) {
+    var acNode = Y.one('#ac-input'), geocoder, res = [];
+
+    geocoder = new google.maps.Geocoder();
+
+    acNode.plug(Y.Plugin.AutoComplete, {
+        maxResults: 10,
+        minQueryLength: 5,
+        resultTextLocator: 'formatted_address',
+        source: function (address) {
+            geocoder.geocode({'address': address}, function (results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                    res = results;
+                }
+            });
+
+            return res;
+        },
+        width: 'auto'
+    });
+
+    acNode.ac.after('resultsChange', function (e) {
+        var newWidth = this.get('boundingBox').get('offsetWidth');
+        acNode.setStyle('width', Math.max(newWidth, 100));
+    });
+
+
+    acNode.ac.on('select', function (e) {
+        alert(e.result.raw.formatted_address);
+    });
+});
+</script> 
+ 
+<!--END SOURCE CODE FOR EXAMPLE =============================== --> 
+ 
+</body>
+</html>
