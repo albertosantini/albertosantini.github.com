@@ -18,7 +18,6 @@ body {
 </style> 
  
 <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" /> 
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
  
 </head> 
@@ -42,36 +41,49 @@ This example demonstrates how to provide autocomplete suggestions in geocode exa
 </div> 
  
 <script> 
-/*global YUI, alert, google */
+/*global YUI, alert, escape */
 
 YUI({ 
     filter: 'raw' 
 }).use("autocomplete", function (Y) {
-    var acNode = Y.one('#ac-input'), geocoder, res = [];
-
-    geocoder = new google.maps.Geocoder();
+    var acNode = Y.one('#ac-input');
 
     acNode.plug(Y.Plugin.AutoComplete, {
+        activateFirstItem: true,
         maxResults: 10,
         minQueryLength: 5,
-        resultTextLocator: 'formatted_address',
-        source: function (address) {
-            geocoder.geocode({'address': address}, function (results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    res = results;
-                }
-            });
+        resultListLocator: function (res) {
+            var r = res.query.results.json;
 
-            return res;
+            if (r.status !== "OK") {
+                return [];
+            }
+
+            r = r.results;
+
+            if (r.length > 0) {
+                return r;
+            } else {
+                return [r];
+            }
         },
+        resultTextLocator: 'formatted_address',
+        requestTemplate: function (query) {
+            return escape(query);
+        },
+        source: 'select * from json where ' +
+            'url="http://maps.googleapis.com/maps/api/geocode/json?' +
+            'sensor=false&' +
+            'address={query}"',
         width: 'auto'
     });
+
+    acNode.focus();
 
     acNode.ac.after('resultsChange', function (e) {
         var newWidth = this.get('boundingBox').get('offsetWidth');
         acNode.setStyle('width', Math.max(newWidth, 100));
     });
-
 
     acNode.ac.on('select', function (e) {
         alert(e.result.raw.formatted_address);
