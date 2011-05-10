@@ -69,7 +69,7 @@ YUI({
         },
         resultTextLocator: 'formatted_address',
         requestTemplate: function (query) {
-            return escape(query);
+            return encodeURI(query);
         },
         source: 'select * from json where ' +
             'url="http://maps.googleapis.com/maps/api/geocode/json?' +
