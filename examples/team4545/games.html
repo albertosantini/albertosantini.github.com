@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Team4545 Scheduled Games</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+<style>
+    body { font-family: 'Inconsolata', arial, serif; }
+</style>
+</head>
+
+<body>
+	<h1>Team4545 Scheduled Games</h1>
+
+	<div id="results">
+	</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+/*global jQuery */
+
+jQuery(document).ready(function () {
+	var container = "", path = "http://team4545league.org/tournament/games.html";
+
+    function requestCrossDomain(site, callback) {
+        var yql = 'http://query.yahooapis.com/v1/public/yql?q=' +
+            encodeURIComponent('select * from html where url="' + site + '"') +
+            '&format=xml&callback=?';
+
+        site = site || "http://www.google.com";
+
+        function cbFunc(data) {
+            if (data.results[0]) {
+                data = data.results[0];
+
+                if (typeof callback === 'function') {
+                    callback(data);
+                }
+            } else {
+                throw new Error('Nothing returned from getJSON.');
+            }
+        }
+
+        jQuery.getJSON(yql, cbFunc);
+    }
+
+    function myContainer(results) {
+        jQuery("tr:contains('RedDeMate')", results)
+            .each(function (index, el) {
+                var cols = jQuery("td", el), t;
+
+                t = cols.text().trim().replace(/\n/g, " ");
+                container += t + "<br />";
+            });
+        jQuery('#results').html(container);
+    }
+
+    requestCrossDomain(path, myContainer);
+});
+
+</script>
+</body>
+</html>
