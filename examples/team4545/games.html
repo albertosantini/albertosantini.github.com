@@ -12,8 +12,7 @@
     body { font-family: 'Inconsolata', arial, serif; }
     .division { display: inline-block; width: 119px; }
     .round { display: inline-block; width: 20px; }
-    .when { display: inline-block; width: 129px; 
-        font-weight: bold; font-size: 8pt; margin-right: 5px; }
+    .when { display: inline-block; width: 170px; font-weight: bold; }
     .whiteTeam { display: inline-block; width: 195px; }
     .whitePlayer { display: inline-block; width: 119px; }
     .result { display: inline-block; width: 24px; }
@@ -36,6 +35,7 @@
 </script>
 
 <script type="text/javascript">
+/*jslint unparam:true */
 /*global jQuery */
 
 jQuery(document).ready(function () {
@@ -66,7 +66,7 @@ jQuery(document).ready(function () {
     function myContainer(results) {
         jQuery("tr:contains('RedDeMate')", results)
             .each(function (index, el) {
-                var cols = jQuery("td", el), 
+                var cols = jQuery("td p", el), 
                     division,
                     round,
                     when,
@@ -77,24 +77,15 @@ jQuery(document).ready(function () {
                     blackTeam,
                     board;
 
-                division = jQuery("p", cols[0])
-                    .text().trim().replace(/\n/g, " ");
-                round = jQuery("p", cols[1])
-                    .text().trim().replace(/\n/g, " ");
-                when = jQuery("p", cols[2])
-                    .text().trim().replace(/\n/g, " ");
-                whiteTeam = jQuery("p", cols[3])
-                    .text().trim().replace(/\n/g, " ");
-                whitePlayer = jQuery("p", cols[4])
-                    .text().trim().replace(/\n/g, " ");
-                result = jQuery("p", cols[5])
-                    .text().trim().replace(/\n/g, " ");
-                blackPlayer = jQuery("p", cols[6])
-                    .text().trim().replace(/\n/g, " ");
-                blackTeam = jQuery("p", cols[7])
-                    .text().trim().replace(/\n/g, " ");
-                board = jQuery("p", cols[8])
-                    .text().trim().replace(/\n/g, " ");
+                division = jQuery(cols[0]).text().replace(/\s{2,}/g, ' ');
+                round = cols[1].innerHTML;
+                when = cols[2].innerHTML;
+                whiteTeam = cols[3].innerHTML;
+                whitePlayer = cols[4].innerHTML;
+                result = cols[5].innerHTML;
+                blackPlayer = cols[6].innerHTML;
+                blackTeam = cols[7].innerHTML;
+                board = cols[8].innerHTML;
 
                 container += 
                     "<span class='when'>" + when + "<\/span>" +
