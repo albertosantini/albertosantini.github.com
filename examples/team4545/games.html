@@ -31,7 +31,6 @@
 	<div id="games">
 	</div>
 
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
 </script>
 
@@ -76,7 +75,7 @@ jQuery(document).ready(function () {
             "<span class='whitePlayer'>" + "White Player" + "<\/span>" +
             "<span class='result'>" + "R" + "<\/span>" +
             "<span class='blackPlayer'>" + "Black Player" + "<\/span>" +
-            "<span class='blackTeam'>" + "Black Player" + "<\/span>" +
+            "<span class='blackTeam'>" + "Black Team" + "<\/span>" +
             "<span class='board'>" + "B#" + "<\/span>" + "<br /><br />";
 
         jQuery("tr:contains('" + teamName + "')", results)
@@ -119,8 +118,8 @@ jQuery(document).ready(function () {
                     container += "<span class='whitePlayer highlight'>" + 
                         whitePlayer + "<\/span>";
                 } else {
-                    container += "<span class='whitePlayer'>" 
-                        + whitePlayer + "<\/span>";
+                    container += "<span class='whitePlayer'>" +
+                        whitePlayer + "<\/span>";
                 }
                 container += "<span class='result'>" + result + "<\/span>";
                 if (blackTeam.search(teamName) !== -1) {
