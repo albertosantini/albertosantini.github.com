@@ -5,21 +5,35 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Team4545 Scheduled Games</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' 
+        rel='stylesheet' type='text/css'>
 
 <style>
     body { font-family: 'Inconsolata', arial, serif; }
+    .division { display: inline-block; width: 119px; }
+    .round { display: inline-block; width: 20px; }
+    .when { display: inline-block; width: 129px; 
+        font-weight: bold; font-size: 8pt; margin-right: 5px; }
+    .whiteTeam { display: inline-block; width: 195px; }
+    .whitePlayer { display: inline-block; width: 119px; }
+    .result { display: inline-block; width: 24px; }
+    .blackPlayer { display: inline-block; width: 119px; }
+    .blackTeam { display: inline-block; width: 195px; }
+    .board { display: inline-block; width: 21px; }
 </style>
 </head>
 
 <body>
-	<h1>Team4545 Scheduled Games</h1>
+	<h1>Team4545 Scheduled Games - RedDeMate Family</h1>
+    <h3>When, Division, Round, 
+        White Team, White Player, Result, Black Player, Black Team, Board</h3>
 
-	<div id="results">
+	<div id="games">
 	</div>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
+</script>
 
 <script type="text/javascript">
 /*global jQuery */
@@ -52,12 +66,48 @@ jQuery(document).ready(function () {
     function myContainer(results) {
         jQuery("tr:contains('RedDeMate')", results)
             .each(function (index, el) {
-                var cols = jQuery("td", el), t;
+                var cols = jQuery("td", el), 
+                    division,
+                    round,
+                    when,
+                    whiteTeam,
+                    whitePlayer,
+                    result,
+                    blackPlayer,
+                    blackTeam,
+                    board;
 
-                t = cols.text().trim().replace(/\n/g, " ");
-                container += t + "<br />";
+                division = jQuery("p", cols[0])
+                    .text().trim().replace(/\n/g, " ");
+                round = jQuery("p", cols[1])
+                    .text().trim().replace(/\n/g, " ");
+                when = jQuery("p", cols[2])
+                    .text().trim().replace(/\n/g, " ");
+                whiteTeam = jQuery("p", cols[3])
+                    .text().trim().replace(/\n/g, " ");
+                whitePlayer = jQuery("p", cols[4])
+                    .text().trim().replace(/\n/g, " ");
+                result = jQuery("p", cols[5])
+                    .text().trim().replace(/\n/g, " ");
+                blackPlayer = jQuery("p", cols[6])
+                    .text().trim().replace(/\n/g, " ");
+                blackTeam = jQuery("p", cols[7])
+                    .text().trim().replace(/\n/g, " ");
+                board = jQuery("p", cols[8])
+                    .text().trim().replace(/\n/g, " ");
+
+                container += 
+                    "<span class='when'>" + when + "<\/span>" +
+                    "<span class='division'>" + division + "<\/span>" +
+                    "<span class='round'>" + round + "<\/span>" +
+                    "<span class='whiteTeam'>" + whiteTeam + "<\/span>" +
+                    "<span class='whitePlayer'>" + whitePlayer + "<\/span>" +
+                    "<span class='result'>" + result + "<\/span>" +
+                    "<span class='blackPlayer'>" + blackPlayer + "<\/span>" +
+                    "<span class='blackTeam'>" + blackTeam + "<\/span>" +
+                    "<span class='board'>" + board + "<\/span>" + "<br />";
             });
-        jQuery('#results').html(container);
+        jQuery('#games').html(container);
     }
 
     requestCrossDomain(path, myContainer);
