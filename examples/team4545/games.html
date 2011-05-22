@@ -14,9 +14,9 @@
     .division { display: inline-block; width: 119px; }
     .round { display: inline-block; width: 20px; }
     .when { display: inline-block; width: 170px; font-weight: bold; }
+    .whenLocal { display: inline-block; width: 170px; color: blue; }
     .whiteTeam { display: inline-block; width: 195px; }
     .whitePlayer { display: inline-block; width: 119px; }
-    .result { display: inline-block; width: 24px; }
     .blackPlayer { display: inline-block; width: 119px; }
     .blackTeam { display: inline-block; width: 195px; }
     .board { display: inline-block; width: 21px; }
@@ -32,6 +32,8 @@
 	</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
+</script>
+<script src="https://github.com/phstc/jquery-dateFormat/raw/master/jquery.dateFormat-1.0.js">
 </script>
 
 <script type="text/javascript">
@@ -68,12 +70,12 @@ jQuery(document).ready(function () {
     function myContainer(results) {
         var teamName = 'RedDeMate';
 
-        container += "<span class='when'>" + "When" + "<\/span>" +
+        container += "<span class='when'>" + "When ICC" + "<\/span>" +
+            "<span class='when'>" + "When Local" + "<\/span>" +
             "<span class='division'>" + "Division" + "<\/span>" +
             "<span class='round'>" + "R#" + "<\/span>" +
             "<span class='whiteTeam'>" + "White Team" + "<\/span>" +
             "<span class='whitePlayer'>" + "White Player" + "<\/span>" +
-            "<span class='result'>" + "R" + "<\/span>" +
             "<span class='blackPlayer'>" + "Black Player" + "<\/span>" +
             "<span class='blackTeam'>" + "Black Team" + "<\/span>" +
             "<span class='board'>" + "B#" + "<\/span>" + "<br /><br />";
@@ -84,9 +86,9 @@ jQuery(document).ready(function () {
                     division,
                     round,
                     when,
+                    whenLocal,
                     whiteTeam,
                     whitePlayer,
-                    result,
                     blackPlayer,
                     blackTeam,
                     board;
@@ -96,21 +98,22 @@ jQuery(document).ready(function () {
                 division = jQuery(cols[0]).text().replace(/\s{2,}/g, ' ');
                 round = cols[1].innerHTML;
                 when = cols[2].innerHTML;
+                whenLocal = jQuery.format.date(new Date(when + " EDT"), 
+                    "MMM dd, HH:mm");
                 whiteTeam = cols[3].innerHTML;
                 whitePlayer = cols[4].innerHTML;
                 if (cols.length === 9) {
-                    result = cols[5].innerHTML;
                     blackPlayer = cols[6].innerHTML;
                     blackTeam = cols[7].innerHTML;
                     board = cols[8].innerHTML;
                 } else {
-                    result = "-";
                     blackPlayer = cols[5].innerHTML;
                     blackTeam = cols[6].innerHTML;
                     board = cols[7].innerHTML;
                 }
 
                 container += "<span class='when'>" + when + "<\/span>" +
+                    "<span class='whenLocal'>" + whenLocal + "<\/span>" +
                     "<span class='division'>" + division + "<\/span>" +
                     "<span class='round'>" + round + "<\/span>" +
                     "<span class='whiteTeam'>" + whiteTeam + "<\/span>";
@@ -121,7 +124,6 @@ jQuery(document).ready(function () {
                     container += "<span class='whitePlayer'>" +
                         whitePlayer + "<\/span>";
                 }
-                container += "<span class='result'>" + result + "<\/span>";
                 if (blackTeam.search(teamName) !== -1) {
                     container += "<span class='blackPlayer highlight'>" + 
                         blackPlayer + "<\/span>";
