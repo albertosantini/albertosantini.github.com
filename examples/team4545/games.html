@@ -5,11 +5,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Team4545 Scheduled Games</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' 
-        rel='stylesheet' type='text/css'>
-
 <style>
-    body { font-family: 'Inconsolata', arial, serif; }
+    body { font-family: courier, arial, serif; font-size: 10pt; }
 
     .division { display: inline-block; width: 119px; }
     .round { display: inline-block; width: 20px; }
@@ -33,8 +30,6 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
 </script>
-<script src="https://github.com/phstc/jquery-dateFormat/raw/master/jquery.dateFormat-1.0.js">
-</script>
 
 <script type="text/javascript">
 /*jslint unparam:true */
@@ -44,6 +39,24 @@ jQuery(document).ready(function () {
     var path = "http://team4545league.org/tournament/games.html",
         container = "",
         found = false;
+
+    function formatDate(date) {
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            ld, dd, hh, mm;
+
+        ld = (new Date(date + " " + (new Date()).getFullYear() + " EDT"));
+        dd = ld.getDate();
+        dd = dd < 10 ? "0" + dd : dd;
+        hh = ld.getHours();
+        hh = hh < 10 ? "0" + hh : hh;
+        mm = ld.getMinutes();
+        mm = mm < 10 ? "0" + mm : mm;
+
+        return days[ld.getDay()] + ", " + months[ld.getMonth()] + " " + dd +
+            ", " + hh + ":" + mm;
+    }
 
     function requestCrossDomain(site, callback) {
         var yql = 'http://query.yahooapis.com/v1/public/yql?q=' +
@@ -98,8 +111,7 @@ jQuery(document).ready(function () {
                 division = jQuery(cols[0]).text().replace(/\s{2,}/g, ' ');
                 round = cols[1].innerHTML;
                 when = cols[2].innerHTML;
-                whenLocal = jQuery.format.date(new Date(when + " " + (new Date()).getFullYear() + " EDT"), 
-                    "MMM dd, HH:mm");
+                whenLocal = formatDate(when);
                 whiteTeam = cols[3].innerHTML;
                 whitePlayer = cols[4].innerHTML;
                 if (cols.length === 9) {
