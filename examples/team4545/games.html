@@ -73,12 +73,12 @@ jQuery(document).ready(function () {
         container += "<span class='when'>" + "When ICC" + "<\/span>" +
             "<span class='whenLocal'>" + "When Local" + "<\/span>" +
             "<span class='division'>" + "Division" + "<\/span>" +
-            "<span class='round'>" + "R#" + "<\/span>" +
+            "<span class='round'>" + "R" + "<\/span>" +
             "<span class='whiteTeam'>" + "White Team" + "<\/span>" +
             "<span class='whitePlayer'>" + "White Player" + "<\/span>" +
             "<span class='blackPlayer'>" + "Black Player" + "<\/span>" +
             "<span class='blackTeam'>" + "Black Team" + "<\/span>" +
-            "<span class='board'>" + "B#" + "<\/span>" + "<br /><br />";
+            "<span class='board'>" + "B" + "<\/span>" + "<br /><br />";
 
         jQuery("tr:contains('" + teamName + "')", results)
             .each(function (index, el) {
@@ -98,7 +98,7 @@ jQuery(document).ready(function () {
                 division = jQuery(cols[0]).text().replace(/\s{2,}/g, ' ');
                 round = cols[1].innerHTML;
                 when = cols[2].innerHTML;
-                whenLocal = jQuery.format.date(new Date(when + " EDT"), 
+                whenLocal = jQuery.format.date(new Date(when + " " + (new Date()).getFullYear() + " EDT"), 
                     "MMM dd, HH:mm");
                 whiteTeam = cols[3].innerHTML;
                 whitePlayer = cols[4].innerHTML;
