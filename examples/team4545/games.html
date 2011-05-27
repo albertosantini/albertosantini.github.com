@@ -36,17 +36,68 @@
 /*global jQuery */
 
 jQuery(document).ready(function () {
-    var path = "http://team4545league.org/tournament/games.html",
-        container = "",
-        found = false;
+    var path = "http://team4545league.org/tournament/games.html";
 
     function formatDate(date) {
-        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+       var edtNY = { // EDT periods for NY, otherwise EST, (Mar - Nov)
+                2011: { "start": "031302:00", "end": "110602:00"},
+                2012: { "start": "031102:00", "end": "110402:00"},
+                2013: { "start": "031002:00", "end": "110302:00"},
+                2014: { "start": "030902:00", "end": "110202:00"},
+                2015: { "start": "030802:00", "end": "110102:00"},
+                2016: { "start": "031302:00", "end": "110602:00"},
+                2017: { "start": "031202:00", "end": "110502:00"},
+                2018: { "start": "031102:00", "end": "110402:00"},
+                2019: { "start": "031002:00", "end": "110302:00"}
+            },
+            months = {
+                "Jan": "01",
+                0: "Jan",
+                "Feb": "02",
+                1: "Feb",
+                "Mar": "03",
+                2: "Mar",
+                "Apr": "04",
+                3: "Apr",
+                "May": "05",
+                4: "May",
+                "Jun": "06",
+                5: "Jun",
+                "Jul": "07",
+                6: "Jul",
+                "Aug": "08",
+                7: "Aug",
+                "Sep": "09",
+                8: "Sep",
+                "Oct": "10",
+                9: "Oct",
+                "Nov": "11",
+                10: "Nov",
+                "Dec": "12",
+                11: "Dec"
+            },
             days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-            ld, dd, hh, mm;
+            now = new Date(),
+            ld, sp, mmmddd, mdh, yyyy, www, mmm, ddd, hhh, dd, hh, mm, tz;
 
-        ld = (new Date(date + " " + (new Date()).getFullYear() + " EDT"));
+        yyyy = now.getFullYear();
+        sp = date.split(", ");
+        www = sp[0];
+        hhh = sp[2];
+        mmmddd = sp[1].split(" ");
+        mmm = mmmddd[0];
+        ddd = mmmddd[1];
+
+        mdh = months[mmm] + ddd + hhh;
+        if (mdh >= edtNY[yyyy].start && mdh < edtNY[yyyy].end) {
+            tz = "EDT";
+        } else {
+            tz = "EST";
+        }
+
+        ld = new Date(www + ", " + ddd + " " + mmm + " " + yyyy + 
+            " " + hhh + ":00 " + tz);
+
         dd = ld.getDate();
         dd = dd < 10 ? "0" + dd : dd;
         hh = ld.getHours();
@@ -81,9 +132,9 @@ jQuery(document).ready(function () {
     }
 
     function myContainer(results) {
-        var teamName = 'RedDeMate';
+        var teamName = 'RedDeMate', container, found= false;
 
-        container += "<span class='when'>" + "When ICC" + "<\/span>" +
+        container = "<span class='when'>" + "When ICC" + "<\/span>" +
             "<span class='whenLocal'>" + "When Local" + "<\/span>" +
             "<span class='division'>" + "Division" + "<\/span>" +
             "<span class='round'>" + "R" + "<\/span>" +
@@ -162,3 +213,5 @@ jQuery(document).ready(function () {
 </script>
 </body>
 </html>
+
+
