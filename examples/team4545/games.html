@@ -39,7 +39,7 @@ jQuery(document).ready(function () {
     var path = "http://team4545league.org/tournament/games.html";
 
     function formatDate(date) {
-       var edtNY = { // EDT periods for NY, otherwise EST, (Mar - Nov)
+        var edtNY = { // EDT periods for NY, otherwise EST, (Mar - Nov)
                 2011: { "start": "031302:00", "end": "110602:00"},
                 2012: { "start": "031102:00", "end": "110402:00"},
                 2013: { "start": "031002:00", "end": "110302:00"},
@@ -78,17 +78,20 @@ jQuery(document).ready(function () {
             },
             days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
             now = new Date(),
-            ld, sp, mmmddd, mdh, yyyy, www, mmm, ddd, hhh, dd, hh, mm, tz;
+            yyyy = now.getFullYear(),
+            sp = date.split(", "),
+            www = sp[0],
+            mmmddd = sp[1].split(" "),
+            mmm = mmmddd[0],
+            ddd = mmmddd[1],
+            hhh = sp[2],
+            mdh = months[mmm] + ddd + hhh,
+            dd, 
+            hh, 
+            mm, 
+            tz,
+            ld;
 
-        yyyy = now.getFullYear();
-        sp = date.split(", ");
-        www = sp[0];
-        hhh = sp[2];
-        mmmddd = sp[1].split(" ");
-        mmm = mmmddd[0];
-        ddd = mmmddd[1];
-
-        mdh = months[mmm] + ddd + hhh;
         if (mdh >= edtNY[yyyy].start && mdh < edtNY[yyyy].end) {
             tz = "EDT";
         } else {
@@ -132,7 +135,7 @@ jQuery(document).ready(function () {
     }
 
     function myContainer(results) {
-        var teamName = 'RedDeMate', container, found= false;
+        var teamName = 'RedDeMate', container, found = false;
 
         container = "<span class='when'>" + "When ICC" + "<\/span>" +
             "<span class='whenLocal'>" + "When Local" + "<\/span>" +
