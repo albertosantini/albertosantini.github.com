@@ -28,14 +28,13 @@
 	<div id="games">
 	</div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
-</script>
+<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
 
 <script type="text/javascript">
 /*jslint unparam:true */
-/*global jQuery */
+/*global YUI */
 
-jQuery(document).ready(function () {
+YUI().use("node", "yql", function (Y) {
     var path = "http://team4545league.org/tournament/games.html";
 
     function formatDate(date) {
@@ -112,30 +111,10 @@ jQuery(document).ready(function () {
             ", " + hh + ":" + mm;
     }
 
-    function requestCrossDomain(site, callback) {
-        var yql = 'http://query.yahooapis.com/v1/public/yql?q=' +
-            encodeURIComponent('select * from html where url="' + site + '"') +
-            '&format=xml&callback=?';
-
-        site = site || "http://www.google.com";
-
-        function cbFunc(data) {
-            if (data.results[0]) {
-                data = data.results[0];
-
-                if (typeof callback === 'function') {
-                    callback(data);
-                }
-            } else {
-                throw new Error('Nothing returned from getJSON.');
-            }
-        }
-
-        jQuery.getJSON(yql, cbFunc);
-    }
-
     function myContainer(results) {
-        var teamName = 'RedDeMate', container, found = false;
+        var teamName = 'RedDeMate', node, container, found = false;
+
+        node = Y.Node.create(results.results[0]);
 
         container = "<span class='when'>" + "When ICC" + "<\/span>" +
             "<span class='whenLocal'>" + "When Local" + "<\/span>" +
@@ -147,70 +126,83 @@ jQuery(document).ready(function () {
             "<span class='blackTeam'>" + "Black Team" + "<\/span>" +
             "<span class='board'>" + "B" + "<\/span>" + "<br /><br />";
 
-        jQuery("tr:contains('" + teamName + "')", results)
-            .each(function (index, el) {
-                var cols = jQuery("td p", el), 
-                    division,
-                    round,
-                    when,
-                    whenLocal,
-                    whiteTeam,
-                    whitePlayer,
-                    blackPlayer,
-                    blackTeam,
-                    board;
+        node.all("tr").each(function (el) {
+            var cols = el.all("td p"), 
+                division,
+                round,
+                when,
+                whenLocal,
+                whiteTeam,
+                whitePlayer,
+                blackPlayer,
+                blackTeam,
+                board,
+                isOurTeam;
 
-                found = true;
+            if (cols.size() === 0) {
+                return;
+            }
 
-                division = jQuery(cols[0]).text().replace(/\s{2,}/g, ' ');
-                round = cols[1].innerHTML;
-                when = cols[2].innerHTML;
-                whenLocal = formatDate(when);
-                whiteTeam = cols[3].innerHTML;
-                whitePlayer = cols[4].innerHTML;
-                if (cols.length === 9) {
-                    blackPlayer = cols[6].innerHTML;
-                    blackTeam = cols[7].innerHTML;
-                    board = cols[8].innerHTML;
-                } else {
-                    blackPlayer = cols[5].innerHTML;
-                    blackTeam = cols[6].innerHTML;
-                    board = cols[7].innerHTML;
-                }
+            found = true;
 
-                container += "<span class='when'>" + when + "<\/span>" +
-                    "<span class='whenLocal'>" + whenLocal + "<\/span>" +
-                    "<span class='division'>" + division + "<\/span>" +
-                    "<span class='round'>" + round + "<\/span>" +
-                    "<span class='whiteTeam'>" + whiteTeam + "<\/span>";
-                if (whiteTeam.search(teamName) !== -1) {
-                    container += "<span class='whitePlayer highlight'>" + 
-                        whitePlayer + "<\/span>";
-                } else {
-                    container += "<span class='whitePlayer'>" +
-                        whitePlayer + "<\/span>";
-                }
-                if (blackTeam.search(teamName) !== -1) {
-                    container += "<span class='blackPlayer highlight'>" + 
-                        blackPlayer + "<\/span>";
-                } else {
-                    container += "<span class='blackPlayer'>" + 
-                        blackPlayer + "<\/span>";
-                }
-                container += "<span class='blackTeam'>" + 
-                    blackTeam + "<\/span>" +
-                    "<span class='board'>" + 
-                    board + "<\/span>" + "<br />";
-            });
+            division = Y.Node.create(cols.item(0).getContent()).get("text")
+                .replace(/\s{2,}/g, ' ');
+            round = cols.item(1).getContent();
+            when = cols.item(2).getContent();
+            whenLocal = formatDate(when);
+            whiteTeam = cols.item(3).getContent();
+            whitePlayer = cols.item(4).getContent();
+            if (cols.size() === 9) {
+                blackPlayer = cols.item(6).getContent();
+                blackTeam = cols.item(7).getContent();
+                board = cols.item(8).getContent();
+            } else {
+                blackPlayer = cols.item(5).getContent();
+                blackTeam = cols.item(6).getContent();
+                board = cols.item(7).getContent();
+            }
+
+            isOurTeam = whiteTeam.search(teamName) !== -1 || 
+                blackTeam.search(teamName) !== -1;
+
+            if (!isOurTeam) {
+                return;
+            }
+
+            container += "<span class='when'>" + when + "<\/span>" +
+                "<span class='whenLocal'>" + whenLocal + "<\/span>" +
+                "<span class='division'>" + division + "<\/span>" +
+                "<span class='round'>" + round + "<\/span>" +
+                "<span class='whiteTeam'>" + whiteTeam + "<\/span>";
+            if (whiteTeam.search(teamName) !== -1) {
+                container += "<span class='whitePlayer highlight'>" + 
+                    whitePlayer + "<\/span>";
+            } else {
+                container += "<span class='whitePlayer'>" +
+                    whitePlayer + "<\/span>";
+            }
+            if (blackTeam.search(teamName) !== -1) {
+                container += "<span class='blackPlayer highlight'>" + 
+                    blackPlayer + "<\/span>";
+            } else {
+                container += "<span class='blackPlayer'>" + 
+                    blackPlayer + "<\/span>";
+            }
+            container += "<span class='blackTeam'>" + 
+                blackTeam + "<\/span>" +
+                "<span class='board'>" + 
+                board + "<\/span>" + "<br />";
+        });
 
         if (found) {
-            jQuery('#games').html(container);
+            Y.one('#games').setContent(container);
         } else {
-            jQuery('#games').html("Games not scheduled yet.");
+            Y.one('#games').setContent("Games not scheduled yet.");
         }
     }
 
-    requestCrossDomain(path, myContainer);
+    Y.YQL('select * from html where url="' + path + '"', myContainer,
+        { format: 'xml' });
 });
 
 </script>
