@@ -31,11 +31,11 @@
 <script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
 
 <script type="text/javascript">
-/*jslint unparam:true */
 /*global YUI */
 
-YUI().use("node", "yql", function (Y) {
-    var path = "http://team4545league.org/tournament/games.html";
+YUI().use("node", "yql", "datatype-date", function (Y) {
+    var path = "http://team4545league.org/tournament/games.html",
+        teamName = 'RedDeMate';
 
     function formatDate(date) {
         var edtNY = { // EDT periods for NY, otherwise EST, (Mar - Nov)
@@ -49,33 +49,9 @@ YUI().use("node", "yql", function (Y) {
                 2018: { "start": "031102:00", "end": "110402:00"},
                 2019: { "start": "031002:00", "end": "110302:00"}
             },
-            months = {
-                "Jan": "01",
-                0: "Jan",
-                "Feb": "02",
-                1: "Feb",
-                "Mar": "03",
-                2: "Mar",
-                "Apr": "04",
-                3: "Apr",
-                "May": "05",
-                4: "May",
-                "Jun": "06",
-                5: "Jun",
-                "Jul": "07",
-                6: "Jul",
-                "Aug": "08",
-                7: "Aug",
-                "Sep": "09",
-                8: "Sep",
-                "Oct": "10",
-                9: "Oct",
-                "Nov": "11",
-                10: "Nov",
-                "Dec": "12",
-                11: "Dec"
-            },
-            days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            win = Y.config.win,
+            lang = win.navigator.userLanguage || win.navigator.language,
+            intl = Y.DataType.Date.Locale.hasOwnProperty(lang) ? lang : "en-US",
             now = new Date(),
             yyyy = now.getFullYear(),
             sp = date.split(", "),
@@ -84,35 +60,38 @@ YUI().use("node", "yql", function (Y) {
             mmm = mmmddd[0],
             ddd = mmmddd[1],
             hhh = sp[2],
-            mdh = months[mmm] + ddd + hhh,
-            dd, 
-            hh, 
-            mm, 
+            mm = Y.DataType.Date.Locale[intl].b.indexOf(mmm) + 1,
+            mdh = (mm < 10 ? "0" + mm : mm) + ddd + hhh,
             tz,
             ld;
 
-        if (mdh >= edtNY[yyyy].start && mdh < edtNY[yyyy].end) {
-            tz = "EDT";
+        if (edtNY.hasOwnProperty(yyyy)) {
+            if (mdh >= edtNY[yyyy].start && mdh < edtNY[yyyy].end) {
+                tz = "EDT";
+            } else {
+                tz = "EST";
+            }
         } else {
-            tz = "EST";
+            if (mm >= 3 && mm <= 11) {
+                tz = "EDT";
+            } else {
+                tz = "EST";
+            }
         }
 
         ld = new Date(www + ", " + ddd + " " + mmm + " " + yyyy + 
             " " + hhh + ":00 " + tz);
 
-        dd = ld.getDate();
-        dd = dd < 10 ? "0" + dd : dd;
-        hh = ld.getHours();
-        hh = hh < 10 ? "0" + hh : hh;
-        mm = ld.getMinutes();
-        mm = mm < 10 ? "0" + mm : mm;
-
-        return days[ld.getDay()] + ", " + months[ld.getMonth()] + " " + dd +
-            ", " + hh + ":" + mm;
+        return Y.DataType.Date.format(ld, {format: "%a, %B %d, %H:%M"});
     }
 
     function myContainer(results) {
-        var teamName = 'RedDeMate', node, container, found = false;
+        var node, container, found = false;
+
+        if (results.results.length === 0) {
+            Y.one('#games').setContent("Problems to retrieve team4545 info.");
+            return;
+        }
 
         node = Y.Node.create(results.results[0]);
 
@@ -208,5 +187,3 @@ YUI().use("node", "yql", function (Y) {
 </script>
 </body>
 </html>
-
-
