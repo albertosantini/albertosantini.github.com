@@ -143,8 +143,6 @@ YUI().use("node", "yql", function (Y) {
                 return;
             }
 
-            found = true;
-
             division = Y.Node.create(cols.item(0).getContent()).get("text")
                 .replace(/\s{2,}/g, ' ');
             round = cols.item(1).getContent();
@@ -168,6 +166,8 @@ YUI().use("node", "yql", function (Y) {
             if (!isOurTeam) {
                 return;
             }
+
+            found = true;
 
             container += "<span class='when'>" + when + "<\/span>" +
                 "<span class='whenLocal'>" + whenLocal + "<\/span>" +
