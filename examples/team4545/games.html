@@ -18,14 +18,31 @@
     .blackTeam { display: inline-block; width: 195px; }
     .board { display: inline-block; width: 21px; }
 
+    .place { display: inline-block; width: 67px; font-weight: bold; }
+    .team { display: inline-block; width: 369px; font-weight: bold; }
+    .mp { display: inline-block; width: 53px; }
+    .gp { display: inline-block; width: 53px; }
+    .forfeits { display: inline-block; width: 19px; }
+    .r1 { display: inline-block; width: 88px; }
+    .r2 { display: inline-block; width: 88px; }
+    .r3 { display: inline-block; width: 88px; }
+    .r4 { display: inline-block; width: 88px; }
+    .r5 { display: inline-block; width: 88px; }
+    .r6 { display: inline-block; width: 88px; }
+
     .highlight { color: red; }
 </style>
 </head>
 
 <body>
-	<h1>Team4545 Scheduled Games - RedDeMate Family</h1>
-
+    <h1>Team4545 - RedDeMate Family</h1> 
+    
+    <h2>Scheduled Games</h2>
 	<div id="games">
+	</div>
+
+    <h2>Standings</h2>
+	<div id="standings">
 	</div>
 
 <script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
@@ -34,8 +51,10 @@
 /*global YUI */
 
 YUI().use("node", "yql", "datatype-date", function (Y) {
-    var path = "http://team4545league.org/tournament/games.html",
-        teamName = 'RedDeMate';
+    var gamesUrl = "http://team4545league.org/tournament/games.html",
+        teamName = 'RedDeMate',
+        games = Y.one("#games"),
+        standings = Y.one("#standings");
 
     function formatDate(date) {
         var edtNY = { // EDT periods for NY, otherwise EST, (Mar - Nov)
@@ -85,15 +104,105 @@ YUI().use("node", "yql", "datatype-date", function (Y) {
         return Y.DataType.Date.format(ld, {format: "%a, %b %d, %H:%M"});
     }
 
-    function myContainer(results) {
-        var node, container, found = false;
+    function myStandings(results) {
+        var node, container = "", found = false;
 
         if (results.results.length === 0) {
-            Y.one('#games').setContent("Problems to retrieve team4545 info.");
+            standings.setContent("Problems to retrieve team4545 info.");
+            return;
+        }
+
+        container = "<span class='place'>" + "Place" + "<\/span>" +
+            "<span class='team'>" + "Team" + "<\/span>" +
+            "<span class='mp'>" + "MP" + "<\/span>" +
+            "<span class='gp'>" + "GP" + "<\/span>" +
+            "<span class='forfeits'>" + "F" + "<\/span>" +
+            "<span class='r1'>" + "R1" + "<\/span>" +
+            "<span class='r2'>" + "R2" + "<\/span>" +
+            "<span class='r3'>" + "R3" + "<\/span>" +
+            "<span class='r4'>" + "R4" + "<\/span>" +
+            "<span class='r5'>" + "R5" + "<\/span>" +
+            "<span class='r6'>" + "R6" + "<\/span>" + "<br /><br />";
+
+        node = Y.Node.create(results.results[0]);
+
+        node.all("table.stand tr").each(function (el) {
+            var cols = el.all("td p"), 
+                place,
+                team,
+                mp,
+                gp,
+                forfeits,
+                r1,
+                r2,
+                r3,
+                r4,
+                r5,
+                r6,
+                isOurTeam;
+
+            if (cols.size() < 10) {
+                return;
+            }
+
+            place = (cols.item(0) && cols.item(0).getContent()) || "";
+            team = (cols.item(1) && cols.item(1).getContent()) || "";
+            mp = (cols.item(2) && cols.item(2).getContent()) || "";
+            gp = ((cols.item(3) && cols.item(3).getContent()) || "")
+                .replace(/&nbsp;/gi,'');
+            forfeits = (cols.item(4) && cols.item(4).getContent()) || "";
+            r1 = (cols.item(5) && cols.item(5).getContent()) || "";
+            r2 = (cols.item(6) && cols.item(6).getContent()) || "";
+            r3 = (cols.item(7) && cols.item(7).getContent()) || "";
+            r4 = (cols.item(8) && cols.item(8).getContent()) || "";
+            r5 = (cols.item(9) && cols.item(9).getContent()) || "";
+            r6 = (cols.item(10) && cols.item(10).getContent()) || "";
+
+            isOurTeam = team.search(teamName) !== -1;
+
+            if (!isOurTeam) {
+                return;
+            }
+
+            found = true;
+
+            container += "<span class='place'>" + place + "<\/span>" +
+                "<span class='team'>" + team + "<\/span>" +
+                "<span class='mp'>" + mp + "<\/span>" +
+                "<span class='gp'>" + gp + "<\/span>" +
+                "<span class='forfeits'>" + forfeits + "<\/span>" +
+                "<span class='r1'>" + r1 + "<\/span>" +
+                "<span class='r2'>" + r2 + "<\/span>" +
+                "<span class='r3'>" + r3 + "<\/span>" +
+                "<span class='r4'>" + r4 + "<\/span>" +
+                "<span class='r5'>" + r5 + "<\/span>" +
+                "<span class='r6'>" + r6 + "<\/span>" + "<br />";
+        });
+
+        if (found) {
+            standings.setContent(container);
+        } else {
+            standings.setContent("There are not standings yet.");
+        }
+    }
+
+    function myGames(results) {
+        var node, container, found = false, tourney, standingsUrl;
+
+        if (results.results.length === 0) {
+            games.setContent("Problems to retrieve team4545 info.");
             return;
         }
 
         node = Y.Node.create(results.results[0]);
+
+        tourney = node.all("h3").get("text")[0].split("- ")[1].split(" ")[0]
+            .toLowerCase();
+        standingsUrl = "http://team4545league.org/tournament/" + tourney +
+            "/" + tourney + "standing.html";
+
+        Y.YQL('select * from html where url="' + standingsUrl + '"', 
+            myStandings, { format: 'xml' });
 
         container = "<span class='when'>" + "When ICC" + "<\/span>" +
             "<span class='whenLocal'>" + "When Local" + "<\/span>" +
@@ -174,16 +283,18 @@ YUI().use("node", "yql", "datatype-date", function (Y) {
         });
 
         if (found) {
-            Y.one('#games').setContent(container);
+            games.setContent(container);
         } else {
-            Y.one('#games').setContent("Games not scheduled yet.");
+            games.setContent("Games not scheduled yet.");
         }
     }
 
-    Y.YQL('select * from html where url="' + path + '"', myContainer,
+    Y.YQL('select * from html where url="' + gamesUrl + '"', myGames,
         { format: 'xml' });
 });
 
 </script>
 </body>
 </html>
+
+
