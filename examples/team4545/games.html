@@ -117,10 +117,10 @@ YUI().use("node", "yql", "datatype-date", function (Y) {
             "<span class='mp'>" + "MP" + "<\/span>" +
             "<span class='gp'>" + "GP" + "<\/span>" +
             "<span class='forfeits'>" + "F" + "<\/span>" +
-            "<span class='r1'>" + "R1" + "<\/span>" +
-            "<span class='r2'>" + "R2" + "<\/span>" +
-            "<span class='r3'>" + "R3" + "<\/span>" +
-            "<span class='r4'>" + "R4" + "<\/span>" +
+            "<span class='r1'>" + "R1/P1" + "<\/span>" +
+            "<span class='r2'>" + "R2/P2" + "<\/span>" +
+            "<span class='r3'>" + "R3/P3" + "<\/span>" +
+            "<span class='r4'>" + "R4/P4" + "<\/span>" +
             "<span class='r5'>" + "R5" + "<\/span>" +
             "<span class='r6'>" + "R6" + "<\/span>" + "<br /><br />";
 
@@ -141,7 +141,7 @@ YUI().use("node", "yql", "datatype-date", function (Y) {
                 r6,
                 isOurTeam;
 
-            if (cols.size() < 10) {
+            if (cols.size() < 6) {
                 return;
             }
 
