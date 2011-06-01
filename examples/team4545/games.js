@@ -81,11 +81,11 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
     };
 
     function settingStyles(o) {
-        var column, whiteTeam, blackTeam;
+        var column, whiteTeam, blackTeam, result;
 
         column = o.column.get('key');
 
-        if (column === "when" || column === 'place' || column === 'team') {
+        if (column === "when") {
             o.td.setStyle('fontWeight', 'bold');
         }
         if (column === "whenLocal") {
@@ -94,12 +94,30 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
         if (column === "whitePlayer") {
             whiteTeam = o.record.getValue('whiteTeam');
             if (whiteTeam.search(teamName) >= 0) {
-                o.td.setStyle('color', 'red');
+                o.td.setStyle('color', 'blue');
             }
         }
         if (column === "blackPlayer") {
             blackTeam = o.record.getValue('blackTeam');
             if (blackTeam.search(teamName) >= 0) {
+                o.td.setStyle('color', 'blue');
+            }
+        }
+
+        if (column === 'place' || column === 'team') {
+            o.td.setStyle('fontWeight', 'bold');
+        }
+        if (column === 'forf') {
+            if (o.value > 0) {
+                o.td.setStyle('color', 'red');
+            }
+        }
+        if (column.search('r') === 0) {
+            result = o.value.split(" - ");
+
+            if (result[0] > result[1]) {
+                o.td.setStyle('color', 'green');
+            } else if (result[0] < result[1]) {
                 o.td.setStyle('color', 'red');
             }
         }
@@ -155,13 +173,20 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
                         formatter: settingStyles},
                     { key: "mp", label: "MP"},
                     { key: "gp", label: "GP"},
-                    { key: "forf", label: "F"},
-                    { key: "r1", label: "R1 P1"},
-                    { key: "r2", label: "R2 P2"},
-                    { key: "r3", label: "R3 P3"},
-                    { key: "r4", label: "R4 P4"},
-                    { key: "r5", label: "R5"},
-                    { key: "r6", label: "R6"}
+                    { key: "forf", label: "F",
+                        formatter: settingStyles},
+                    { key: "r1", label: "R1 P1",
+                        formatter: settingStyles},
+                    { key: "r2", label: "R2 P2",
+                        formatter: settingStyles},
+                    { key: "r3", label: "R3 P3",
+                        formatter: settingStyles},
+                    { key: "r4", label: "R4 P4",
+                        formatter: settingStyles},
+                    { key: "r5", label: "R5",
+                        formatter: settingStyles},
+                    { key: "r6", label: "R6",
+                        formatter: settingStyles}
                 ],
                 recordset: standings
             }).render("#standings");
