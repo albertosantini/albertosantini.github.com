@@ -1,7 +1,9 @@
 /*global YUI */
 
 YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
-    var gamesUrl = "http://team4545league.org/tournament/games.html",
+    var baseUrl = "http://www.team4545league.org/",
+        gamesUrl = baseUrl + "tournament/games.html",
+        playerUrl = baseUrl + "players/displayhist.php?player=",
         teamName = 'RedDeMate',
         gamesNode = Y.one("#games"),
         standingsNode = Y.one("#standings");
@@ -94,13 +96,13 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
         if (column === "whitePlayer") {
             whiteTeam = o.record.getValue('whiteTeam');
             if (whiteTeam.search(teamName) >= 0) {
-                o.td.setStyle('color', 'blue');
+                o.td.setStyle('fontWeight', 'bold');
             }
         }
         if (column === "blackPlayer") {
             blackTeam = o.record.getValue('blackTeam');
             if (blackTeam.search(teamName) >= 0) {
-                o.td.setStyle('color', 'blue');
+                o.td.setStyle('fontWeight', 'bold');
             }
         }
 
@@ -207,7 +209,7 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
 
         tourney = node.all("h3").get("text")[0].split("- ")[1].split(" ")[0]
             .toLowerCase();
-        standingsUrl = "http://team4545league.org/tournament/" + tourney +
+        standingsUrl = baseUrl + "tournament/" + tourney +
             "/" + tourney + "standing.html";
 
         Y.YQL('select * from html where url="' + standingsUrl + '"',
@@ -222,17 +224,28 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
 
             game.division = Y.Node.create(cols.item(0).getContent())
                 .get("text").replace(/\s{2,}/g, ' ');
+            game.divisionLink = baseUrl +
+                Y.Node.create(cols.item(0).getContent())
+                .one("a").getAttribute("href");
+            game.division = '<a href="' + game.divisionLink + '">' +
+                game.division + '</a>';
             game.round = cols.item(1).getContent();
             game.when = cols.item(2).getContent();
             game.whenLocal = formatDate(game.when);
             game.whiteTeam = cols.item(3).getContent();
-            game.whitePlayer = cols.item(4).getContent();
+            game.whitePlayer = '<a href="' + playerUrl +
+                cols.item(4).getContent() + '">' +
+                cols.item(4).getContent() + '</a>';
             if (cols.size() === 9) {
-                game.blackPlayer = cols.item(6).getContent();
+                game.blackPlayer = '<a href="' + playerUrl +
+                    cols.item(6).getContent() + '">' +
+                    cols.item(6).getContent() + '</a>';
                 game.blackTeam = cols.item(7).getContent();
                 game.board = cols.item(8).getContent();
             } else {
-                game.blackPlayer = cols.item(5).getContent();
+                game.blackPlayer = '<a href="' + playerUrl +
+                    cols.item(5).getContent() + '">' +
+                    cols.item(5).getContent() + '</a>';
                 game.blackTeam = cols.item(6).getContent();
                 game.board = cols.item(7).getContent();
             }
