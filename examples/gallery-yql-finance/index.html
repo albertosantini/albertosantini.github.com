@@ -12,38 +12,43 @@
     }
 </style>
 
-<script src="http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js"></script>
+<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
 </head>
 
 <body>
 
 	<h1>Test gallery-yql-finance</h1>
 
-    <div id="cHistQuotes">
+    <div id="cHistQuotes"> Test Historical Quotes
         <div id="histQuotes"></div><br />
     </div>
-    <div id="cHistQuotes2">
+    <div id="cHistQuotesBis"> Test Historical Quotes Bis
+        <div id="histQuotesBis"></div><br />
+    </div>
+    <div id="cHistQuotes2"> Test Historical Quotes 2
         <div id="histQuotes2"></div><br />
     </div>
-    <div id="cQuotes">
+    <div id="cHistQuotes3"> Test Historical Quotes 3 
+        <div id="histQuotes3"></div><br />
+    </div>
+    <div id="cQuotes"> Test Latest Quotes
         <div id="quotes"></div><br />
     </div>
 
 <script type="text/javascript">
 /*global YUI */
 
-"use strict";
-
 YUI({
-//~     modules: {
-//~         "gallery-yql-finance": {
-//~             fullpath: "./gallery-yql-finance.js",
-//~             requires: ["substitute", "yql"]
-//~         }
-//~     }
-    gallery: 'gallery-2010.11.17-21-32'
+    // modules: {
+        // "gallery-yql-finance": {
+            // fullpath: "./gallery-yql-finance.js",
+            // requires: ["substitute", "yql"]
+        // }
+    // },
+    gallery: 'gallery-2011.06.01-20-18',
+    filter: 'raw'
 }).use("node", "json", "gallery-yql-finance", function (Y) {
-    var symbols = ["IBM", "MSFT", "YHOO", "^GSPC", "EUR=X"];
+    var symbols = ["YHOO", "GOOG"];
 
     function display(container, prices) {
         var asset, content = "", c = Y.one(container);
@@ -63,12 +68,20 @@ YUI({
     }
 
     Y.one("#cHistQuotes").addClass('progress');
+    Y.one("#cHistQuotesBis").addClass('progress');
     Y.one("#cHistQuotes2").addClass('progress');
+    Y.one("#cHistQuotes3").addClass('progress');
     Y.one("#cQuotes").addClass('progress');
 
     Y.YQL.Finance.getHistoricalQuotes(symbols, function (prices) {
         Y.one("#cHistQuotes").removeClass('progress');
         display("#histQuotes", prices);
+    }, {
+        columns: ["Close", "Date"]
+    });
+    Y.YQL.Finance.getHistoricalQuotes(symbols, function (prices) {
+        Y.one("#cHistQuotesBis").removeClass('progress');
+        display("#histQuotesBis", prices);
     }, {
         columns: ["Close", "Date"]
     });
@@ -80,6 +93,17 @@ YUI({
         columns: ["Close", "Date"],
         frequency: "w",
         startDate: "2010-10-01",
+        endDate: "2010-10-30"
+    });
+
+
+    Y.YQL.Finance.getHistoricalQuotes(symbols, function (prices) {
+        Y.one("#cHistQuotes3").removeClass('progress');
+        display("#histQuotes3", prices);
+    }, {
+        columns: ["Close", "Date"],
+        frequency: "w",
+        startDate: "2009-10-01",
         endDate: "2010-10-30"
     });
 
