@@ -121,6 +121,8 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
                 o.td.setStyle('color', 'green');
             } else if (result[0] < result[1]) {
                 o.td.setStyle('color', 'red');
+            } else if (result[0] === "0.0" && result[1] === "0.0") {
+                o.value = "";
             }
         }
 
