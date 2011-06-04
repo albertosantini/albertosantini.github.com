@@ -1,6 +1,16 @@
 /*global YUI */
 
-YUI().use("node", "yql", "datatype-date", "datatable-base", function (Y) {
+YUI({
+    modules: {
+        'node': {
+            requires: [
+                'yql',
+                'datatype-date',
+                'datatable-base'
+            ]
+        }
+    }
+}).use('node', function (Y) {
     var baseUrl = "http://www.team4545league.org/",
         gamesUrl = baseUrl + "tournament/games.html",
         playerUrl = baseUrl + "players/displayhist.php?player=",
