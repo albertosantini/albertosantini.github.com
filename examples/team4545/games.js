@@ -1,3 +1,4 @@
+/*jslint type:true */
 /*global YUI */
 
 YUI({
