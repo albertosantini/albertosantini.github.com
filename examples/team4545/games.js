@@ -7,7 +7,10 @@ YUI({
             requires: [
                 'yql',
                 'datatype-date',
-                'datatable-base'
+                'datatable-base',
+                'autocomplete',
+                'autocomplete-filters',
+                'cookie'
             ]
         }
     }
@@ -15,9 +18,17 @@ YUI({
     var baseUrl = "http://www.team4545league.org/",
         gamesUrl = baseUrl + "tournament/games.html",
         playerUrl = baseUrl + "players/displayhist.php?player=",
-        teamName = 'RedDeMate',
+        teamName,
+        teamNode = Y.one("#team"),
         gamesNode = Y.one("#games"),
         standingsNode = Y.one("#standings");
+
+    teamName = Y.Cookie.get("teamName");
+    if (teamName === null) {
+        teamName = 'RedDeMate';
+    }
+
+    teamNode.set('value', teamName);
 
     function formatDate(date) {
         var edtNY = { // EDT periods for NY, otherwise EST, (Mar - Nov)
@@ -151,67 +162,91 @@ YUI({
         node = Y.Node.create(results.results[0]);
 
         node.all("table.stand tr").each(function (el) {
-            var cols = el.all("td p"), standing = {}, isOurTeam;
+            var cols = el.all("td"), standing = {};
 
             if (cols.size() < 6) {
                 return;
             }
 
-            standing.place = (cols.item(0) && cols.item(0).getContent()) || "";
-            standing.team = (cols.item(1) && cols.item(1).getContent()) || "";
-            standing.mp = (cols.item(2) && cols.item(2).getContent()) || "";
-            standing.gp = ((cols.item(3) && cols.item(3).getContent()) || "")
-                .replace(/&nbsp;/gi, '');
-            standing.forf = (cols.item(4) && cols.item(4).getContent()) || "";
-            standing.r1 = (cols.item(5) && cols.item(5).getContent()) || "";
-            standing.r2 = (cols.item(6) && cols.item(6).getContent()) || "";
-            standing.r3 = (cols.item(7) && cols.item(7).getContent()) || "";
-            standing.r4 = (cols.item(8) && cols.item(8).getContent()) || "";
-            standing.r5 = (cols.item(9) && cols.item(9).getContent()) || "";
-            standing.r6 = (cols.item(10) && cols.item(10).getContent()) || "";
-
-            isOurTeam = standing.team.search(teamName) !== -1;
-
-            if (!isOurTeam) {
-                return;
-            }
+            standing.place = (cols.item(0) && cols.item(0).get('text')
+                .trim()) || "";
+            standing.team = (cols.item(1) && cols.item(1).get('text')
+                .replace(/\n\s{2,}/g, ' ')) || "";
+            standing.mp = (cols.item(2) && cols.item(2).get('text')
+                .trim()) || "";
+            standing.gp = ((cols.item(3) && cols.item(3).get('text')
+                .trim()) || "");
+            standing.forf = (cols.item(4) && cols.item(4).get('text')
+                .trim()) || "";
+            standing.r1 = (cols.item(5) && cols.item(5).get('text')
+                .trim()) || "";
+            standing.r2 = (cols.item(6) && cols.item(6).get('text')
+                .trim()) || "";
+            standing.r3 = (cols.item(7) && cols.item(7).get('text')
+                .trim()) || "";
+            standing.r4 = (cols.item(8) && cols.item(8).get('text')
+                .trim()) || "";
+            standing.r5 = (cols.item(9) && cols.item(9).get('text')
+                .trim()) || "";
+            standing.r6 = (cols.item(10) && cols.item(10).get('text')
+                .trim()) || "";
 
             standings.push(standing);
         });
 
+        function standingsTeamFilter(team) {
+            var newStandings = [], isOurTeam, i;
+
+            for (i = 0; i < standings.length; i += 1) {
+                isOurTeam = standings[i].team.search(team) !== -1;
+                if (isOurTeam) {
+                    newStandings.push(standings[i]);
+                }
+            }
+            standingsDT.set('recordset', newStandings);
+        }
+
+        standingsDT = new Y.DataTable.Base({
+            columnset: [
+                { key: "place", label: "Place",
+                    formatter: settingStyles},
+                { key: "team", label: "Team",
+                    formatter: settingStyles},
+                { key: "mp", label: "MP"},
+                { key: "gp", label: "GP"},
+                { key: "forf", label: "F",
+                    formatter: settingStyles},
+                { key: "r1", label: "R1 P1",
+                    formatter: settingStyles},
+                { key: "r2", label: "R2 P2",
+                    formatter: settingStyles},
+                { key: "r3", label: "R3 P3",
+                    formatter: settingStyles},
+                { key: "r4", label: "R4 P4",
+                    formatter: settingStyles},
+                { key: "r5", label: "R5",
+                    formatter: settingStyles},
+                { key: "r6", label: "R6",
+                    formatter: settingStyles}
+            ],
+            recordset: []
+        });
+
+        standingsTeamFilter(teamName);
+
+        Y.on("teamNameChange", function (team) {
+            standingsTeamFilter(team);
+        });
+
         if (standings.length) {
-            standingsDT = new Y.DataTable.Base({
-                columnset: [
-                    { key: "place", label: "Place",
-                        formatter: settingStyles},
-                    { key: "team", label: "Team",
-                        formatter: settingStyles},
-                    { key: "mp", label: "MP"},
-                    { key: "gp", label: "GP"},
-                    { key: "forf", label: "F",
-                        formatter: settingStyles},
-                    { key: "r1", label: "R1 P1",
-                        formatter: settingStyles},
-                    { key: "r2", label: "R2 P2",
-                        formatter: settingStyles},
-                    { key: "r3", label: "R3 P3",
-                        formatter: settingStyles},
-                    { key: "r4", label: "R4 P4",
-                        formatter: settingStyles},
-                    { key: "r5", label: "R5",
-                        formatter: settingStyles},
-                    { key: "r6", label: "R6",
-                        formatter: settingStyles}
-                ],
-                recordset: standings
-            }).render("#standings");
+            standingsDT.render("#standings");
         } else {
             standingsNode.setContent("There are not standings yet.");
         }
     }
 
     function myGames(results) {
-        var node, tourney, standingsUrl, games = [], gamesDT;
+        var node, tourney, standingsUrl, games = [], teams = [], gamesDT;
 
         if (results.results.length === 0) {
             gamesNode.setContent("Problems to retrieve team4545 info.");
@@ -229,7 +264,7 @@ YUI({
             myStandings, { format: 'xml' });
 
         node.all("tr").each(function (el) {
-            var cols = el.all("td p"), game = {}, isOurTeam;
+            var cols = el.all("td p"), game = {};
 
             if (cols.size() === 0) {
                 return;
@@ -263,35 +298,78 @@ YUI({
                 game.board = cols.item(7).getContent();
             }
 
-            isOurTeam = game.whiteTeam.search(teamName) !== -1 ||
-                game.blackTeam.search(teamName) !== -1;
-
-            if (!isOurTeam) {
-                return;
+            if (teams.indexOf(game.whiteTeam) === -1) {
+                teams.push(game.whiteTeam);
+            }
+            if (teams.indexOf(game.blackTeam) === -1) {
+                teams.push(game.blackTeam);
             }
 
             games.push(game);
         });
 
+        function gamesTeamFilter(team) {
+            var newGames = [], isOurTeam, i;
+
+            for (i = 0; i < games.length; i += 1) {
+                isOurTeam = games[i].whiteTeam.search(team) !== -1 ||
+                    games[i].blackTeam.search(team) !== -1;
+                if (isOurTeam) {
+                    newGames.push(games[i]);
+                }
+            }
+            gamesDT.set('recordset', newGames);
+
+            Y.fire("teamNameChange", team);
+            teamName = team;
+
+            Y.Cookie.set("teamName", teamName);
+        }
+
+        teamNode.plug(Y.Plugin.AutoComplete, {
+            source: teams,
+            resultFilters: 'startsWith',
+            maxResults: 15,
+            width: 'auto'
+        });
+
+        teamNode.focus();
+
+        teamNode.ac.after('resultsChange', function () {
+            var newWidth = this.get('boundingBox').get('offsetWidth');
+            teamNode.setStyle('width', Math.max(newWidth, 100));
+        });
+
+        gamesDT = new Y.DataTable.Base({
+            columnset: [
+                { key: "when", label: "When ICC",
+                    formatter: settingStyles},
+                { key: "whenLocal", label: "When Local",
+                    formatter: settingStyles},
+                { key: "division", label: "Division"},
+                { key: "round", label: "R"},
+                { key: "whiteTeam", label: "White Team"},
+                { key: "whitePlayer", label: "White Player",
+                    formatter: settingStyles},
+                { key: "blackPlayer", label: "Black Player",
+                    formatter: settingStyles},
+                { key: "blackTeam", label: "Black Team"},
+                { key: "board", label: "B"}
+            ],
+            recordset: []
+        });
+
+        gamesTeamFilter(teamName);
+
+        teamNode.ac.on('query', function(e) {
+            gamesTeamFilter(e.query);
+        });
+        teamNode.ac.on('select', function(e) {
+            gamesTeamFilter(e.result.text);
+        });
+
         if (games.length) {
-            gamesDT = new Y.DataTable.Base({
-                columnset: [
-                    { key: "when", label: "When ICC",
-                        formatter: settingStyles},
-                    { key: "whenLocal", label: "When Local",
-                        formatter: settingStyles},
-                    { key: "division", label: "Division"},
-                    { key: "round", label: "R"},
-                    { key: "whiteTeam", label: "White Team"},
-                    { key: "whitePlayer", label: "White Player",
-                        formatter: settingStyles},
-                    { key: "blackPlayer", label: "Black Player",
-                        formatter: settingStyles},
-                    { key: "blackTeam", label: "Black Team"},
-                    { key: "board", label: "B"}
-                ],
-                recordset: games
-            }).render("#games");
+            gamesDT.render("#games");
         } else {
             gamesNode.setContent("Games not scheduled yet.");
         }
