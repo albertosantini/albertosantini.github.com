@@ -23,6 +23,10 @@ YUI({
         gamesNode = Y.one("#games"),
         standingsNode = Y.one("#standings");
 
+    if (!Array.prototype.indexOf) {
+        Array.prototype.indexOf = Y.Array.indexOf;
+    }
+
     teamName = Y.Cookie.get("teamName");
     if (teamName === null) {
         teamName = 'RedDeMate';
@@ -162,36 +166,26 @@ YUI({
         node = Y.Node.create(results.results[0]);
 
         node.all("table.stand tr").each(function (el) {
-            var cols = el.all("td"), standing = {};
+            var trim = Y.Lang.trim, cols = el.all("td"), st = {};
 
             if (cols.size() < 6) {
                 return;
             }
 
-            standing.place = (cols.item(0) && cols.item(0).get('text')
-                .trim()) || "";
-            standing.team = (cols.item(1) && cols.item(1).get('text')
+            st.place = trim(cols.item(0) && cols.item(0).get('text')) || "";
+            st.team = (cols.item(1) && cols.item(1).get('text')
                 .replace(/\n\s{2,}/g, ' ')) || "";
-            standing.mp = (cols.item(2) && cols.item(2).get('text')
-                .trim()) || "";
-            standing.gp = ((cols.item(3) && cols.item(3).get('text')
-                .trim()) || "");
-            standing.forf = (cols.item(4) && cols.item(4).get('text')
-                .trim()) || "";
-            standing.r1 = (cols.item(5) && cols.item(5).get('text')
-                .trim()) || "";
-            standing.r2 = (cols.item(6) && cols.item(6).get('text')
-                .trim()) || "";
-            standing.r3 = (cols.item(7) && cols.item(7).get('text')
-                .trim()) || "";
-            standing.r4 = (cols.item(8) && cols.item(8).get('text')
-                .trim()) || "";
-            standing.r5 = (cols.item(9) && cols.item(9).get('text')
-                .trim()) || "";
-            standing.r6 = (cols.item(10) && cols.item(10).get('text')
-                .trim()) || "";
+            st.mp = trim(cols.item(2) && cols.item(2).get('text')) || "";
+            st.gp = trim((cols.item(3) && cols.item(3).get('text')) || "");
+            st.forf = trim(cols.item(4) && cols.item(4).get('text')) || "";
+            st.r1 = trim(cols.item(5) && cols.item(5).get('text')) || "";
+            st.r2 = trim(cols.item(6) && cols.item(6).get('text')) || "";
+            st.r3 = trim(cols.item(7) && cols.item(7).get('text')) || "";
+            st.r4 = trim(cols.item(8) && cols.item(8).get('text')) || "";
+            st.r5 = trim(cols.item(9) && cols.item(9).get('text')) || "";
+            st.r6 = trim(cols.item(10) && cols.item(10).get('text')) || "";
 
-            standings.push(standing);
+            standings.push(st);
         });
 
         function standingsTeamFilter(team) {
