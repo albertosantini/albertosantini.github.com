@@ -23,10 +23,6 @@ YUI({
         gamesNode = Y.one("#games"),
         standingsNode = Y.one("#standings");
 
-    if (!Array.prototype.indexOf) {
-        Array.prototype.indexOf = Y.Array.indexOf;
-    }
-
     teamName = Y.Cookie.get("teamName");
     if (teamName === null) {
         teamName = 'RedDeMate';
@@ -57,7 +53,7 @@ YUI({
             mmm = mmmddd[0],
             ddd = mmmddd[1],
             hhh = sp[2],
-            mm = Y.DataType.Date.Locale[intl].b.indexOf(mmm) + 1,
+            mm = Y.Array.indexOf(Y.DataType.Date.Locale[intl].b, mmm) + 1,
             mdh = (mm < 10 ? "0" + mm : mm) + ddd + hhh,
             tz,
             ld;
@@ -264,8 +260,7 @@ YUI({
                 return;
             }
 
-            game.division = Y.Node.create(cols.item(0).getContent())
-                .get("text").replace(/\s{2,}/g, ' ');
+            game.division = cols.item(0).get('text').replace(/\s{2,}/g, ' ');
             game.divisionLink = baseUrl +
                 Y.Node.create(cols.item(0).getContent())
                 .one("a").getAttribute("href");
@@ -292,10 +287,10 @@ YUI({
                 game.board = cols.item(7).getContent();
             }
 
-            if (teams.indexOf(game.whiteTeam) === -1) {
+            if (Y.Array.indexOf(teams, game.whiteTeam) === -1) {
                 teams.push(game.whiteTeam);
             }
-            if (teams.indexOf(game.blackTeam) === -1) {
+            if (Y.Array.indexOf(teams, game.blackTeam) === -1) {
                 teams.push(game.blackTeam);
             }
 
