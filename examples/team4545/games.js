@@ -3,8 +3,9 @@
 
 YUI({
     modules: {
-        'node': {
+        'loader': {
             requires: [
+                'node',
                 'yql',
                 'datatype-date',
                 'datatable-base',
@@ -14,7 +15,7 @@ YUI({
             ]
         }
     }
-}).use('node', function (Y) {
+}).use('loader', function (Y) {
     var baseUrl = "http://www.team4545league.org/",
         gamesUrl = baseUrl + "tournament/games.html",
         playerUrl = baseUrl + "players/displayhist.php?player=",
@@ -154,8 +155,11 @@ YUI({
     function myStandings(results) {
         var node, standings = [], standingsDT;
 
+        standingsNode.removeClass('progress');
+        standingsNode.setContent('');
+
         if (results.results.length === 0) {
-            standingsNode.setContent("Problems to retrieve team4545 info.");
+            standingsNode.setContent("Problems to get team4545 standings.");
             return;
         }
 
@@ -238,8 +242,11 @@ YUI({
     function myGames(results) {
         var node, tourney, standingsUrl, games = [], teams = [], gamesDT;
 
+        gamesNode.removeClass('progress');
+        gamesNode.setContent('');
+
         if (results.results.length === 0) {
-            gamesNode.setContent("Problems to retrieve team4545 info.");
+            gamesNode.setContent("Problems to get team4545 games.");
             return;
         }
 

@@ -8,16 +8,22 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.3.0/build/cssfonts/fonts-min.css&3.3.0/build/cssreset/reset-min.css&3.3.0/build/cssbase/base-min.css">
     <style>
         body { margin: 2em; }
+        .progress {
+            background-image: url(progress.gif);
+            background-repeat: no-repeat;
+            background-position: 200px;
+        }
+        #games, #standings { margin: 10px }
     </style>
 </head>
 
 <body class="yui3-skin-sam">
     <h1>Team4545 - Scheduled Games and Standings -
-    Please, type your preferred team: <input id="team" type="text">
+        Please, type your preferred team: <input id="team" type="text">
     </h1>
 
-	<div id="games"></div>
-	<div id="standings"></div>
+    <div id="games" class="progress">Loading scheduled games...</div>
+	<div id="standings" class="progress">Loading standings...</div>
 
 <script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
 <script src="games.js"></script>
