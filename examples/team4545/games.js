@@ -1,4 +1,3 @@
-/*jslint type:true */
 /*global YUI */
 
 YUI({
@@ -55,7 +54,7 @@ YUI({
             ddd = mmmddd[1],
             hhh = sp[2],
             mm = Y.Array.indexOf(Y.DataType.Date.Locale[intl].b, mmm) + 1,
-            mdh = (mm < 10 ? "0" + mm : mm) + ddd + hhh,
+            mdh = (mm < 10 ? "0" + String(mm) : String(mm)) + ddd + hhh,
             tz,
             ld;
 
