@@ -152,7 +152,7 @@ YUI({
     }
 
     function myStandings(results) {
-        var node, standings = [], standingsDT;
+        var node, standings = [], standingsDT, teams = [];
 
         standingsNode.removeClass('progress');
         standingsNode.setContent('');
@@ -172,7 +172,7 @@ YUI({
             }
 
             st.place = trim(cols.item(0) && cols.item(0).get('text')) || "";
-            st.team = (cols.item(1) && cols.item(1).get('text')
+            st.team = trim(cols.item(1) && cols.item(1).get('text')
                 .replace(/\n\s{2,}/g, ' ')) || "";
             st.mp = trim(cols.item(2) && cols.item(2).get('text')) || "";
             st.gp = trim((cols.item(3) && cols.item(3).get('text')) || "");
@@ -185,7 +185,13 @@ YUI({
             st.r6 = trim(cols.item(10) && cols.item(10).get('text')) || "";
 
             standings.push(st);
+
+            if (Y.Array.indexOf(teams, st.team) === -1) {
+                teams.push(st.team);
+            }
         });
+
+        teamNode.ac.set("source", teams);
 
         function standingsTeamFilter(team) {
             var newStandings = [], isOurTeam, i;
