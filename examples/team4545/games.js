@@ -32,21 +32,23 @@ YUI({
 
     function formatDate(date) {
         var edtNY = { // EDT periods for NY, otherwise EST, (Mar - Nov)
-                "2011": { "start": "031302:00", "end": "110602:00"},
-                "2012": { "start": "031102:00", "end": "110402:00"},
-                "2013": { "start": "031002:00", "end": "110302:00"},
-                "2014": { "start": "030902:00", "end": "110202:00"},
-                "2015": { "start": "030802:00", "end": "110102:00"},
-                "2016": { "start": "031302:00", "end": "110602:00"},
-                "2017": { "start": "031202:00", "end": "110502:00"},
-                "2018": { "start": "031102:00", "end": "110402:00"},
-                "2019": { "start": "031002:00", "end": "110302:00"}
+                "y2011": { "start": "031302:00", "end": "110602:00"},
+                "y2012": { "start": "031102:00", "end": "110402:00"},
+                "y2013": { "start": "031002:00", "end": "110302:00"},
+                "y2014": { "start": "030902:00", "end": "110202:00"},
+                "y2015": { "start": "030802:00", "end": "110102:00"},
+                "y2016": { "start": "031302:00", "end": "110602:00"},
+                "y2017": { "start": "031202:00", "end": "110502:00"},
+                "y2018": { "start": "031102:00", "end": "110402:00"},
+                "y2019": { "start": "031002:00", "end": "110302:00"}
             },
             win = Y.config.win,
+            YDateFormat = Y.DataType.Date.format,
             lang = win.navigator.userLanguage || win.navigator.language,
             intl = Y.DataType.Date.Locale.hasOwnProperty(lang) ? lang : "en-US",
             now = new Date(),
             yyyy = now.getFullYear(),
+            yyyyy = "y" + String(now.getFullYear()),
             sp = date.split(", "),
             www = sp[0],
             mmmddd = sp[1].split(" "),
@@ -58,8 +60,8 @@ YUI({
             tz,
             ld;
 
-        if (edtNY.hasOwnProperty(yyyy)) {
-            if (mdh >= edtNY[yyyy].start && mdh < edtNY[yyyy].end) {
+        if (edtNY.hasOwnProperty(yyyyy)) {
+            if (mdh >= edtNY[yyyyy].start && mdh < edtNY[yyyyy].end) {
                 tz = "EDT";
             } else {
                 tz = "EST";
@@ -72,10 +74,10 @@ YUI({
             }
         }
 
-        ld = new Date(www + ", " + ddd + " " + mmm + " " + yyyy +
+        ld = new Date(www + ", " + ddd + " " + mmm + " " + String(yyyy) +
             " " + hhh + ":00 " + tz);
 
-        return Y.DataType.Date.format(ld, {format: "%a, %b %d, %H:%M"});
+        return YDateFormat(ld, {'format': "%a, %b %d, %H:%M"});
     }
 
     Y.DataTable.Base.prototype._createTbodyTdNode = function (o) {
