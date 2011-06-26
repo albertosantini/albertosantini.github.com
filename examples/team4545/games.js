@@ -48,7 +48,7 @@ YUI({
             intl = Y.DataType.Date.Locale.hasOwnProperty(lang) ? lang : "en-US",
             now = new Date(),
             yyyy = now.getFullYear(),
-            yyyyy = "y" + String(now.getFullYear()),
+            yyyyy = "y" + yyyy,
             sp = date.split(", "),
             www = sp[0],
             mmmddd = sp[1].split(" "),
