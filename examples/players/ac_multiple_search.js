@@ -129,21 +129,26 @@ YUI({
             displaynmber + " - " + position;
     };
 
+    enterKey = new YAHOO.util.KeyListener("myInput", {keys: 13}, {
+        fn: function () {
+            alert(oAC.getInputEl().value);
+        }
+    }, 'keydown');
+    enterKey.enable();
+
     function myHandler(sType, aArgs) {
         var myAC = aArgs[0], // reference back to the AC instance
             elLI = aArgs[1], // reference to the selected LI element
             oData = aArgs[2]; // object literal of selected item's result data
 
         myAC.getInputEl().value += oData.lname + " " + oData.fname ;
+        enterKey.disable();
     }
     oAC.itemSelectEvent.subscribe(myHandler);
 
-    enterKey = new YAHOO.util.KeyListener(oAC.getInputEl(), {keys: 13}, {
-        fn: function () {
-            alert(oAC.getInputEl().value);
-        },
-    }, 'keydown');
-    enterKey.enable();
+    oAC.containerCollapseEvent.subscribe(function () {
+        enterKey.enable();
+    });
 
     oAC.getInputEl().focus();
 });
