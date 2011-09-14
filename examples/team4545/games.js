@@ -1,20 +1,7 @@
+/*jslint sloppy:true */
 /*global YUI */
 
-YUI({
-    modules: {
-        'loader': {
-            requires: [
-                'node',
-                'yql',
-                'datatype-date',
-                'datatable-base',
-                'autocomplete',
-                'autocomplete-filters',
-                'cookie'
-            ]
-        }
-    }
-}).use('loader', function (Y) {
+YUI().use('node', 'yql', 'datatype-date', 'datatable-base', 'autocomplete', 'autocomplete-filters', 'cookie', function (Y) {
     var baseUrl = "http://www.team4545league.org/",
         gamesUrl = baseUrl + "tournament/games.html",
         playerUrl = baseUrl + "players/displayhist.php?player=",
@@ -43,7 +30,7 @@ YUI({
                 "y2019": { "start": "031002:00", "end": "110302:00"}
             },
             win = Y.config.win,
-            YDateFormat = Y.DataType.Date.format,
+            yDateFormat = Y.DataType.Date.format,
             lang = win.navigator.userLanguage || win.navigator.language,
             intl = Y.DataType.Date.Locale.hasOwnProperty(lang) ? lang : "en-US",
             now = new Date(),
@@ -77,74 +64,56 @@ YUI({
         ld = new Date(www + ", " + ddd + " " + mmm + " " + String(yyyy) +
             " " + hhh + ":00 " + tz);
 
-        return YDateFormat(ld, {'format': "%a, %b %d, %H:%M"});
+        return yDateFormat(ld, {'format': "%a, %b %d, %H:%M"});
     }
-
-    Y.DataTable.Base.prototype._createTbodyTdNode = function (o) {
-        var column, td, temp, value, div;
-
-        column = o.column;
-        o.headers = column.headers;
-        o.classnames = column.get("classnames");
-        td = Y.Node.create(Y.Lang.substitute(this.tdTemplate, o));
-
-        temp = {};
-        temp.column = o.column;
-        temp.headers = o.headers;
-        temp.classnames = o.classnames;
-        temp.record = o.record;
-        temp.rowindex = o.rowindex;
-        temp.tbody = o.tbody;
-        temp.tr = o.tr;
-        temp.td = td;
-
-        value = this.formatDataCell(temp);
-
-        div = td.one('div');
-        div.set('innerHTML', value);
-
-        return td;
-    };
 
     function settingStyles(o) {
         var column, whiteTeam, blackTeam, result;
 
+        this.tdTemplate = '<td style="{myStyle}" ' +
+            'headers="{headers}" ' +
+            'class="{classnames}">' +
+            '<div class="yui3-datatable-liner">{value}</div>' +
+            '</td>';
+
+        o.myStyle = "";
+
         column = o.column.get('key');
 
         if (column === "when") {
-            o.td.setStyle('fontWeight', 'bold');
+            o.myStyle = "font-weight: bold;";
         }
         if (column === "whenLocal") {
-            o.td.setStyle('color', 'blue');
+            o.myStyle = "color: blue;";
         }
         if (column === "whitePlayer") {
             whiteTeam = o.record.getValue('whiteTeam');
             if (whiteTeam.search(teamName) >= 0) {
-                o.td.setStyle('fontWeight', 'bold');
+                o.myStyle = "font-weight: bold;";
             }
         }
         if (column === "blackPlayer") {
             blackTeam = o.record.getValue('blackTeam');
             if (blackTeam.search(teamName) >= 0) {
-                o.td.setStyle('fontWeight', 'bold');
+                o.myStyle = "font-weight: bold;";
             }
         }
 
         if (column === 'place' || column === 'team') {
-            o.td.setStyle('fontWeight', 'bold');
+            o.myStyle = "font-weight: bold;";
         }
         if (column === 'forf') {
             if (o.value > 0) {
-                o.td.setStyle('color', 'red');
+                o.myStyle = "color: red;";
             }
         }
         if (column.search('r') === 0) {
             result = o.value.split(" - ");
 
             if (result[0] > result[1]) {
-                o.td.setStyle('color', 'green');
+                o.myStyle = "color: green;";
             } else if (result[0] < result[1]) {
-                o.td.setStyle('color', 'red');
+                o.myStyle = "color: red;";
             } else if (result[0] === "0.0" && result[1] === "0.0") {
                 o.value = "";
             }
@@ -213,8 +182,10 @@ YUI({
                     formatter: settingStyles},
                 { key: "team", label: "Team",
                     formatter: settingStyles},
-                { key: "mp", label: "MP"},
-                { key: "gp", label: "GP"},
+                { key: "mp", label: "MP",
+                    formatter: settingStyles},
+                { key: "gp", label: "GP",
+                    formatter: settingStyles},
                 { key: "forf", label: "F",
                     formatter: settingStyles},
                 { key: "r1", label: "R1 P1",
@@ -349,25 +320,30 @@ YUI({
                     formatter: settingStyles},
                 { key: "whenLocal", label: "When Local",
                     formatter: settingStyles},
-                { key: "division", label: "Division"},
-                { key: "round", label: "R"},
-                { key: "whiteTeam", label: "White Team"},
+                { key: "division", label: "Division",
+                    formatter: settingStyles},
+                { key: "round", label: "R",
+                    formatter: settingStyles},
+                { key: "whiteTeam", label: "White Team",
+                    formatter: settingStyles},
                 { key: "whitePlayer", label: "White Player",
                     formatter: settingStyles},
                 { key: "blackPlayer", label: "Black Player",
                     formatter: settingStyles},
-                { key: "blackTeam", label: "Black Team"},
-                { key: "board", label: "B"}
+                { key: "blackTeam", label: "Black Team",
+                    formatter: settingStyles},
+                { key: "board", label: "B",
+                    formatter: settingStyles}
             ],
             recordset: []
         });
 
         gamesTeamFilter(teamName);
 
-        teamNode.ac.on('query', function(e) {
+        teamNode.ac.on('query', function (e) {
             gamesTeamFilter(e.query);
         });
-        teamNode.ac.on('select', function(e) {
+        teamNode.ac.on('select', function (e) {
             gamesTeamFilter(e.result.text);
         });
 
