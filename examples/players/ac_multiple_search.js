@@ -1,12 +1,10 @@
+/*jslint sloppy:true, nomen:true, unparam:true */
+/*global YUI, alert, myPlayers */
+
 YUI({
     'yui2': '2.9.0',
     '2in3': '4'
-}).use("yui2-yahoo",
-    "yui2-dom",
-    "yui2-event",
-    "yui2-datasource",
-    "yui2-autocomplete", function (Y) {
-
+}).use("yui2-yahoo", "yui2-dom", "yui2-event", "yui2-datasource", "yui2-autocomplete", function (Y) {
     var YAHOO = Y.YUI2, oDS, oAC, enterKey;
 
     // Define a custom search function for the DataSource
@@ -14,16 +12,16 @@ YUI({
         // Case insensitive matching
         var query = sQuery.toLowerCase(),
             player,
-            i=0,
-            l=myPlayers.length,
+            i,
+            l = myPlayers.length,
             matches = [];
 
         // Match against each name of each contact
-        for(; i < l; i++) {
+        for (i = 0; i < l; i += 1) {
             player = myPlayers[i];
-            if((player.fname.toLowerCase().indexOf(query) > -1) ||
-                (player.lname.toLowerCase().indexOf(query) > -1) ||
-                (player.nmber &&
+            if ((player.fname.toLowerCase().indexOf(query) > -1) ||
+                    (player.lname.toLowerCase().indexOf(query) > -1) ||
+                    (player.nmber &&
                     (player.nmber.toLowerCase().indexOf(query) > -1))) {
                 matches[matches.length] = player;
             }
@@ -46,24 +44,25 @@ YUI({
     oAC.autoHighlight = true;
     oAC.delimChar = " ";
 
-    YAHOO.widget.AutoComplete.prototype._updateValue = function(elListItem) {
-        if(!this.suppressInputUpdate) {
-            var elTextbox = this._elTextbox;
-            var sDelimChar = (this.delimChar) ? (this.delimChar[0] || this.delimChar) : null;
-            var sResultMatch = elListItem._sResultMatch;
+    YAHOO.widget.AutoComplete.prototype._updateValue = function (elListItem) {
+        var elTextbox, sDelimChar, sResultMatch, sNewValue, end;
+
+        if (!this.suppressInputUpdate) {
+            elTextbox = this._elTextbox;
+            sDelimChar = (this.delimChar) ? (this.delimChar[0] || this.delimChar) : null;
+            sResultMatch = elListItem._sResultMatch;
 
             // Calculate the new value
-            var sNewValue = "";
-            if(sDelimChar) {
+            sNewValue = "";
+            if (sDelimChar) {
                 // Preserve selections from past queries
                 sNewValue = this._sPastSelections;
                 // Add new selection plus delimiter
                 // sNewValue += sResultMatch + sDelimChar; // LINE MODIFIED
-                if(sDelimChar != " ") {
+                if (sDelimChar !== " ") {
                     sNewValue += " ";
                 }
-            }
-            else {
+            } else {
                 sNewValue = sResultMatch;
             }
 
@@ -71,13 +70,13 @@ YUI({
             elTextbox.value = sNewValue;
 
             // Scroll to bottom of textarea if necessary
-            if(elTextbox.type == "textarea") {
+            if (elTextbox.type === "textarea") {
                 elTextbox.scrollTop = elTextbox.scrollHeight;
             }
 
             // Move cursor to end
-            var end = elTextbox.value.length;
-            this._selectText(elTextbox,end,end);
+            end = elTextbox.value.length;
+            this._selectText(elTextbox, end, end);
 
             this._elCurListItem = elListItem;
         }
@@ -86,14 +85,14 @@ YUI({
     // Helper function for the formatter
     function highlightMatch(full, snippet, matchindex) {
         return full.substring(0, matchindex) +
-                "<span class='match'>" +
-                full.substr(matchindex, snippet.length) +
-                "</span>" +
-                full.substring(matchindex + snippet.length);
+            "<span class='match'>" +
+            full.substr(matchindex, snippet.length) +
+            "</span>" +
+            full.substring(matchindex + snippet.length);
     }
 
     // Custom formatter to highlight the matching letters
-    oAC.formatResult = function(oResultData, sQuery, sResultMatch) {
+    oAC.formatResult = function (oResultData, sQuery, sResultMatch) {
         var query = sQuery.toLowerCase(),
             fname = oResultData.fname,
             lname = oResultData.lname,
@@ -102,26 +101,25 @@ YUI({
             fnameMatchIndex = fname.toLowerCase().indexOf(query),
             lnameMatchIndex = lname.toLowerCase().indexOf(query),
             nmberMatchIndex = nmber.toLowerCase().indexOf(query),
-            displayfname, displaylname, displaynmber;
+            displayfname,
+            displaylname,
+            displaynmber;
 
         if (fnameMatchIndex > -1) {
             displayfname = highlightMatch(fname, query, fnameMatchIndex);
-        }
-        else {
+        } else {
             displayfname = fname;
         }
 
         if (lnameMatchIndex > -1) {
             displaylname = highlightMatch(lname, query, lnameMatchIndex);
-        }
-        else {
+        } else {
             displaylname = lname;
         }
 
         if (nmberMatchIndex > -1) {
             displaynmber = highlightMatch(nmber, query, nmberMatchIndex);
-        }
-        else {
+        } else {
             displaynmber = nmber;
         }
 
@@ -138,10 +136,10 @@ YUI({
 
     function myHandler(sType, aArgs) {
         var myAC = aArgs[0], // reference back to the AC instance
-            elLI = aArgs[1], // reference to the selected LI element
+            // elLI = aArgs[1], // reference to the selected LI element
             oData = aArgs[2]; // object literal of selected item's result data
 
-        myAC.getInputEl().value += oData.lname + " " + oData.fname ;
+        myAC.getInputEl().value += oData.lname + " " + oData.fname;
         enterKey.disable();
     }
     oAC.itemSelectEvent.subscribe(myHandler);

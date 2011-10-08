@@ -1,36 +1,30 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE>
+
+<html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>AutoComplete Control: FunctionDataSource to Search Multiple Fields for Multiple Times</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>AutoComplete Control: Searching on Multiple Fields</title>
 
-<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" />
-
-<style type="text/css">
-/*margin and padding on body element
-  can introduce errors in determining
-  element position and are not recommended;
-  we turn them off as a foundation for YUI
-  CSS treatments. */
-body {
-    margin:0;
-    padding:0;
-}
-
-#myAutoComplete {
-    width: 30em; /* set width here or else widget will expand to fit its container */
-    padding-bottom:2em;
-}
-.match {
-    font-weight:bold;
-}
-</style>
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css" />
+    <style>
+        body {
+            margin: auto;
+            width: 960px;
+        }
+        #myAutoComplete {
+            width: 30em;
+            padding-bottom: 2em;
+        }
+        .match {
+            font-weight: bold;
+        }
+    </style>
 
 </head>
 
 <body class="yui3-skin-sam  yui-skin-sam">
 
-<h1>AutoComplete Control: FunctionDataSource to Search Multiple Fields for Multiple Times</h1>
+<h1>AutoComplete Control: Searching on Multiple Fields</h1>
 
 <p>This example uses a FunctionDataSource to perform string matching against
 multiple fields of a players database at runtime. Since the data for this
@@ -49,9 +43,7 @@ FunctionDataSource to Search Multiple Fields of an Address Book at Runtime</a>
     <div id="myContainer"></div>
 </div>
 
-<script>
-</script>
-<script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script type="text/javascript" src="myPlayers.js"></script>
 <script type="text/javascript" src="ac_multiple_search.js"></script>
 
