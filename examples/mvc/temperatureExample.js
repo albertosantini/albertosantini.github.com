@@ -1,3 +1,4 @@
+/*jslint sloppy:true, unparam:true */
 /*global YAHOO */
 
 YAHOO.util.Event.onDOMReady(function () {
@@ -8,13 +9,11 @@ YAHOO.util.Event.onDOMReady(function () {
     //
 
     function TemperatureDocument() {
-        // These variables and the internal functions declared below are private
         var self = this,
             F = 'Fahrenheit',
             C = 'Celsius',
             K = 'Kelvin';
 
-        // Labels are read only
         this.setAttributeConfig('FahrenheitLabel', {
             value: F,
             readOnly: true
@@ -28,10 +27,9 @@ YAHOO.util.Event.onDOMReady(function () {
             readOnly: true
         });
 
-        // I use the validator functionality so that if the new value is just
-        // a rounding error away from the stored value, it won't take it
-        // and won't trigger change events
-        // This prevents the whole thing from entering a loop
+        // Validator checks if the new value is just a rounding error away
+        // from the stored value: it won't take it and won't trigger change
+        // events, preventing the whole thing from entering a loop
         function check(what, value) {
             if (YAHOO.lang.isNumber(value)) {
                 if (value === 0) {
@@ -82,58 +80,36 @@ YAHOO.util.Event.onDOMReady(function () {
             this.set(C, round((value - 32) * 5 / 9));
             this.set(K, round((value + 459.67) * 5 / 9));
         });
-
     }
 
     YAHOO.lang.extend(TemperatureDocument, YAHOO.util.AttributeProvider);
-
 
     //
     // View
     //
 
+    function TemperatureView(model) {
 
-    function TemperatureView(documentModel) {
+        this.getField = function (label, field) {
+            var fld = YAHOO.util.Dom.get(field);
 
-        this.getField = function (label, container) {
-            var labelField, field;
-
-            labelField = new YAHOO.inputEx.UneditableField({
-                value: label,
-                parentEl: container
-            });
-            field = new YAHOO.inputEx.NumberField({
-                value: '',
-                parentEl: container
+            YAHOO.util.Event.addListener(fld, "change", function (e) {
+                model.set(label, e.target.value);
+                model.fireEvent(label + 'Change', {
+                    newValue: parseInt(e.target.value, 10)
+                });
             });
 
-            field.documentItemName = label;
+            model.subscribe(label + 'Change', function (ev) {
+                this.value = ev.newValue;
+            }, fld, true);
 
-            field.updatedEvt.subscribe(function (e, params) {
-                var value = params[0];
-                documentModel.set(this.documentItemName, value);
-            });
-
-
-            documentModel.subscribe(label + 'Change', function (ev) {
-                this.setValue(ev.newValue);
-            }, field, true);
-
-            return field;
+            return fld;
         };
 
-        this.getForm = function (container) {
-            var title = new YAHOO.inputEx.UneditableField({
-                value: "Pick a field and type a temperature "
-                    + "and press enter (or tab) to convert.<br /><br />",
-                parentEl: container
-            });
-
-            this.getField(documentModel.get('FahrenheitLabel'), container);
-            this.getField(documentModel.get('CelsiusLabel'), container);
-            this.getField(documentModel.get('KelvinLabel'), container);
-        };
-
+        this.getField(model.get('FahrenheitLabel'), "fahrenheit");
+        this.getField(model.get('CelsiusLabel'), "celsius");
+        this.getField(model.get('KelvinLabel'), "kelvin");
     }
 
     //
@@ -142,7 +118,5 @@ YAHOO.util.Event.onDOMReady(function () {
 
     documentModel = new TemperatureDocument();
     view = new TemperatureView(documentModel);
-
-    view.getForm("temperatureForm");
 });
 
