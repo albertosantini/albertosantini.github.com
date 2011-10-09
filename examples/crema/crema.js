@@ -1,16 +1,18 @@
-/*jslint browser: true */
+/*jslint sloppy:true, browser: true */
 /*globals YUI, jQuery */
 
 YUI({
     gallery: 'gallery-2011.02.16-20-31',
     filter: 'raw'
-}).use('node', 'async-queue', 'yql', 'gallery-tagcloud',
-    function (Y) {
+}).use('node', 'async-queue', 'yql', 'gallery-tagcloud', function (Y) {
     var yuiForumUrl = "http://yuilibrary.com/forum/",
         yuiRecentPostsUrl = "http://yuilibrary.com/forum/recent.php",
         goButton = Y.one("#go"),
         forumEdit = Y.one("#forum"),
-        authors = [], tags = [], totalTopics = 0, counterTopics = 0;
+        authors = [],
+        tags = [],
+        totalTopics = 0,
+        counterTopics = 0;
 
     function getTopics(url, cbfunc) {
         var topics = [];
@@ -19,7 +21,7 @@ YUI({
             jQuery(".tablebg tr td a[href*=viewtopic]", r.results[0])
                 .each(function () {
                     topics.push(jQuery(this).attr("href"));
-            });
+                });
 
             cbfunc(topics);
         }, {format: 'xml'});
@@ -52,13 +54,13 @@ YUI({
             jQuery(".tablebg .mod h3", r.results[0])
                 .each(function () {
                     authors.push(jQuery(this).text().replace(/[ ]+/g, '_'));
-            });
+                });
 
             jQuery(".tablebg .tags ul li", r.results[0])
                 .each(function () {
                     tags.push(jQuery(this).text()
                         .trim().replace(/[ ]+/g, '').replace(/\W/g, '_'));
-            });
+                });
 
             counterTopics += 1;
             goButton.set('text', counterTopics + '/' + totalTopics + ' topics');
@@ -69,7 +71,7 @@ YUI({
         }, {format: 'xml'});
     }
 
-    goButton.on("click", function (e) {
+    goButton.on("click", function () {
         goButton.set("disabled", true);
         goButton.set('text', 'Loading topics...');
 

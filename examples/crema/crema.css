@@ -2,13 +2,13 @@
 
 /* Layout */
 
-body { 
-    font: 62.5% "Trebuchet MS", sans-serif; 
-    margin: 32px;
-    overflow: hidden;
+body {
+    margin: auto;
+    width: 960px;
+    overflow-x: hidden;
 }
 
-.highlight { 
+.highlight {
     background-color: yellow;
 }
 
@@ -23,25 +23,25 @@ body {
 
 /* Header */
 #forum {
-    border: 1px solid #cccccc; 
-    width: 400px; 
+    border: 1px solid #cccccc;
+    width: 400px;
 }
 
 /* Content */
 #cloud1 {
     width: 460px;
-    height: 230px;
+    /* height: 230px; */
     float: left;
     margin-top: 5px;
-    overflow: hidden;    
+    overflow: hidden;
     padding: 5px;
 }
 #cloud2 {
     width: 460px;
-    height: 230px;
+    /* height: 230px; */
     float: right;
     margin-top: 5px;
-    overflow: hidden;    
+    overflow: hidden;
     padding: 5px;
 }
 
@@ -69,16 +69,16 @@ body {
 }
 
 #text1 {
-    visibility: hidden;    
+    visibility: hidden;
 }
 
 #text2 {
-    visibility: hidden;    
+    visibility: hidden;
 }
 
 .counter {
     margin: 0;
-    padding: 0; 
+    padding: 0;
     background: #A9E1A9;
     height: 2px;
     visibility: hidden;
