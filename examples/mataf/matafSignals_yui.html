@@ -2,25 +2,34 @@
 
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Mataf Signals</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Mataf Signals</title>
+
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
+    <style>
+        body {
+            margin: auto;
+            width: 960px;
+        }
+    </style>
 </head>
+
 <body>
-	<h1>Mataf Signals</h1>
 
-    <p>This example demonstrates how to make html scraping with YUI using YQL.</p>
-    
+<h1>Mataf Signals</h1>
 
-	<div id="container"></div>
+<p>This example demonstrates how to make html scraping with YUI using YQL.
+</p>
 
+<div id="container"></div>
 
-<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script> 
-
+<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script type="text/javascript">
+/*jslint sloppy:true */
 /*global YUI */
 
 YUI().use("node", "yql", function (Y) {
-	var container = "", i, paths = [
+    var container = "", i, paths = [
         "http://www.mataf.net/en/forex/eurusd",
         "http://www.mataf.net/en/forex/usdchf",
         "http://www.mataf.net/en/forex/usdjpy",
@@ -42,14 +51,14 @@ YUI().use("node", "yql", function (Y) {
     function myContainer(results) {
         var node, currency, entry, clock, stoploss, target1, riskreward1,
             sell = '<img height=12 width=12 ' +
-                'src="http://www.mataf.net/images/_V3img/fleches/down.png">' +
-                    '<\/img>',
+            'src="http://www.mataf.net/images/_V3img/fleches/down.png">' +
+            '<\/img>',
             buy = '<img height=12 width=12 ' +
-                'src="http://www.mataf.net/images/_V3img/fleches/up.png">' +
-                    '<\/img>',
+            'src="http://www.mataf.net/images/_V3img/fleches/up.png">' +
+            '<\/img>',
             flat = '<img height=12 width=12 ' +
-                'src="http://www.mataf.net/images/_V3img/fleches/flat.png">' +
-                    '<\/img>';
+            'src="http://www.mataf.net/images/_V3img/fleches/flat.png">' +
+            '<\/img>';
 
         node = Y.Node.create(results.results[0]);
 
@@ -62,8 +71,8 @@ YUI().use("node", "yql", function (Y) {
 //                 .get('text').split(" GMT")[0];
             stoploss = node.all("#stoploss").get("value");
             target1 = node.all("#t1").get("value");
-            riskreward1 = Math.abs(
-                roundNumber((target1 - entry) / (stoploss - entry), 1));
+            riskreward1 = Math.abs(roundNumber((target1 - entry) /
+                    (stoploss - entry), 1));
 
             container += "<b>";
             if (stoploss > entry) {

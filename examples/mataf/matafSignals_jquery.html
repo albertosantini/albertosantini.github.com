@@ -2,24 +2,36 @@
 
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Mataf Signals</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mataf Signals</title>
+
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
+    <style>
+        body {
+            margin: auto;
+            width: 960px;
+        }
+    </style>
 </head>
+
 <body>
-	<h1>Mataf Signals</h1>
 
-    <p>This example demonstrates how to make html scraping with JQuery using YQL.</p>
+<h1>Mataf Signals</h1>
 
-	<div id="container"></div>
+<p>This example demonstrates how to make html scraping with JQuery using YQL.
+</p>
+
+<div id="container"></div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
 <script type="text/javascript">
-/*global jQuery */
+/*jslint sloppy:true */
+/*global jQuery, document */
 
 jQuery(document).ready(function () {
-	var container = "", i, paths = [
+    var container = "", i, paths = [
         "http://www.mataf.net/en/forex/eurusd",
         "http://www.mataf.net/en/forex/usdchf",
         "http://www.mataf.net/en/forex/usdjpy",
@@ -37,7 +49,7 @@ jQuery(document).ready(function () {
     function requestCrossDomain(site, callback) {
         var yql = 'http://query.yahooapis.com/v1/public/yql?q=' +
             encodeURIComponent('select * from html where url="' + site + '"') +
-                '&format=xml&callback=?';
+            '&format=xml&callback=?';
 
         site = site || "http://www.google.com";
 
@@ -63,14 +75,14 @@ jQuery(document).ready(function () {
     function myContainer(results) {
         var currency, entry, clock, stoploss, target1, riskreward1,
             sell = '<img height=12 width=12 ' +
-                'src="http://www.mataf.net/images/_V3img/fleches/down.png">' +
-                    '<\/img>',
+            'src="http://www.mataf.net/images/_V3img/fleches/down.png">' +
+            '<\/img>',
             buy = '<img height=12 width=12 ' +
-                'src="http://www.mataf.net/images/_V3img/fleches/up.png">' +
-                    '<\/img>',
+            'src="http://www.mataf.net/images/_V3img/fleches/up.png">' +
+            '<\/img>',
             flat = '<img height=12 width=12 ' +
-                'src="http://www.mataf.net/images/_V3img/fleches/flat.png">' +
-                    '<\/img>';
+            'src="http://www.mataf.net/images/_V3img/fleches/flat.png">' +
+            '<\/img>';
 
         //~ jQuery('#container').html(results);
 
@@ -81,8 +93,8 @@ jQuery(document).ready(function () {
         if (entry !== undefined) {
             stoploss = jQuery("#stoploss", results).attr("value");
             target1 = jQuery("#t1", results).attr("value");
-            riskreward1 = Math.abs(
-                roundNumber((target1 - entry) / (stoploss - entry), 1));
+            riskreward1 = Math.abs(roundNumber((target1 - entry) /
+                    (stoploss - entry), 1));
 
             container += "<b>";
             if (stoploss > entry) {
