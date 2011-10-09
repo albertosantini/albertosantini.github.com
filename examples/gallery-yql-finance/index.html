@@ -2,48 +2,53 @@
 
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Test gallery-yql-finance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Test gallery-yql-finance</title>
 
-<style>
-    .progress {
-        background-image: url(progress.gif);
-        background-repeat: no-repeat;
-    }
-</style>
-
-<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
+    <style>
+        body {
+            margin: auto;
+            width: 960px;
+        }
+        .progress {
+            background-image: url(progress.gif);
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body>
 
-	<h1>Test gallery-yql-finance</h1>
+<h1>Test gallery-yql-finance</h1>
 
-    <div id="cHistQuotes"> Test Historical Quotes
-        <div id="histQuotes"></div><br />
-    </div>
-    <div id="cHistQuotesBis"> Test Historical Quotes Bis
-        <div id="histQuotesBis"></div><br />
-    </div>
-    <div id="cHistQuotes2"> Test Historical Quotes 2
-        <div id="histQuotes2"></div><br />
-    </div>
-    <div id="cHistQuotes3"> Test Historical Quotes 3 
-        <div id="histQuotes3"></div><br />
-    </div>
-    <div id="cQuotes"> Test Latest Quotes
-        <div id="quotes"></div><br />
-    </div>
+<div id="cHistQuotes"> Test Historical Quotes
+    <div id="histQuotes"></div><br />
+</div>
+<div id="cHistQuotesBis"> Test Historical Quotes Bis
+    <div id="histQuotesBis"></div><br />
+</div>
+<div id="cHistQuotes2"> Test Historical Quotes 2
+    <div id="histQuotes2"></div><br />
+</div>
+<div id="cHistQuotes3"> Test Historical Quotes 3
+    <div id="histQuotes3"></div><br />
+</div>
+<div id="cQuotes"> Test Latest Quotes
+    <div id="quotes"></div><br />
+</div>
 
+<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script type="text/javascript">
+/*jslint sloppy:true */
 /*global YUI */
 
 YUI({
     // modules: {
-        // "gallery-yql-finance": {
-            // fullpath: "./gallery-yql-finance.js",
-            // requires: ["substitute", "yql"]
-        // }
+    //     "gallery-yql-finance": {
+    //         fullpath: "./gallery-yql-finance.js",
+    //         requires: ["substitute", "yql"]
+    //     }
     // },
     gallery: 'gallery-2011.06.01-20-18',
     filter: 'raw'
@@ -61,9 +66,9 @@ YUI({
             }
         }
         if (content === "") {
-            c.setContent("Not available");    
+            c.setContent("Not available");
         } else {
-            c.setContent(content);    
+            c.setContent(content);
         }
     }
 
