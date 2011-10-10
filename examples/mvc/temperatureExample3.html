@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Model View Controller - Temperature Conversion with YUI 3</title>
+
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
+    <style>
+        body {
+            margin: auto;
+            width: 960px;
+        }
+        label {
+            width: 80px;
+            float: left;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Model View Controller - Temperature Conversion with YUI 3</h1>
+
+<p>Pick a field, type a temperature and press enter (or tab) to convert.
+</p>
+
+<div id="temperatureView">
+<p><label for="fahrenheit">Fahrenheit</label>
+    <input type ="text" id="fahrenheit" />
+</p>
+<p><label for="celsius">Celsius</label>
+    <input type="text" id="celsius" />
+</p>
+<p><label for="kelvin">Kelvin</label>
+    <input type="text" id="kelvin" />
+</p>
+</div>
+
+<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+<script src="temperatureExample3.js"></script>
+
+</body>
+</html>
