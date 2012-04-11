@@ -1,23 +1,22 @@
 ---
 layout: default
 ---
+<style>
+    body { margin: 2em; }
+    .progress {
+        background-image: url(progress.gif);
+        background-repeat: no-repeat;
+        background-position: 200px;
+    }
+    #games, #standings { margin: 10px }
+</style>
 
-    <style>
-        body { margin: 2em; }
-        .progress {
-            background-image: url(progress.gif);
-            background-repeat: no-repeat;
-            background-position: 200px;
-        }
-        #games, #standings { margin: 10px }
-    </style>
+<h2>Team4545 - Scheduled Games and Standings -
+    Please, type your preferred team: <input id="team" type="text">
+</h2>
 
-    <h1>Team4545 - Scheduled Games and Standings -
-        Please, type your preferred team: <input id="team" type="text">
-    </h1>
-
-    <div id="games" class="progress">Loading scheduled games...</div>
-    <div id="standings" class="progress">Loading standings...</div>
+<div id="games" class="progress">Loading scheduled games...</div>
+<div id="standings" class="progress">Loading standings...</div>
 
 <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script src="games.js"></script>
