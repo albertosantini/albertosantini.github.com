@@ -3,7 +3,7 @@ layout: default
 ---
 <style>
     body { margin: 2em; }
-    .progress {
+    .loading {
         background-image: url(progress.gif);
         background-repeat: no-repeat;
         background-position: 200px;
@@ -15,8 +15,8 @@ layout: default
 
 <div>Please, type your preferred team: <input id="team" type="text"></div>
 
-<div id="games" class="progress">Loading scheduled games...</div>
-<div id="standings" class="progress">Loading standings...</div>
+<div id="games" class="loading">Loading scheduled games...</div>
+<div id="standings" class="loading">Loading standings...</div>
 
 <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script src="games.js"></script>
