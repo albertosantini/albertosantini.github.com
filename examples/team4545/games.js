@@ -12,6 +12,7 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", "autocomplete", "aut
 
     teamNode.setStyle("margin", "10px");
     gamesNode.setStyle("margin", "10px");
+    standingsNode.setStyle("margin", "10px");
 
     teamName = Y.Cookie.get("teamName");
     if (teamName === null) {
