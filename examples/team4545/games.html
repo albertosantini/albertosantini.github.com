@@ -7,16 +7,35 @@ layout: default
         background-repeat: no-repeat;
         background-position: 200px;
     }
+
+    .boldCell {
+        font-weight: bold;
+    }
+    .blueCell {
+       color: blue;
+    }
+    .redCell {
+       color: red;
+    }
+    .greenCell {
+       color: green;
+    }
+    `
     #games, #standings { margin: 10px }
 </style>
 
 <h2>Team4545 - Scheduled Games and Standings</h2>
+
+<div class="yui3-skin-sam">
 
 <div>Please, type your preferred team: <input id="team" type="text"></div>
 
 <div id="games" class="loading">Loading scheduled games...</div>
 <div id="standings" class="loading">Loading standings...</div>
 
-<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+</div>
+
+<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
 <script src="games.js"></script>
+
 

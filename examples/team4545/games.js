@@ -1,7 +1,7 @@
 /*jslint sloppy:true */
 /*global YUI */
 
-YUI().use('node', 'yql', 'datatype-date', 'datatable-base', 'autocomplete', 'autocomplete-filters', 'cookie', function (Y) {
+YUI().use("node", "yql", "datatype-date", "datatable", "autocomplete", "autocomplete-filters", "cookie", function (Y) {
     var baseUrl = "http://www.team4545league.org/",
         gamesUrl = baseUrl + "tournament/games.html",
         playerUrl = baseUrl + "players/displayhist.php?player=",
@@ -70,50 +70,42 @@ YUI().use('node', 'yql', 'datatype-date', 'datatable-base', 'autocomplete', 'aut
     function settingStyles(o) {
         var column, whiteTeam, blackTeam, result;
 
-        this.tdTemplate = '<td style="{myStyle}" ' +
-            'headers="{headers}" ' +
-            'class="{classnames}">' +
-            '<div class="yui3-datatable-liner">{value}</div>' +
-            '</td>';
-
-        o.myStyle = "";
-
-        column = o.column.get('key');
+        column = o.column.key;
 
         if (column === "when") {
-            o.myStyle = "font-weight: bold;";
+            o.className += "boldCell";
         }
         if (column === "whenLocal") {
-            o.myStyle = "color: blue;";
+            o.className += "blueCell";
         }
         if (column === "whitePlayer") {
-            whiteTeam = o.record.getValue('whiteTeam');
+            whiteTeam = o.record.get('whiteTeam');
             if (whiteTeam.search(teamName) >= 0) {
-                o.myStyle = "font-weight: bold;";
+                o.className += "boldCell";
             }
         }
         if (column === "blackPlayer") {
-            blackTeam = o.record.getValue('blackTeam');
+            blackTeam = o.record.get('blackTeam');
             if (blackTeam.search(teamName) >= 0) {
-                o.myStyle = "font-weight: bold;";
+                o.className += "boldCell";
             }
         }
 
         if (column === 'place' || column === 'team') {
-            o.myStyle = "font-weight: bold;";
+            o.className += "boldCell";
         }
         if (column === 'forf') {
             if (o.value > 0) {
-                o.myStyle = "color: red;";
+                o.className += "redCell";
             }
         }
         if (column.search('r') === 0) {
             result = o.value.split(" - ");
 
             if (result[0] > result[1]) {
-                o.myStyle = "color: green;";
+                o.className += "greenCell";
             } else if (result[0] < result[1]) {
-                o.myStyle = "color: red;";
+                o.className += "redCell";
             } else if (result[0] === "0.0" && result[1] === "0.0") {
                 o.value = "";
             }
@@ -173,35 +165,24 @@ YUI().use('node', 'yql', 'datatype-date', 'datatable-base', 'autocomplete', 'aut
                     newStandings.push(standings[i]);
                 }
             }
-            standingsDT.set('recordset', newStandings);
+            standingsDT.set('data', newStandings);
         }
 
-        standingsDT = new Y.DataTable.Base({
-            columnset: [
-                { key: "place", label: "Place",
-                    formatter: settingStyles},
-                { key: "team", label: "Team",
-                    formatter: settingStyles},
-                { key: "mp", label: "MP",
-                    formatter: settingStyles},
-                { key: "gp", label: "GP",
-                    formatter: settingStyles},
-                { key: "forf", label: "F",
-                    formatter: settingStyles},
-                { key: "r1", label: "R1 P1",
-                    formatter: settingStyles},
-                { key: "r2", label: "R2 P2",
-                    formatter: settingStyles},
-                { key: "r3", label: "R3 P3",
-                    formatter: settingStyles},
-                { key: "r4", label: "R4 P4",
-                    formatter: settingStyles},
-                { key: "r5", label: "R5",
-                    formatter: settingStyles},
-                { key: "r6", label: "R6",
-                    formatter: settingStyles}
+        standingsDT = new Y.DataTable({
+            columns: [
+                { key: "place", label: "Place", formatter: settingStyles},
+                { key: "team", label: "Team", formatter: settingStyles},
+                { key: "mp", label: "MP", formatter: settingStyles},
+                { key: "gp", label: "GP", formatter: settingStyles},
+                { key: "forf", label: "F", formatter: settingStyles},
+                { key: "r1", label: "R1 P1", formatter: settingStyles},
+                { key: "r2", label: "R2 P2", formatter: settingStyles},
+                { key: "r3", label: "R3 P3", formatter: settingStyles},
+                { key: "r4", label: "R4 P4", formatter: settingStyles},
+                { key: "r5", label: "R5", formatter: settingStyles},
+                { key: "r6", label: "R6", formatter: settingStyles}
             ],
-            recordset: []
+            data: []
         });
 
         standingsTeamFilter(teamName);
@@ -292,7 +273,7 @@ YUI().use('node', 'yql', 'datatype-date', 'datatable-base', 'autocomplete', 'aut
                     newGames.push(games[i]);
                 }
             }
-            gamesDT.set('recordset', newGames);
+            gamesDT.set('data', newGames);
 
             Y.fire("teamNameChange", team);
             teamName = team;
@@ -314,28 +295,28 @@ YUI().use('node', 'yql', 'datatype-date', 'datatable-base', 'autocomplete', 'aut
             teamNode.setStyle('width', Math.max(newWidth, 100));
         });
 
-        gamesDT = new Y.DataTable.Base({
-            columnset: [
+        gamesDT = new Y.DataTable({
+            columns: [
                 { key: "when", label: "When ICC",
                     formatter: settingStyles},
                 { key: "whenLocal", label: "When Local",
                     formatter: settingStyles},
-                { key: "division", label: "Division",
+                { key: "division", label: "Division", allowHTML: true,
                     formatter: settingStyles},
                 { key: "round", label: "R",
                     formatter: settingStyles},
                 { key: "whiteTeam", label: "White Team",
                     formatter: settingStyles},
-                { key: "whitePlayer", label: "White Player",
+                { key: "whitePlayer", label: "White Player", allowHTML: true,
                     formatter: settingStyles},
-                { key: "blackPlayer", label: "Black Player",
+                { key: "blackPlayer", label: "Black Player", allowHTML: true,
                     formatter: settingStyles},
                 { key: "blackTeam", label: "Black Team",
                     formatter: settingStyles},
                 { key: "board", label: "B",
                     formatter: settingStyles}
             ],
-            recordset: []
+            data: []
         });
 
         gamesTeamFilter(teamName);
