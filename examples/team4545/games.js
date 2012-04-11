@@ -1,7 +1,7 @@
 /*jslint sloppy:true */
 /*global YUI */
 
-YUI().use("node", "yql", "datatype-date", "datatable", "autocomplete", "autocomplete-filters", "cookie", function (Y) {
+YUI().use("node", "yql", "datatype-date", "datatable-base", "autocomplete", "autocomplete-filters", "cookie", function (Y) {
     var baseUrl = "http://www.team4545league.org/",
         gamesUrl = baseUrl + "tournament/games.html",
         playerUrl = baseUrl + "players/displayhist.php?player=",
@@ -9,6 +9,9 @@ YUI().use("node", "yql", "datatype-date", "datatable", "autocomplete", "autocomp
         teamNode = Y.one("#team"),
         gamesNode = Y.one("#games"),
         standingsNode = Y.one("#standings");
+
+    teamNode.setStyle("margin", "10px");
+    gamesNode.setStyle("margin", "10px");
 
     teamName = Y.Cookie.get("teamName");
     if (teamName === null) {
