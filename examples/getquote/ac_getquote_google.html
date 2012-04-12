@@ -1,28 +1,19 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Google Finance Get Quotes AutoComplete
+yui: 3.5.0
+yuiskin: yui3-skin-sam
+---
+<style>
+    #ac-input {
+        width: 35em;
+    }
+    .yui3-aclist {
+        width: 35em;
+    }
+</style>
 
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Google Finance Get Quotes AutoComplete</title>
-
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
-    <style>
-        body {
-            margin: auto;
-            width: 960px;
-        }
-        #ac-input {
-            width: 35em;
-        }
-        .yui3-aclist {
-            width: 35em;
-        }
-    </style>
-</head>
-
-<body class="yui3-skin-sam">
-
-<h1>Google Finance Get Quotes AutoComplete</h1>
+<h2>{{ page.title }}</h2>
 
 <p>This example demonstrates how to provide autocomplete suggestions using a YQL
 query as source.
@@ -38,7 +29,6 @@ Try typing a name of an asset: yahoo, ibm, oracle, etc.
 <label for="ac-input">Enter an asset (for instance, GOOGLE):</label><br>
 <input id="ac-input" type="text">
 
-<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script>
 /*jslint sloppy:true, unparam:true */
 /*global YUI, alert */
@@ -67,6 +57,3 @@ YUI({
     });
 });
 </script>
-
-</body>
-</html>
