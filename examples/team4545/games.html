@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Team4545 - Scheduled Games and Standings
+yui: 3.5.0
+yuiskin: yui3-skin-sam
 ---
 <style>
     .loading {
@@ -22,18 +25,13 @@ layout: default
     }
 </style>
 
-<h2>Team4545 - Scheduled Games and Standings</h2>
-
-<div class="yui3-skin-sam">
+<h2>{{ page.title }}</h2>
 
 <div>Please, type your preferred team: <input id="team" type="text"></div>
 
 <div id="games" class="loading">Loading scheduled games...</div>
 <div id="standings" class="loading">Loading standings...</div>
 
-</div>
-
-<script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
 <script src="games.js"></script>
 
 
