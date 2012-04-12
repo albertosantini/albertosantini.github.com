@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Mataf Signals</title>
-
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
-    <style>
-        body {
-            margin: auto;
-            width: 960px;
-        }
-    </style>
-</head>
-
-<body>
-
-<h1>Mataf Signals</h1>
+---
+layout: default
+title: Mataf Signals
+yui: 3.5.0
+yuiskin: yui3-skin-sam
+---
+<h2>{{ page.title }}</h2>
 
 <p>This example demonstrates how to make html scraping with JQuery using YQL.
 </p>
 
 <div id="container"></div>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+</script>
 
 <script type="text/javascript">
 /*jslint sloppy:true */
@@ -121,7 +109,4 @@ jQuery(document).ready(function () {
         requestCrossDomain(paths[i], myContainer);
     }
 });
-
 </script>
-</body>
-</html>
