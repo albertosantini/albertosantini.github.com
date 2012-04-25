@@ -43,7 +43,6 @@ YUI({filter: "raw"}).use('model', 'view', function (Y) {
     });
 
     Y.TemperatureView = Y.Base.create('temperatureView', Y.View, [], {
-        container: Y.one("#temperatureView"),
 
         fahrenheitNode: Y.one("#fahrenheit"),
 
@@ -121,8 +120,13 @@ YUI({filter: "raw"}).use('model', 'view', function (Y) {
 
     m = new Y.TemperatureModel();
     v = new Y.TemperatureView({
+        container: Y.one("#temperatureView"),
         model: m
     });
+
+    // Events are attached lazily
+    // They will be attached on the first call to getting the container node.
+    v.get('container');
 });
 
 
