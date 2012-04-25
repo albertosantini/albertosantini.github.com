@@ -2,15 +2,19 @@
 /*global YUI */
 
 YUI({filter: "raw"}).use('model', 'view', function (Y) {
-    var model, view;
+    var m, v;
 
     Y.TemperatureModel = Y.Base.create('temperatureModel', Y.Model, [], {
         check: function (value) {
+            var isOK = false;
+
             if (Y.Lang.isNumber(value)) {
-                return true;
+                isOK = true;
             } else {
-                return false;
+                isOK = false;
             }
+
+            return isOK;
         },
         round: function (value) {
             return Math.round(value * 1000) / 1000;
@@ -40,16 +44,21 @@ YUI({filter: "raw"}).use('model', 'view', function (Y) {
 
     Y.TemperatureView = Y.Base.create('temperatureView', Y.View, [], {
         container: Y.one("#temperatureView"),
+
         fahrenheitNode: Y.one("#fahrenheit"),
+
         celsiusNode: Y.one("#celsius"),
+
         kelvinNode: Y.one("#kelvin"),
+
         events: {
             '#fahrenheit': { keypress: 'convertFahrenheit' },
             '#celsius': { keypress: 'convertCelsius' },
             '#kelvin': { keypress: 'convertKelvin' }
         },
+
         initializer: function () {
-            var model = this.model;
+            var model = this.get('model');
 
             model.after('fahrenheitChange', function (e) {
                 var value = e.newVal;
@@ -73,11 +82,15 @@ YUI({filter: "raw"}).use('model', 'view', function (Y) {
             this.celsiusNode.set("value", "");
             this.kelvinNode.set("value", "");
         },
+
         render: function () {
-            this.fahrenheitNode.set("value", this.model.get('fahrenheit'));
-            this.celsiusNode.set("value", this.model.get('celsius'));
-            this.kelvinNode.set("value", this.model.get('kelvin'));
+            var model = this.get('model');
+
+            this.fahrenheitNode.set("value", model.get('fahrenheit'));
+            this.celsiusNode.set("value", model.get('celsius'));
+            this.kelvinNode.set("value", model.get('kelvin'));
         },
+
         convert: function (e, node) {
             var what, value;
 
@@ -89,23 +102,26 @@ YUI({filter: "raw"}).use('model', 'view', function (Y) {
                     return;
                 }
 
-                this.model.set(what, parseFloat(value));
+                this.get('model').set(what, parseFloat(value));
             }
         },
+
         convertFahrenheit: function (e) {
             this.convert(e, this.fahrenheitNode);
         },
+
         convertCelsius: function (e) {
             this.convert(e, this.celsiusNode);
         },
+
         convertKelvin: function (e) {
             this.convert(e, this.kelvinNode);
         }
     });
 
-    model = new Y.TemperatureModel();
-    view = new Y.TemperatureView({
-        model: model
+    m = new Y.TemperatureModel();
+    v = new Y.TemperatureView({
+        model: m
     });
 });
 
