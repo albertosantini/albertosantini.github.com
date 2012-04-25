@@ -51,9 +51,9 @@ YUI({filter: "raw"}).use('model', 'view', function (Y) {
         kelvinNode: Y.one("#kelvin"),
 
         events: {
-            '#fahrenheit': { keypress: 'convertFahrenheit' },
-            '#celsius': { keypress: 'convertCelsius' },
-            '#kelvin': { keypress: 'convertKelvin' }
+            '#fahrenheit': { keydown: 'convertFahrenheit' },
+            '#celsius': { keydown: 'convertCelsius' },
+            '#kelvin': { keydown: 'convertKelvin' }
         },
 
         initializer: function () {
