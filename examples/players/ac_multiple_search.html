@@ -1,30 +1,20 @@
-<!DOCTYPE html>
+---
+layout: default
+title: AutoComplete Control: Searching on Multiple Fields
+yui: 3.5.0
+yuiskin: yui3-skin-sam yui-skin-sam
+---
+<style>
+    #myAutoComplete {
+        width: 30em;
+        padding-bottom: 2em;
+    }
+    .match {
+        font-weight: bold;
+    }
+</style>
 
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>AutoComplete Control: Searching on Multiple Fields</title>
-
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
-    <style>
-        body {
-            margin: auto;
-            width: 960px;
-        }
-        #myAutoComplete {
-            width: 30em;
-            padding-bottom: 2em;
-        }
-        .match {
-            font-weight: bold;
-        }
-    </style>
-
-</head>
-
-<body class="yui3-skin-sam  yui-skin-sam">
-
-<h1>AutoComplete Control: Searching on Multiple Fields</h1>
+<h2>{{ page.title }}</h2>
 
 <p>This example uses a FunctionDataSource to perform string matching against
 multiple fields of a players database at runtime. Since the data for this
@@ -43,12 +33,11 @@ FunctionDataSource to Search Multiple Fields of an Address Book at Runtime</a>
     <div id="myContainer"></div>
 </div>
 
-<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script type="text/javascript" src="myPlayers.js"></script>
 <script type="text/javascript" src="ac_multiple_search.js"></script>
 
 
-<h2>Specs</h2>
+<h3>Specs</h3>
 
 <div>
 <ol>
@@ -70,7 +59,4 @@ FunctionDataSource to Search Multiple Fields of an Address Book at Runtime</a>
 ...
 </pre>
 </div>
-
-</body>
-</html>
 
