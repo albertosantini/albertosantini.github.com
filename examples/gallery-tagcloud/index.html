@@ -1,23 +1,14 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Test gallery-tagcloud
+yui: 3.5.0
+yuiskin: yui3-skin-sam
+---
+<style>
+    .highlight { background-color: yellow; }
+</style>
 
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Test gallery-tagcloud</title>
-
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
-    <style>
-        body {
-            margin: auto;
-            width: 960px;
-        }
-        .highlight { background-color: yellow; }
-    </style>
-</head>
-
-<body>
-
-<h1>Test gallery-tagcloud</h1>
+<h2>{{ page.title }}</h2>
 
 Ported from <a href="http://johannburkard.de/blog/programming/javascript/dynacloud-a-dynamic-javascript-tag-keyword-cloud-with-jquery.html">
 DynaCloud - a dynamic JavaScript tag/keyword cloud with jQuery</a>
@@ -30,7 +21,6 @@ DynaCloud - a dynamic JavaScript tag/keyword cloud with jQuery</a>
     Fifth FIFTH FIFTH FIFTH FIFTH Sixth SIXTH SIXTH SIXTH SIXTH SIXTH
 </div>
 
-<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script type="text/javascript">
 /*jslint sloppy:true */
 /*global YUI */
@@ -44,7 +34,4 @@ YUI({
     });
 });
 </script>
-
-</body>
-</html>
 

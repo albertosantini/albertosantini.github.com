@@ -1,26 +1,17 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Test gallery-yql-finance
+yui: 3.5.0
+yuiskin: yui3-skin-sam
+---
+<style>
+    .progress {
+        background-image: url(progress.gif);
+        background-repeat: no-repeat;
+    }
+</style>
 
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Test gallery-yql-finance</title>
-
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
-    <style>
-        body {
-            margin: auto;
-            width: 960px;
-        }
-        .progress {
-            background-image: url(progress.gif);
-            background-repeat: no-repeat;
-        }
-    </style>
-</head>
-
-<body>
-
-<h1>Test gallery-yql-finance</h1>
+<h2>{{ page.title }}</h2>
 
 <div id="cHistQuotes"> Test Historical Quotes
     <div id="histQuotes"></div><br />
@@ -38,7 +29,6 @@
     <div id="quotes"></div><br />
 </div>
 
-<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 <script type="text/javascript">
 /*jslint sloppy:true */
 /*global YUI */
@@ -120,7 +110,4 @@ YUI({
     });
 });
 </script>
-
-</body>
-</html>
 
