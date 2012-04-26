@@ -1,43 +1,30 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Model View Controller - Temperature Conversion with YUI 2
+---
+<style>
+    label {
+        width: 80px;
+        float: left;
+        font-weight: bold;
+    }
+</style>
 
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Model View Controller - Temperature Conversion with YUI 2</title>
+<h2>{{ page.title }}</h2>
 
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.4.1/build/cssreset/cssreset-min.css&3.4.1/build/cssfonts/cssfonts-min.css&3.4.1/build/cssbase/cssbase-min.css">
-    <style>
-        body {
-            margin: auto;
-            width: 960px;
-        }
-        label {
-            width: 80px;
-            float: left;
-            font-weight: bold;
-        }
-    </style>
-</head>
+<p>Pick a field, type a temperature and press enter (or tab) to convert.
+</p>
 
-<body>
+<p><label for="fahrenheit">Fahrenheit</label>
+    <input type ="text" id="fahrenheit" />
+</p>
+<p><label for="celsius">Celsius</label>
+    <input type="text" id="celsius" />
+</p>
+<p><label for="kelvin">Kelvin</label>
+    <input type="text" id="kelvin" />
+</p>
 
-    <h1>Model View Controller - Temperature Conversion with YUI 2</h1>
+<script src="http://yui.yahooapis.com/combo?2.9.0/build/utilities/utilities.js"></script>
+<script src="temperatureExample.js"></script>
 
-    <p>Pick a field, type a temperature and press enter (or tab) to convert.
-    </p>
-
-    <p><label for="fahrenheit">Fahrenheit</label>
-        <input type ="text" id="fahrenheit" />
-    </p>
-    <p><label for="celsius">Celsius</label>
-        <input type="text" id="celsius" />
-    </p>
-    <p><label for="kelvin">Kelvin</label>
-        <input type="text" id="kelvin" />
-    </p>
-
-    <script src="http://yui.yahooapis.com/combo?2.9.0/build/utilities/utilities.js"></script>
-    <script src="temperatureExample.js"></script>
-
-</body>
-</html>
