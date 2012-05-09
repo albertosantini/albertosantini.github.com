@@ -18,8 +18,9 @@
         }
     </style>
 
-    {% if page.yui %}
-    <script src="http://yui.yahooapis.com/{{ page.yui }}/build/yui/yui-min.js">
+    {% assign yui = site.yui or page.yui %}
+    {% if yui %}
+    <script src="http://yui.yahooapis.com/{{ yui }}/build/yui/yui-min.js">
     </script>
     {% endif %}
 </head>
