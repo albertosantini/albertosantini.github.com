@@ -27,30 +27,32 @@
 
 <body>
 
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <!-- <span class="icon-bar"></span> -->
-                    <!-- <span class="icon-bar"></span> -->
-                </a>
-                <a class="brand" href="https://github.com/albertosantini/">{{ site.appname }}</a>
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <!-- <li><a href="#about">About</a></li> -->
-                        <!-- <li><a href="#contact">Contact</a></li> -->
-                    </ul>
-                </div>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <!-- <span class="icon-bar"></span> -->
+                <!-- <span class="icon-bar"></span> -->
+            </a>
+            <a class="brand" href="https://github.com/albertosantini/">{{ site.appname }}</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="active"><a href="/">Home</a></li>
+                    <!-- <li><a href="#about">About</a></li> -->
+                    <!-- <li><a href="#contact">Contact</a></li> -->
+                </ul>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container {% if page.yuiskin %}{{ page.yuiskin }}{% endif %}">
-        {{content}}
-    </div>
-    <div style="clear:both;">&nbsp;</div>
+{% assign yuiskin = site.yuiskin or page.yuiskin %}
+<div class="container {% if yuiskin %}{{ yuiskin }}{% endif %}">
+{{content}}
+</div>
+
+<div style="clear:both;">&nbsp;</div>
 
 </body>
 </html>
