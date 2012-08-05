@@ -86,11 +86,17 @@
     }
 
     function projectNameComparator(p1, p2) {
-        return p1.name.toLowerCase() > p2.name.toLowerCase();
+        var a = p1.name.toLowerCase(),
+            b = p2.name.toLowerCase();
+
+        return a < b ? -1 : a > b ? 1 : 0;
     }
 
     function projectWatchersComparator(p1, p2) {
-        return p1.watchers < p2.watchers;
+        var a = p1.watchers,
+            b = p2.watchers;
+
+        return a < b ? 1 : a > b ? -1 : 0;
     }
 
     function sortProjects(node, projects, sortFn) {
@@ -122,4 +128,3 @@
         todoMVCRepos, todoMVCProjects);
 
 }(jQuery));
-
