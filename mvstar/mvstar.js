@@ -47,8 +47,8 @@
             'Yui': 'https://api.github.com/repos/yui/yui3'
         };
 
-    function getWatchers(node, repo) {
-        $.each(repo, function (projectName, repoUrl) {
+    function getWatchers(node, repos) {
+        $.each(repos, function (projectName, repoUrl) {
             jQuery.ajax({
                 type: 'GET',
                 dataType: 'jsonp',
@@ -56,9 +56,11 @@
                 url: repoUrl,
                 success: function (response) {
                     var results = $(node),
-                        content = results.html();
+                        content = results.html(),
+                        projectLink = '<a href="' + repoUrl + '">' +
+                            projectName + '</a>';
 
-                    content += '<dt>' + projectName + '</dt>' +
+                    content += '<dt>' + projectLink + '</dt>' +
                         '<dd>' + response.data.watchers + '</dd>';
 
                     results.html(content);
