@@ -111,15 +111,15 @@
     $('#sort-by-project-name').on('click', function () {
         sortProjects(throneOfJS2012Node,
             throneOfJS2012Projects, projectNameComparator);
-        // sortProjects(todoMVCNode,
-        //     todoMVCProjects, projectNameComparator);
+        sortProjects(todoMVCNode,
+            todoMVCProjects, projectNameComparator);
     });
 
     $('#sort-by-watchers-count').on('click', function () {
         sortProjects(throneOfJS2012Node,
             throneOfJS2012Projects, projectWatchersComparator);
-        // sortProjects(todoMVCNode,
-        //     todoMVCProjects, projectWatchersComparator);
+        sortProjects(todoMVCNode,
+            todoMVCProjects, projectWatchersComparator);
     });
 
     getWatchers(throneOfJS2012Node,
