@@ -57,7 +57,8 @@
                 success: function (response) {
                     var results = $(node),
                         content = results.html(),
-                        projectLink = '<a href="' + repoUrl + '">' +
+                        projectLink = '<a href="' +
+                            response.data.html_url + '">' +
                             projectName + '</a>';
 
                     content += '<dt>' + projectLink + '</dt>' +
