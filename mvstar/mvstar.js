@@ -17,7 +17,7 @@
         'Epitome': 'https://api.github.com/repos/DimitarChristoff/Epitome',
         'Fidel': 'https://api.github.com/repos/jgallen23/fidel',
         'Fun': 'https://api.github.com/repos/marcuswestin/fun',
-        'Funnyface.js': 'https://api.github.com/repos/weppy/o_O',
+        'Funnyface.js': 'https://api.github.com/repos/weepy/o_O',
         'JavaScriptMVC': 'https://api.github.com/repos/jupiterjs/javascriptmvc',
         'jQuery': 'https://api.github.com/repos/jquery/jquery',
         'Knockback.js': 'https://api.github.com/repos/kmalakoff/knockback',
