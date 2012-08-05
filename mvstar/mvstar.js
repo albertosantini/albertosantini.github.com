@@ -1,3 +1,4 @@
+/*jslint unparam:true */
 /*global jQuery */
 
 (function ($) {
@@ -13,6 +14,8 @@
             'Meteor': 'https://api.github.com/repos/meteor/meteor',
             'Spine': 'https://api.github.com/repos/maccman/spine'
         },
+        throneOfJS2012Node = $('#ThroneOfJS-2012'),
+        throneOfJS2012Projects = [],
         todoMVCRepos = {
             'Agility.js': 'https://api.github.com/repos/arturadib/agility',
             'AngularJS': 'https://api.github.com/repos/angular/angular.js',
@@ -45,9 +48,23 @@
             'Stapes.js': 'https://api.github.com/repos/hay/stapes',
             'TroopJS': 'https://api.github.com/repos/troopjs/troopjs-core',
             'Yui': 'https://api.github.com/repos/yui/yui3'
-        };
+        },
+        todoMVCNode = $('#TodoMVC'),
+        todoMVCProjects = [];
 
-    function getWatchers(node, repos) {
+    function projectRender(node, project) {
+        var content = node.html(),
+            projectLink = '<a href="' +
+                project.link + '">' +
+                project.name + '</a>';
+
+        content += '<dt>' + projectLink + '</dt>' +
+            '<dd class="watchers">' + project.watchers + '</dd>';
+
+        node.html(content);
+    }
+
+    function getWatchers(node, repos, projects) {
         $.each(repos, function (projectName, repoUrl) {
             jQuery.ajax({
                 type: 'GET',
@@ -55,22 +72,54 @@
                 cache: true,
                 url: repoUrl,
                 success: function (response) {
-                    var results = $(node),
-                        content = results.html(),
-                        projectLink = '<a href="' +
-                            response.data.html_url + '">' +
-                            projectName + '</a>';
+                    var project = {
+                        name: projectName,
+                        link: response.data.html_url,
+                        watchers: response.data.watchers
+                    };
 
-                    content += '<dt>' + projectLink + '</dt>' +
-                        '<dd>' + response.data.watchers + '</dd>';
-
-                    results.html(content);
+                    projects.push(project);
+                    projectRender(node, project);
                 }
             });
         });
     }
 
-    getWatchers('#ThroneOfJS-2012', throneOfJS2012Repos);
-    getWatchers('#TodoMVC', todoMVCRepos);
+    function projectNameComparator(p1, p2) {
+        return p1.name.toLowerCase() > p2.name.toLowerCase();
+    }
+
+    function projectWatchersComparator(p1, p2) {
+        return p1.watchers < p2.watchers;
+    }
+
+    function sortProjects(node, projects, sortFn) {
+        var sortedProjects = projects.sort(sortFn);
+
+        node.empty();
+        $.each(sortedProjects, function (index, project) {
+            projectRender(node, project);
+        });
+    }
+
+    $('#sort-by-project-name').on('click', function () {
+        sortProjects(throneOfJS2012Node,
+            throneOfJS2012Projects, projectNameComparator);
+        // sortProjects(todoMVCNode,
+        //     todoMVCProjects, projectNameComparator);
+    });
+
+    $('#sort-by-watchers-count').on('click', function () {
+        sortProjects(throneOfJS2012Node,
+            throneOfJS2012Projects, projectWatchersComparator);
+        // sortProjects(todoMVCNode,
+        //     todoMVCProjects, projectWatchersComparator);
+    });
+
+    getWatchers(throneOfJS2012Node,
+        throneOfJS2012Repos, throneOfJS2012Projects);
+    getWatchers(todoMVCNode,
+        todoMVCRepos, todoMVCProjects);
+
 }(jQuery));
 
