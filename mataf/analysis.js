@@ -1,20 +1,8 @@
----
-layout: default
-title: Mataf Signals
-jquery: 1.8.0
----
-<h2>{{ page.title }}</h2>
-
-<p>This example demonstrates how to make html scraping with JQuery using YQL.
-</p>
-
-<div id="container"></div>
-
-<script type="text/javascript">
-/*jslint sloppy:true */
 /*global jQuery, document */
 
 jQuery(document).ready(function () {
+    'use strict';
+
     var container = "", i, paths = [
         "http://www.mataf.net/en/forex/eurusd",
         "http://www.mataf.net/en/forex/usdchf",
@@ -98,11 +86,11 @@ jQuery(document).ready(function () {
             container += " no strategy";
         }
         container += "<br /><br />";
-        jQuery('#container').html(container);
+        jQuery('#results').html(container);
     }
 
     for (i = 0; i < paths.length; i = i + 1) {
         requestCrossDomain(paths[i], myContainer);
     }
 });
-</script>
+
