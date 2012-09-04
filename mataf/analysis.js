@@ -79,6 +79,7 @@ jQuery(document).ready(function () {
             container += " stoploss: " + stoploss;
             container += " target1: " + target1;
             container += " rw: " + riskreward1;
+            container += " size: " + (100 / riskreward1);
             container += "<\/b>";
         } else {
             container += flat;
