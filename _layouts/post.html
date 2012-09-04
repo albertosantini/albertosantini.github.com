@@ -16,6 +16,11 @@
         body {
             padding-top: 60px;
         }
+
+        .post-date {
+            font-size: 12px;
+            font-weight: normal;
+        }
     </style>
 
 </head>
@@ -43,8 +48,8 @@
 </div>
 
 <div id="main" role="main">
-        <h1>{{ page.title }}<span class="post-date">{{ page.time }}</span></h1>
-        {{ content }}
+    <h1>{{ page.title }} <span class="post-date">{{ page.time }}</span></h1>
+    {{ content }}
 </div>
 
 <div style="clear:both;">&nbsp;</div>
