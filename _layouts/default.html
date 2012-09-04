@@ -18,9 +18,16 @@
         }
     </style>
 
-    {% assign yui = site.yui or page.yui %}
+    {% assign yui = page.yui %}
+    {% assign yuiskin = page.yuiskin %}
+    {% assign jquery = page.jquery %}
+
     {% if yui %}
     <script src="http://yui.yahooapis.com/{{ yui }}/build/yui/yui-min.js">
+    </script>
+    {% endif %}
+    {% if jquery %}
+    <script src="http://code.jquery.com/jquery-{{ jquery }}.min.js"></script>
     </script>
     {% endif %}
 </head>
@@ -47,7 +54,6 @@
     </div>
 </div>
 
-{% assign yuiskin = site.yuiskin or page.yuiskin %}
 <div class="container {% if yuiskin %}{{ yuiskin }}{% endif %}">
 {{content}}
 </div>
