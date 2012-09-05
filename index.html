@@ -71,6 +71,16 @@ AutoComplete: Searching on Multiple Fields</a>
 <div class="span6">
 
     <h2>My Posts</h2>
+
+    <blockquote class="pull-right">
+        <p>
+        She sat behind the black pieces and said carefully in Russian, "Would
+        you like to play chess?"
+        </p>
+
+        <small>Walter Tevis <cite>The Queen's Gambit</cite> 1983</small>
+    </blockquote>
+
     <ul class="posts">
          {% for post in paginator.posts %}
          <li>
@@ -83,7 +93,9 @@ AutoComplete: Searching on Multiple Fields</a>
      </ul>
 
     <div class="pagination">
-        {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a href="/" class="previous">Previous</a>
+        {% elsif paginator.previous_page %}
             <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
         {% else %}
             <span class="previous">Previous</span>
