@@ -86,10 +86,8 @@ AutoComplete: Searching on Multiple Fields</a>
     <ul class="posts">
          {% for post in paginator.posts %}
          <li>
+             <span class="post-date"> {{ post.date | date_to_string }} </span>
              <a href="{{ post.url }}"> {{ post.title }} </a>
-             <span class="post-date">
-                 {{ post.date | date_to_string }}
-             </span>
          </li>
          {% endfor %}
      </ul>
