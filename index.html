@@ -83,14 +83,12 @@ AutoComplete: Searching on Multiple Fields</a>
         <small>Walter Tevis, <cite>The Queen's Gambit</cite>, 1983</small>
     </blockquote>
 
-    <ul class="posts">
+    <dl class="posts dl-horizontal">
          {% for post in paginator.posts %}
-         <dl class="dl-horizontal">
              <dt class="muted"> {{ post.date | date_to_string }} </dt>
              <dd><a href="{{ post.url }}"> {{ post.title }} </a></dd>
-         </dl>
          {% endfor %}
-     </ul>
+    </dl>
 
     <div class="pagination">
         {% if paginator.previous_page == 1 %}
