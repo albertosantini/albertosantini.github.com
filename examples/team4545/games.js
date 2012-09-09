@@ -161,14 +161,16 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", "autocomplete", "aut
         teamNode.ac.set("source", teams);
 
         function standingsTeamFilter(team) {
-            var newStandings = [], isOurTeam, i;
+            var newStandings = [];
 
-            for (i = 0; i < standings.length; i += 1) {
-                isOurTeam = standings[i].team.search(team) !== -1;
+            newStandings = standings.filter(function (standing) {
+                var isOurTeam = standing.team.search(team) !== -1;
+
                 if (isOurTeam) {
-                    newStandings.push(standings[i]);
+                    return true;
                 }
-            }
+            });
+
             standingsDT.set('data', newStandings);
         }
 
@@ -268,15 +270,17 @@ YUI().use("node", "yql", "datatype-date", "datatable-base", "autocomplete", "aut
         });
 
         function gamesTeamFilter(team) {
-            var newGames = [], isOurTeam, i;
+            var newGames = [];
 
-            for (i = 0; i < games.length; i += 1) {
-                isOurTeam = games[i].whiteTeam.search(team) !== -1 ||
-                    games[i].blackTeam.search(team) !== -1;
+            newGames = games.filter(function (game) {
+                var isOurTeam = game.whiteTeam.search(team) !== -1 ||
+                        game.blackTeam.search(team) !== -1;
+
                 if (isOurTeam) {
-                    newGames.push(games[i]);
+                    return true;
                 }
-            }
+            });
+
             gamesDT.set('data', newGames);
 
             Y.fire("teamNameChange", team);
