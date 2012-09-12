@@ -58,7 +58,7 @@ jQuery(document).ready(function () {
 
         //~ jQuery('#container').html(results);
 
-        currency = jQuery("h1.top1", results).text();
+        currency = jQuery("h2:first", results).text();
         entry = jQuery("#entry", results).attr("value");
         clock = jQuery("table.AT_analyse > tbody > tr > td:first", results)
             .text().split(" GMT")[0];
