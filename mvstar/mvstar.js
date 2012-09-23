@@ -52,7 +52,7 @@
         todoMVCNode = $('#TodoMVC'),
         todoMVCProjects = [],
         labsRepos = {
-            'Thorax': 'https://github.com/walmartlabs/thorax'
+            'Thorax': 'https://api.github.com/repos/walmartlabs/thorax'
         },
         labsNode = $('#Labs'),
         labsProjects = [];
