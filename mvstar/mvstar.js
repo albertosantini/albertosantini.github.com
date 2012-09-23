@@ -50,7 +50,12 @@
             'Yui': 'https://api.github.com/repos/yui/yui3'
         },
         todoMVCNode = $('#TodoMVC'),
-        todoMVCProjects = [];
+        todoMVCProjects = [],
+        labsRepos = {
+            'Thorax': 'https://github.com/walmartlabs/thorax'
+        },
+        labsNode = $('#Labs'),
+        labsProjects = [];
 
     function projectRender(node, project) {
         var content = node.html(),
@@ -126,5 +131,7 @@
         throneOfJS2012Repos, throneOfJS2012Projects);
     getWatchers(todoMVCNode,
         todoMVCRepos, todoMVCProjects);
+    getWatchers(labsNode,
+        labsRepos, labsProjects);
 
 }(jQuery));
