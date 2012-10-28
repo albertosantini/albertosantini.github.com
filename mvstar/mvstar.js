@@ -77,11 +77,21 @@
                 cache: true,
                 url: repoUrl,
                 success: function (response) {
-                    var project = {
-                        name: projectName,
-                        link: response.data.html_url,
-                        watchers: response.data.watchers
-                    };
+                    var project;
+
+                    if (response.data.html_url) {
+                        project = {
+                            name: projectName,
+                            link: response.data.html_url,
+                            watchers: response.data.watchers
+                        };
+                    } else {
+                        project = {
+                            name: projectName,
+                            link: '#',
+                            watchers: response.data.message
+                        };
+                    }
 
                     projects.push(project);
                     projectRender(node, project);
