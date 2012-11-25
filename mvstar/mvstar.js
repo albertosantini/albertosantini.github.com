@@ -8,7 +8,7 @@
             'AngularJS': 'https://api.github.com/repos/angular/angular.js',
             'Backbone.js': 'https://api.github.com/repos/documentcloud/backbone',
             'batman.js': 'https://api.github.com/repos/Shopify/batman',
-            'CanJS': 'https://api.github.com/repos/jupiterjs/canjs',
+            'CanJS': 'https://api.github.com/repos/bitovi/canjs',
             'Ember.js': 'https://api.github.com/repos/emberjs/ember.js',
             'Knockout.js': 'https://api.github.com/repos/SteveSanderson/knockout',
             'Meteor': 'https://api.github.com/repos/meteor/meteor',
