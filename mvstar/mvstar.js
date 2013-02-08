@@ -12,7 +12,7 @@
             'Ember.js': 'https://api.github.com/repos/emberjs/ember.js',
             'Knockout.js': 'https://api.github.com/repos/SteveSanderson/knockout',
             'Meteor': 'https://api.github.com/repos/meteor/meteor',
-            'Spine': 'https://api.github.com/repos/maccman/spine'
+            'Spine': 'https://api.github.com/repos/spine/spine'
         },
         throneOfJS2012Node = $('#ThroneOfJS-2012'),
         throneOfJS2012Projects = [],
@@ -44,7 +44,7 @@
             'RequireJS': 'https://api.github.com/repos/jrburke/requirejs',
             'Sammy.js': 'https://api.github.com/repos/quirkey/sammy',
             'soma.js': 'https://api.github.com/repos/somajs/somajs',
-            'Spine': 'https://api.github.com/repos/maccman/spine',
+            'Spine': 'https://api.github.com/repos/spine/spine',
             'Stapes.js': 'https://api.github.com/repos/hay/stapes',
             'TroopJS': 'https://api.github.com/repos/troopjs/troopjs-core',
             'Yui': 'https://api.github.com/repos/yui/yui3'
