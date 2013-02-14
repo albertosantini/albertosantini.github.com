@@ -1,61 +1,49 @@
-/*jslint unparam:true */
 /*global jQuery */
 
 (function ($) {
     'use strict';
 
-    var throneOfJS2012Repos = {
-            'AngularJS': 'https://api.github.com/repos/angular/angular.js',
-            'Backbone.js': 'https://api.github.com/repos/documentcloud/backbone',
-            'batman.js': 'https://api.github.com/repos/Shopify/batman',
-            'CanJS': 'https://api.github.com/repos/bitovi/canjs',
-            'Ember.js': 'https://api.github.com/repos/emberjs/ember.js',
-            'Knockout.js': 'https://api.github.com/repos/SteveSanderson/knockout',
-            'Meteor': 'https://api.github.com/repos/meteor/meteor',
-            'Spine': 'https://api.github.com/repos/spine/spine'
-        },
-        throneOfJS2012Node = $('#ThroneOfJS-2012'),
-        throneOfJS2012Projects = [],
-        todoMVCRepos = {
-            'Agility.js': 'https://api.github.com/repos/arturadib/agility',
-            'AngularJS': 'https://api.github.com/repos/angular/angular.js',
-            'Backbone.js': 'https://api.github.com/repos/documentcloud/backbone',
-            'batman.js': 'https://api.github.com/repos/Shopify/batman',
-            'Broke': 'https://api.github.com/repos/brokenseal/broke-client',
-            'CanJS': 'https://api.github.com/repos/bitovi/canjs',
-            'cujo.js': 'https://api.github.com/repos/cujojs/cujo',
-            'Dijon': 'https://api.github.com/repos/creynders/dijon-framework',
-            'Dojo': 'https://api.github.com/repos/dojo/dojo',
-            'Ember.js': 'https://api.github.com/repos/emberjs/ember.js',
-            'Epitome': 'https://api.github.com/repos/DimitarChristoff/Epitome',
-            'Fidel': 'https://api.github.com/repos/jgallen23/fidel',
-            'Fun': 'https://api.github.com/repos/marcuswestin/fun',
-            'Funnyface.js': 'https://api.github.com/repos/weepy/o_O',
-            'JavaScriptMVC': 'https://api.github.com/repos/bitovi/javascriptmvc',
-            'jQuery': 'https://api.github.com/repos/jquery/jquery',
-            'Knockback.js': 'https://api.github.com/repos/kmalakoff/knockback',
-            'Knockout.js': 'https://api.github.com/repos/SteveSanderson/knockout',
-            'Maria': 'https://api.github.com/repos/petermichaux/maria',
-            'Meteor': 'https://api.github.com/repos/meteor/meteor',
-            'Montage': 'https://api.github.com/repos/Motorola-Mobility/montage',
-            'Olives': 'https://api.github.com/repos/flams/olives',
-            'Plastronjs': 'https://api.github.com/repos/rhysbrettbowen/PlastronJS',
-            'rAppid.js': 'https://api.github.com/repos/it-ony/rAppid.js',
-            'RequireJS': 'https://api.github.com/repos/jrburke/requirejs',
-            'Sammy.js': 'https://api.github.com/repos/quirkey/sammy',
-            'soma.js': 'https://api.github.com/repos/somajs/somajs',
-            'Spine': 'https://api.github.com/repos/spine/spine',
-            'Stapes.js': 'https://api.github.com/repos/hay/stapes',
-            'TroopJS': 'https://api.github.com/repos/troopjs/troopjs-core',
-            'Yui': 'https://api.github.com/repos/yui/yui3'
-        },
-        todoMVCNode = $('#TodoMVC'),
-        todoMVCProjects = [],
-        labsRepos = {
-            'Thorax': 'https://api.github.com/repos/walmartlabs/thorax'
-        },
-        labsNode = $('#Labs'),
-        labsProjects = [];
+    var todoMVCRepos = {
+        'Agility.js': 'https://api.github.com/repos/arturadib/agility',
+        'AngularJS': 'https://api.github.com/repos/angular/angular.js',
+        'Backbone.js': 'https://api.github.com/repos/documentcloud/backbone',
+        'batman.js': 'https://api.github.com/repos/Shopify/batman',
+        'Broke': 'https://api.github.com/repos/brokenseal/broke-client',
+        'CanJS': 'https://api.github.com/repos/bitovi/canjs',
+        'Chaplin': 'https://api.github.com/repos/chaplinjs/chaplin',
+        'cujo.js': 'https://api.github.com/repos/cujojs/cujo',
+        'dermis': 'https://api.github.com/repos/wearefractal/dermis',
+        'Dijon': 'https://api.github.com/repos/creynders/dijon-framework',
+        'Dojo': 'https://api.github.com/repos/dojo/dojo',
+        'Ember.js': 'https://api.github.com/repos/emberjs/ember.js',
+        'Epitome': 'https://api.github.com/repos/DimitarChristoff/Epitome',
+        'Fidel': 'https://api.github.com/repos/jgallen23/fidel',
+        'Fun': 'https://api.github.com/repos/marcuswestin/fun',
+        'Funnyface.js': 'https://api.github.com/repos/weepy/o_O',
+        'JavaScriptMVC': 'https://api.github.com/repos/bitovi/javascriptmvc',
+        'jQuery': 'https://api.github.com/repos/jquery/jquery',
+        'Knockback.js': 'https://api.github.com/repos/kmalakoff/knockback',
+        'Knockout.js': 'https://api.github.com/repos/SteveSanderson/knockout',
+        'Maria': 'https://api.github.com/repos/petermichaux/maria',
+        'Marionette.js': 'https://api.github.com/repos/marionettejs/backbone.marionette',
+        'Meteor': 'https://api.github.com/repos/meteor/meteor',
+        'Montage': 'https://api.github.com/repos/Motorola-Mobility/montage',
+        'Olives': 'https://api.github.com/repos/flams/olives',
+        'Plastronjs': 'https://api.github.com/repos/rhysbrettbowen/PlastronJS',
+        'PureMVC': 'https://api.github.com/repos/puremvc/puremvc.github.com',
+        'rAppid.js': 'https://api.github.com/repos/it-ony/rAppid.js',
+        'RequireJS': 'https://api.github.com/repos/jrburke/requirejs',
+        'Sammy.js': 'https://api.github.com/repos/quirkey/sammy',
+        'Serenade.js': 'https://api.github.com/repos/elabs/serenade.js',
+        'soma.js': 'https://api.github.com/repos/somajs/somajs',
+        'Spine': 'https://api.github.com/repos/spine/spine',
+        'Stapes.js': 'https://api.github.com/repos/hay/stapes',
+        'Thorax': 'https://api.github.com/repos/walmartlabs/thorax',
+        'TroopJS': 'https://api.github.com/repos/troopjs/troopjs-core',
+        'Yui': 'https://api.github.com/repos/yui/yui3'
+    },
+    todoMVCNode = $('#TodoMVC'),
+    todoMVCProjects = [];
 
     function projectRender(node, project) {
         var content = node.html(),
@@ -124,24 +112,13 @@
     }
 
     $('#sort-by-project-name').on('click', function () {
-        sortProjects(throneOfJS2012Node,
-            throneOfJS2012Projects, projectNameComparator);
-        sortProjects(todoMVCNode,
-            todoMVCProjects, projectNameComparator);
+        sortProjects(todoMVCNode, todoMVCProjects, projectNameComparator);
     });
 
     $('#sort-by-watchers-count').on('click', function () {
-        sortProjects(throneOfJS2012Node,
-            throneOfJS2012Projects, projectWatchersComparator);
-        sortProjects(todoMVCNode,
-            todoMVCProjects, projectWatchersComparator);
+        sortProjects(todoMVCNode, todoMVCProjects, projectWatchersComparator);
     });
 
-    getWatchers(throneOfJS2012Node,
-        throneOfJS2012Repos, throneOfJS2012Projects);
-    getWatchers(todoMVCNode,
-        todoMVCRepos, todoMVCProjects);
-    getWatchers(labsNode,
-        labsRepos, labsProjects);
+    getWatchers(todoMVCNode, todoMVCRepos, todoMVCProjects);
 
 }(jQuery));
