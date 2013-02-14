@@ -59,7 +59,7 @@
 
     function getWatchers(node, repos, projects) {
         $.each(repos, function (projectName, repoUrl) {
-            jQuery.ajax({
+            $.ajax({
                 type: 'GET',
                 dataType: 'jsonp',
                 cache: true,
