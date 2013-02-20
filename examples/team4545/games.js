@@ -1,7 +1,10 @@
-/*jslint sloppy:true */
 /*global YUI */
 
-YUI().use("node", "yql", "datatype-date", "datatable-base", "autocomplete", "autocomplete-filters", "cookie", function (Y) {
+YUI().use("node", "yql", "datatype-date", "datatable-base",
+    "autocomplete", "autocomplete-filters", "cookie", function (Y) {
+
+    'use strict';
+
     var baseUrl = "http://www.team4545league.org/",
         gamesUrl = baseUrl + "tournament/games.html",
         playerUrl = baseUrl + "players/displayhist.php?player=",
