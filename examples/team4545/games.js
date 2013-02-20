@@ -36,10 +36,8 @@ YUI().use("node", "yql", "datatype-date", "datatable-base",
                 "y2018": { "start": "031102:00", "end": "110402:00"},
                 "y2019": { "start": "031002:00", "end": "110302:00"}
             },
-            win = Y.config.win,
             yDateFormat = Y.DataType.Date.format,
-            lang = win.navigator.userLanguage || win.navigator.language,
-            intl = Y.DataType.Date.Locale.hasOwnProperty(lang) ? lang : "en-US",
+            intl = Y.config.lang,
             now = new Date(),
             yyyy = now.getFullYear(),
             yyyyy = "y" + String(yyyy),
@@ -49,7 +47,10 @@ YUI().use("node", "yql", "datatype-date", "datatable-base",
             mmm = mmmddd[0],
             ddd = mmmddd[1],
             hhh = sp[2],
-            mm = Y.Array.indexOf(Y.DataType.Date.Locale[intl].b, mmm) + 1,
+            mm = Y.DataType.Date.format(Y.DataType.Date.parse(date), {
+                format: "%m",
+                locale: intl
+            }),
             mdh = (mm < 10 ? "0" + String(mm) : String(mm)) + ddd + hhh,
             tz,
             ld;
