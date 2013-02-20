@@ -51,7 +51,7 @@ YUI().use("node", "yql", "datatype-date", "datatable-base",
                 format: "%m",
                 locale: intl
             }),
-            mdh = (mm < 10 ? "0" + String(mm) : String(mm)) + ddd + hhh,
+            mdh = mm + ddd + hhh,
             tz,
             ld;
 
