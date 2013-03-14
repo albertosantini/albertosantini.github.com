@@ -47,7 +47,8 @@ YUI().use("node", "yql", "datatype-date", "datatable-base",
             mmm = mmmddd[0],
             ddd = mmmddd[1],
             hhh = sp[2],
-            mm = Y.DataType.Date.format(Y.DataType.Date.parse(date), {
+            date2 = www + ', ' + mmm + ' ' + ddd + ', ' + yyyy + ', ' + hhh,
+            mm = Y.DataType.Date.format(Y.DataType.Date.parse(date2), {
                 format: "%m",
                 locale: intl
             }),
