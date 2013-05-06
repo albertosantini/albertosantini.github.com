@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Yahoo! Finance Get Quotes AutoComplete
-yui: 3.6.0
+yui: 3.10.0
 yuiskin: yui3-skin-sam
 ---
 <style>
@@ -29,53 +29,4 @@ Try typing a name of an asset: yahoo, ibm, oracle, etc.
 <label for="ac-input">Enter an asset (for instance, YAHOO):</label><br>
 <input id="ac-input" type="text">
 
-<script>
-/*jslint sloppy:true, unparam:true */
-/*global YUI, YAHOO:true, alert */
-
-YUI({
-    filter: 'raw'
-}).use("datasource-get", "datasource-jsonschema", "autocomplete", function (Y) {
-
-    var oDS, acNode = Y.one('#ac-input');
-
-    oDS = new Y.DataSource.Get({
-        source: "http://d.yimg.com/aq/autoc?query=",
-        generateRequestCallback: function (id) {
-            YAHOO = {};
-            YAHOO.util = {};
-            YAHOO.util.ScriptNodeDataSource = {};
-            YAHOO.util.ScriptNodeDataSource.callbacks =
-                YUI.Env.DataSource.callbacks[id];
-            return "&callback=YAHOO.util.ScriptNodeDataSource.callbacks";
-        }
-    });
-    oDS.plug(Y.Plugin.DataSourceJSONSchema, {
-        schema: {
-            resultListLocator: "ResultSet.Result",
-            resultFields: ["symbol", "name", "exch", "type", "exchDisp"]
-        }
-    });
-
-    acNode.plug(Y.Plugin.AutoComplete, {
-        maxResults: 10,
-        resultTextLocator: 'symbol',
-        resultFormatter: function (query, results) {
-            return Y.Array.map(results, function (result) {
-                var asset = result.raw;
-
-                return asset.symbol +
-                    " " + asset.name +
-                    " (" + asset.type +
-                    " - " + asset.exchDisp + ")";
-            });
-        },
-        requestTemplate:  "{query}&region=US&lang=en-US",
-        source: oDS
-    });
-
-    acNode.ac.on('select', function (e) {
-        alert(e.result.raw.name);
-    });
-});
-</script>
+<script src="getquote.js"></script>
