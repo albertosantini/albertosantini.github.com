@@ -2,16 +2,17 @@
 
 "use strict";
 
+var YAHOO = {};
+
 YUI({
     filter: "raw"
 }).use("datasource", "autocomplete", "highlight", function (Y) {
-
     var oDS, acNode = Y.one("#ac-input");
 
     oDS = new Y.DataSource.Get({
         source: "http://d.yimg.com/aq/autoc?query=",
         generateRequestCallback: function (id) {
-            YAHOO = {};
+
             YAHOO.util = {};
             YAHOO.util.ScriptNodeDataSource = {};
             YAHOO.util.ScriptNodeDataSource.callbacks =
