@@ -3,6 +3,8 @@
 "use strict";
 
 var YAHOO = {};
+YAHOO.util = {};
+YAHOO.util.ScriptNodeDataSource = {};
 
 YUI({
     filter: "raw"
@@ -12,9 +14,6 @@ YUI({
     oDS = new Y.DataSource.Get({
         source: "http://d.yimg.com/aq/autoc?query=",
         generateRequestCallback: function (id) {
-
-            YAHOO.util = {};
-            YAHOO.util.ScriptNodeDataSource = {};
             YAHOO.util.ScriptNodeDataSource.callbacks =
                 YUI.Env.DataSource.callbacks[id];
             return "&callback=YAHOO.util.ScriptNodeDataSource.callbacks";
