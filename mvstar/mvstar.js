@@ -16,7 +16,7 @@
         "Dijon": "https://api.github.com/repos/creynders/dijon-framework",
         "Dojo": "https://api.github.com/repos/dojo/dojo",
         "Ember.js": "https://api.github.com/repos/emberjs/ember.js",
-        "Epitome": "https://api.github.com/repos/DimitarChristoff/Epitome",
+        "Epitome": "https://api.github.com/repos/epitome-mvc/Epitome",
         "Fidel": "https://api.github.com/repos/jgallen23/fidel",
         "Fun": "https://api.github.com/repos/marcuswestin/fun",
         "Funnyface.js": "https://api.github.com/repos/weepy/o_O",
@@ -78,7 +78,7 @@
                         project = {
                             name: projectName,
                             link: "#",
-                            watchers: response.data.message
+                            watchers: response.data.message || response.message
                         };
                     }
 
