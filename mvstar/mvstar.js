@@ -28,7 +28,7 @@
         "Marionette.js": "https://api.github.com/repos/marionettejs/" +
             "backbone.marionette",
         "Meteor": "https://api.github.com/repos/meteor/meteor",
-        "Montage": "https://api.github.com/repos/Motorola-Mobility/montage",
+        "Montage": "https://api.github.com/repos/montagejs/montage",
         "Olives": "https://api.github.com/repos/flams/olives",
         "Plastronjs": "https://api.github.com/repos/rhysbrettbowen/PlastronJS",
         "PureMVC": "https://api.github.com/repos/puremvc/" +
