@@ -31,8 +31,9 @@
         "Montage": "https://api.github.com/repos/Motorola-Mobility/montage",
         "Olives": "https://api.github.com/repos/flams/olives",
         "Plastronjs": "https://api.github.com/repos/rhysbrettbowen/PlastronJS",
-        "PureMVC": "https://api.github.com/repos/puremvc/puremvc.github.com",
-        "rAppid.js": "https://api.github.com/repos/it-ony/rAppid.js",
+        "PureMVC": "https://api.github.com/repos/puremvc/" +
+            "puremvc-js-multicore-framework",
+        "rAppid.js": "https://api.github.com/repos/rappid/rAppid.js",
         "RequireJS": "https://api.github.com/repos/jrburke/requirejs",
         "Sammy.js": "https://api.github.com/repos/quirkey/sammy",
         "Serenade.js": "https://api.github.com/repos/elabs/serenade.js",
