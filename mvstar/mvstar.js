@@ -6,8 +6,8 @@
     var todoMVCRepos = {
         "Agility.js": "https://api.github.com/repos/arturadib/agility",
         "AngularJS": "https://api.github.com/repos/angular/angular.js",
-        "Backbone.js": "https://api.github.com/repos/documentcloud/backbone",
-        "batman.js": "https://api.github.com/repos/Shopify/batman",
+        "Backbone.js": "https://api.github.com/repos/jashkenas/backbone",
+        "batman.js": "https://api.github.com/repos/batmanjs/batman",
         "Broke": "https://api.github.com/repos/brokenseal/broke-client",
         "CanJS": "https://api.github.com/repos/bitovi/canjs",
         "Chaplin": "https://api.github.com/repos/chaplinjs/chaplin",
