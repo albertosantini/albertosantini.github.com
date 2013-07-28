@@ -33,6 +33,7 @@
         "Plastronjs": "https://api.github.com/repos/rhysbrettbowen/PlastronJS",
         "PureMVC": "https://api.github.com/repos/puremvc/" +
             "puremvc-js-multicore-framework",
+        "Ractive.js": "https://api.github.com/repos/Rich-Harris/Ractive",
         "rAppid.js": "https://api.github.com/repos/rappid/rAppid.js",
         "RequireJS": "https://api.github.com/repos/jrburke/requirejs",
         "Sammy.js": "https://api.github.com/repos/quirkey/sammy",
