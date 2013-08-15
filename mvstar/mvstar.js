@@ -13,7 +13,7 @@
         "Chaplin": "https://api.github.com/repos/chaplinjs/chaplin",
         "cujo.js": "https://api.github.com/repos/cujojs/cujo",
         "dermis": "https://api.github.com/repos/wearefractal/dermis",
-        "Dijon": "https://api.github.com/repos/creynders/dijon-framework",
+        "Dijon": "https://api.github.com/repos/creynders/dijon",
         "Dojo": "https://api.github.com/repos/dojo/dojo",
         "Ember.js": "https://api.github.com/repos/emberjs/ember.js",
         "Epitome": "https://api.github.com/repos/epitome-mvc/Epitome",
