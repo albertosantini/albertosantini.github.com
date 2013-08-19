@@ -1,22 +1,8 @@
+/*jshint quotmark: false */
 /*global jQuery, document */
 
 jQuery(document).ready(function () {
     'use strict';
-
-    var container = "", i, paths = [
-        "http://www.mataf.net/en/forex/eurusd",
-        "http://www.mataf.net/en/forex/usdchf",
-        "http://www.mataf.net/en/forex/usdjpy",
-        "http://www.mataf.net/en/forex/gbpusd",
-        "http://www.mataf.net/en/forex/usdcad",
-        "http://www.mataf.net/en/forex/gbpjpy",
-        "http://www.mataf.net/en/forex/eurgbp",
-        "http://www.mataf.net/en/forex/eurcad",
-        "http://www.mataf.net/en/forex/eurjpy",
-        "http://www.mataf.net/en/forex/audusd",
-        "http://www.mataf.net/en/forex/euraud",
-        "http://www.mataf.net/en/forex/eurchf"
-    ];
 
     function requestCrossDomain(site, callback) {
         var yql = 'http://query.yahooapis.com/v1/public/yql?q=' +
@@ -45,16 +31,22 @@ jQuery(document).ready(function () {
     }
 
     function myContainer(results) {
-        var currency, entry, clock, stoploss, target1, riskreward1,
+        var container = "",
+            currency,
+            entry,
+            clock,
+            stoploss,
+            target1,
+            riskreward1,
             sell = '<img height=12 width=12 ' +
             'src="http://www.mataf.net/images/_V3img/fleches/down.png">' +
-            '<\/img>',
+            '<\/img>&nbsp;',
             buy = '<img height=12 width=12 ' +
             'src="http://www.mataf.net/images/_V3img/fleches/up.png">' +
-            '<\/img>',
+            '<\/img>&nbsp;',
             flat = '<img height=12 width=12 ' +
             'src="http://www.mataf.net/images/_V3img/fleches/flat.png">' +
-            '<\/img>';
+            '<\/img>&nbsp;';
 
         //~ jQuery('#container').html(results);
 
@@ -62,6 +54,7 @@ jQuery(document).ready(function () {
         entry = jQuery("#entry", results).attr("value");
         clock = jQuery("table.AT_analyse > tbody > tr > td:first", results)
             .text().split(" GMT")[0];
+        clock = jQuery.trim(clock);
         if (entry !== undefined) {
             stoploss = jQuery("#stoploss", results).attr("value");
             target1 = jQuery("#t1", results).attr("value");
@@ -90,8 +83,28 @@ jQuery(document).ready(function () {
         jQuery('#results').html(container);
     }
 
-    for (i = 0; i < paths.length; i = i + 1) {
-        requestCrossDomain(paths[i], myContainer);
+    function main() {
+        var paths = [
+            "http://www.mataf.net/en/forex/eurusd",
+            "http://www.mataf.net/en/forex/usdchf",
+            "http://www.mataf.net/en/forex/usdjpy",
+            "http://www.mataf.net/en/forex/gbpusd",
+            "http://www.mataf.net/en/forex/usdcad",
+            "http://www.mataf.net/en/forex/gbpjpy",
+            "http://www.mataf.net/en/forex/eurgbp",
+            "http://www.mataf.net/en/forex/eurcad",
+            "http://www.mataf.net/en/forex/eurjpy",
+            "http://www.mataf.net/en/forex/audusd",
+            "http://www.mataf.net/en/forex/euraud",
+            "http://www.mataf.net/en/forex/eurchf"
+        ],
+        i;
+
+        for (i = 0; i < paths.length; i = i + 1) {
+            requestCrossDomain(paths[i], myContainer);
+        }
     }
+
+    main();
 });
 
