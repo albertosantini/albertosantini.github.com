@@ -4,6 +4,8 @@
 jQuery(document).ready(function () {
     'use strict';
 
+    var container = "";
+
     function requestCrossDomain(site, callback) {
         var yql = 'http://query.yahooapis.com/v1/public/yql?q=' +
             encodeURIComponent('select * from html where url="' + site + '"') +
@@ -31,8 +33,7 @@ jQuery(document).ready(function () {
     }
 
     function myContainer(results) {
-        var container = "",
-            currency,
+        var currency,
             entry,
             clock,
             stoploss,
