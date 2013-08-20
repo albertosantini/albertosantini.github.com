@@ -1,119 +1,65 @@
----
-layout: default
----
-<base href="http://albertosantini.github.com/">
+<!doctype html>
+<html lang="en">
 
-<div class="row">
+<head>
+    <title>Alberto Santini</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/base-min.css">
+    <style>
+        body {
+            font-family: serif;
+            color: #444;
+        }
+        h1 {
+            font-size: 6em;
+            font-weight: normal;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-<div class="span6">
+        .hero {
+            position: absolute;
+            bottom: 20%;
+            right: 10%;
+        }
+        .networks {
+            border-top: 1px solid #ccc;
+            margin: 0;
+            padding: 0;
+        }
+        .networks li {
+            display: inline-block;
+            float: right;
+        }
+        .networks a {
+            display: block;
+            font-size: 1.3em;
+            color: #444;
+            padding: 5px 0 0 25px;
+        }
+        .ext {
+            color: #ff7373;
+        }
+    </style>
+</head>
 
-    <h2>Live Projects</h2>
-    <ul>
-
-<li><a href="http://conpa.nodester.com/">ConPA</a>
-<li><a href="http://trammi.nodester.com/">tramMI</a></li>
-<li><a href="./mvstar/">MV* GitHub Stargazers</a></li>
-<li><a href="./mataf/">Mataf Analysis</a></li>
-
-    </ul>
-
-    <h2>YUI3 Examples</h2>
-    <ul>
-
-<li><a href="./examples/getquote/ac_getquote_yahoo.html">
-Yahoo! Finances</a>
-and
-<a href="./examples/getquote/ac_getquote_google.html">
-Google Finance</a>
-Get Quotes AutoComplete</li>
-
-<li><a href="./examples/crema/crema.html">
-Html scraping with YQL, AsyncQueue and Tag Cloud</a>
-</li>
-
-<li><a href="./examples/team4545/games.html">
-Another Html scraping with YQL, DataTable and AutoComplete</a>
-</li>
-
-<li>Model View Controller: Temperature Conversion
-<a href="./examples/mvc/temperatureExample.html">
-with YUI 2</a>
-and
-<a href="./examples/mvc/temperatureExample3.html">
-with YUI 3</a>
-</li>
-
-    </ul>
-
-    <h2>YUI3 Gallery Examples</h2>
-    <ul>
-
-<li><a href="./examples/gallery-tagcloud/">
-Tag Cloud: gallery-tagcloud</a>
-</li>
-
-<li><a href="./examples/gallery-yql-finance/">
-YQL Finance: gallery-yql-finance</a>
-</li>
-
-    </ul>
-
-    <h2>YUI2 Examples</h2>
-    <ul>
-
-<li><a href="./examples/players/ac_multiple_search.html">
-AutoComplete: Searching on Multiple Fields</a>
-</li>
-
-    </ul>
-
-</div>
-
-<div class="span6">
-
-    <h2>My Posts</h2>
-
-    <blockquote>
-        <p>
-        She sat behind the black pieces and said carefully in Russian, "Would
-        you like to play chess?"
-        </p>
-        <small>Walter Tevis, <cite>The Queen's Gambit</cite>, 1983</small>
-    </blockquote>
-
-    <blockquote>
-        <p>
-        There's so many different worlds<br />
-        So many different suns<br />
-        And we have just one world<br />
-        But we live in different ones<br />
-        </p>
-        <small>Dire Straits, <cite>Brothers in Arms</cite>, 1985</small>
-    </blockquote>
-
-    <dl class="posts dl-horizontal">
-         {% for post in paginator.posts %}
-             <dt class="muted"> {{ post.date | date_to_string }} </dt>
-             <dd><a href="{{ post.url }}"> {{ post.title }} </a></dd>
-         {% endfor %}
-    </dl>
-
-    <div class="pagination">
-        {% if paginator.previous_page == 1 %}
-            <a href="/" class="previous">Previous</a>
-        {% elsif paginator.previous_page %}
-            <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
-        {% else %}
-            <span class="previous">Previous</span>
-        {% endif %}
-            <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
-        {% if paginator.next_page %}
-            <a href="/page{{paginator.next_page}}" class="next ">Next</a>
-        {% else %}
-            <span class="next ">Next</span>
-        {% endif %}
+<body>
+    <div class="hero">
+        <h1><span class="ext">Alberto Santini</span></h1>
+        <ul class="networks">
+            <li>
+                <a href="http://it.linkedin.com/in/santinialberto/">linkedin</a>
+            </li>
+            <li>
+                <a href="https://twitter.com/santinialberto">twitter</a>
+            </li>
+            <li>
+                <a href="https://github.com/albertosantini">github</a>
+            </li>
+        </ul>
     </div>
+</body>
 
-</div>
-
-</div>
+</html>
