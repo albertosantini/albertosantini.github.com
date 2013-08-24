@@ -48,4 +48,3 @@ YUI({
         alert(e.result.raw.name);
     });
 });
-
