@@ -1,0 +1,33 @@
+---
+layout: default
+title: Yahoo! Finance Get Quotes Typeahead
+jquery: 2.0.3
+---
+<style>
+    #ac-input {
+        width: 35em;
+    }
+    .yui3-aclist {
+        width: 35em;
+    }
+</style>
+
+<h2>{{ page.title }}</h2>
+
+<p>This example demonstrates how to provide autocomplete suggestions from a
+remote JSONP API.
+</p>
+<p>In this case, we're using <a href="http://finance.yahoo.com/">Yahoo!
+Finance Get Quotes AutoComplete</a> to suggest assets.
+</p>
+
+<p>
+Try typing a name of an asset: yahoo, ibm, oracle, etc.
+</p>
+
+<label for="ac-input">Enter an asset (for instance, YAHOO):</label><br>
+<input id="ac-input" type="text">
+
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.min.js"></script>
+<script src="ac_getquote_typeahead.js"></script>
