@@ -18,7 +18,7 @@ YUI({
                 return asset.t + " - " + asset.n + " - " + asset.e;
             });
         },
-        source: "select * from json" +
+        source: "select * from json " +
             "where url=\"http://www.google.com/finance/match?q={query}\""
     });
 
