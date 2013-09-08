@@ -1,130 +1,87 @@
-/*global jQuery */
+/*global angular */
 
-(function ($) {
+(function (angular) {
     "use strict";
 
-    var todoMVCRepos = {
-        "Agility.js": "https://api.github.com/repos/arturadib/agility",
-        "AngularJS": "https://api.github.com/repos/angular/angular.js",
-        "Backbone.js": "https://api.github.com/repos/jashkenas/backbone",
-        "batman.js": "https://api.github.com/repos/batmanjs/batman",
-        "Broke": "https://api.github.com/repos/brokenseal/broke-client",
-        "CanJS": "https://api.github.com/repos/bitovi/canjs",
-        "Chaplin": "https://api.github.com/repos/chaplinjs/chaplin",
-        "cujo.js": "https://api.github.com/repos/cujojs/cujo",
-        "dermis": "https://api.github.com/repos/wearefractal/dermis",
-        "Dijon": "https://api.github.com/repos/creynders/dijon",
-        "Dojo": "https://api.github.com/repos/dojo/dojo",
-        "Ember.js": "https://api.github.com/repos/emberjs/ember.js",
-        "Epitome": "https://api.github.com/repos/epitome-mvc/Epitome",
-        "Fidel": "https://api.github.com/repos/jgallen23/fidel",
-        "Flight": "https://api.github.com/repos/flightjs/flight",
-        "Fun": "https://api.github.com/repos/marcuswestin/fun",
-        "Funnyface.js": "https://api.github.com/repos/weepy/o_O",
-        "JavaScriptMVC": "https://api.github.com/repos/bitovi/javascriptmvc",
-        "jQuery": "https://api.github.com/repos/jquery/jquery",
-        "Knockback.js": "https://api.github.com/repos/kmalakoff/knockback",
-        "Knockout.js": "https://api.github.com/repos/knockout/knockout",
-        "Maria": "https://api.github.com/repos/petermichaux/maria",
-        "Marionette.js": "https://api.github.com/repos/marionettejs/" +
-            "backbone.marionette",
-        "Meteor": "https://api.github.com/repos/meteor/meteor",
-        "Montage": "https://api.github.com/repos/montagejs/montage",
-        "Olives": "https://api.github.com/repos/flams/olives",
-        "Polymer": "https://api.github.com/repos/polymer/polymer",
-        "Plastronjs": "https://api.github.com/repos/rhysbrettbowen/PlastronJS",
-        "PureMVC": "https://api.github.com/repos/puremvc/" +
-            "puremvc-js-multicore-framework",
-        "React": "https://api.github.com/repos/facebook/react",
-        "Ractive.js": "https://api.github.com/repos/Rich-Harris/Ractive",
-        "rAppid.js": "https://api.github.com/repos/rappid/rAppid.js",
-        "RequireJS": "https://api.github.com/repos/jrburke/requirejs",
-        "Sammy.js": "https://api.github.com/repos/quirkey/sammy",
-        "Serenade.js": "https://api.github.com/repos/elabs/serenade.js",
-        "soma.js": "https://api.github.com/repos/somajs/somajs",
-        "Spine": "https://api.github.com/repos/spine/spine",
-        "Stapes.js": "https://api.github.com/repos/hay/stapes",
-        "Thorax": "https://api.github.com/repos/walmartlabs/thorax",
-        "TroopJS": "https://api.github.com/repos/troopjs/troopjs-core",
-        "Yui": "https://api.github.com/repos/yui/yui3"
-    },
-    todoMVCNode = $("#TodoMVC"),
-    todoMVCProjects = [];
+    var app = angular.module("mvstar", []);
 
-    function projectRender(node, project) {
-        var content = node.html(),
-            projectLink = "<a href='" +
-                project.link + "'>" +
-                project.name + "</a>";
+    // AngularJS: Creating A Service With $http
+    // http://www.benlesh.com/2013/02/angularjs-creating-service-with-http.html
+    app.factory("ghService", function ($http, $q) {
+        return {
+            getRepoInfo: function (data) {
+                var ghRepoUrl = "https://api.github.com/repos/",
+                    url = ghRepoUrl + data.repo,
+                    deferred = $q.defer();
 
-        content += "<dt>" + projectLink + "</dt>" +
-            "<dd class='watchers'>" + project.watchers + "</dd>";
+                data.params = data.params || {};
+                data.params.callback = "JSON_CALLBACK";
 
-        node.html(content);
-    }
+                $http.jsonp(url, data)
+                    .success(function (response) {
+                        deferred.resolve(response.data);
+                    }).error(function () {
+                        deferred.reject();
+                    });
 
-    function getWatchers(node, repos, projects) {
-        $.each(repos, function (projectName, repoUrl) {
-            $.ajax({
-                type: "GET",
-                dataType: "jsonp",
-                cache: true,
-                url: repoUrl,
-                success: function (response) {
-                    var project;
+                return deferred.promise;
+            }
+        };
+    });
 
-                    if (response.data.html_url) {
-                        project = {
-                            name: projectName,
-                            link: response.data.html_url,
-                            watchers: response.data.watchers
-                        };
-                    } else {
-                        project = {
-                            name: projectName,
-                            link: "#",
-                            watchers: response.data.message || response.message
-                        };
-                    }
+    app.controller("mvstarCtrl", function ($scope, ghService) {
+        var mvstarRepos = [
+            {repo: "arturadib/agility"},
+            {repo: "angular/angular.js"},
+            {repo: "jashkenas/backbone"},
+            {repo: "batmanjs/batman"},
+            {repo: "brokenseal/broke-client"},
+            {repo: "bitovi/canjs"},
+            {repo: "chaplinjs/chaplin"},
+            {repo: "cujojs/cujo"},
+            {repo: "wearefractal/dermis"},
+            {repo: "creynders/dijon"},
+            {repo: "dojo/dojo"},
+            {repo: "emberjs/ember.js"},
+            {repo: "epitome-mvc/Epitome"},
+            {repo: "jgallen23/fidel"},
+            {repo: "flightjs/flight"},
+            {repo: "marcuswestin/fun"},
+            {repo: "weepy/o_O"},
+            {repo: "bitovi/javascriptmvc"},
+            {repo: "jquery/jquery"},
+            {repo: "kmalakoff/knockback"},
+            {repo: "knockout/knockout"},
+            {repo: "petermichaux/maria"},
+            {repo: "marionettejs/backbone.marionette"},
+            {repo: "meteor/meteor"},
+            {repo: "montagejs/montage"},
+            {repo: "flams/olives"},
+            {repo: "polymer/polymer"},
+            {repo: "rhysbrettbowen/PlastronJS"},
+            {repo: "puremvc/puremvc-js-multicore-framework"},
+            {repo: "facebook/react"},
+            {repo: "Rich-Harris/Ractive"},
+            {repo: "rappid/rAppid.js"},
+            {repo: "jrburke/requirejs"},
+            {repo: "quirkey/sammy"},
+            {repo: "elabs/serenade.js"},
+            {repo: "somajs/somajs"},
+            {repo: "spine/spine"},
+            {repo: "hay/stapes"},
+            {repo: "walmartlabs/thorax"},
+            {repo: "troopjs/troopjs-core"},
+            {repo: "yui/yui3"}
+        ];
 
-                    projects.push(project);
-                    projectRender(node, project);
-                }
+        $scope.reposInfo = [];
+        $scope.repoOrderBy = "name";
+
+        mvstarRepos.forEach(function (repo) {
+            ghService.getRepoInfo(repo).then(function (repoInfo) {
+                $scope.reposInfo.push(repoInfo);
             });
         });
-    }
 
-    function projectNameComparator(p1, p2) {
-        var a = p1.name.toLowerCase(),
-            b = p2.name.toLowerCase();
-
-        return a < b ? -1 : a > b ? 1 : 0;
-    }
-
-    function projectWatchersComparator(p1, p2) {
-        var a = p1.watchers,
-            b = p2.watchers;
-
-        return a < b ? 1 : a > b ? -1 : 0;
-    }
-
-    function sortProjects(node, projects, sortFn) {
-        var sortedProjects = projects.sort(sortFn);
-
-        node.empty();
-        $.each(sortedProjects, function (index, project) {
-            projectRender(node, project);
-        });
-    }
-
-    $("#sort-by-project-name").on("click", function () {
-        sortProjects(todoMVCNode, todoMVCProjects, projectNameComparator);
     });
-
-    $("#sort-by-watchers-count").on("click", function () {
-        sortProjects(todoMVCNode, todoMVCProjects, projectWatchersComparator);
-    });
-
-    getWatchers(todoMVCNode, todoMVCRepos, todoMVCProjects);
-
-}(jQuery));
+}(angular));
