@@ -3,7 +3,10 @@
 (function (angular) {
     "use strict";
 
-    var app = angular.module("mvstar", []);
+    var app = angular.module("mvstar", [], function ($interpolateProvider) {
+        $interpolateProvider.startSymbol("{[");
+        $interpolateProvider.endSymbol("]}");
+    });
 
     // AngularJS: Creating A Service With $http
     // http://www.benlesh.com/2013/02/angularjs-creating-service-with-http.html

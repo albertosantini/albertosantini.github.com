@@ -13,7 +13,6 @@ angular: 1.2.0-rc.2
 <h2>{{ page.title }}</h2>
 
 <div class="row" ng-app="mvstar">
-{% raw %}
 
     <div class="col-lg-8">
         <h3>References</h3>
@@ -55,8 +54,8 @@ angular: 1.2.0-rc.2
             </div>
             <dl class="dl-horizontal">
                 <span ng-repeat="repo in reposInfo | orderBy:repoOrderBy">
-                    <dt><a href="{{ repo.html_url }}">{{ repo.name }}</a></dt>
-                    <dd>{{ repo.watchers }}</dd>
+                    <dt><a href="{[ repo.html_url ]}">{[ repo.name ]}</a></dt>
+                    <dd>{[ repo.watchers ]}</dd>
                 </span>
             </dl>
 
@@ -64,7 +63,6 @@ angular: 1.2.0-rc.2
 
     </div>
 
-{% endraw %}
 </div>
 
 <script src="mvstar.js"></script>
