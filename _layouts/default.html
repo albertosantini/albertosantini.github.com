@@ -23,6 +23,7 @@
     {% assign yui = page.yui %}
     {% assign yuiskin = page.yuiskin %}
     {% assign jquery = page.jquery %}
+    {% assign angular = page.angular %}
 
     {% if yui %}
     <script src="http://yui.yahooapis.com/{{ yui }}/build/yui/yui-min.js">
@@ -30,6 +31,10 @@
     {% endif %}
     {% if jquery %}
     <script src="http://code.jquery.com/jquery-{{ jquery }}.min.js">
+    </script>
+    {% endif %}
+    {% if angular %}
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/{{ angular }}/angular.min.js">
     </script>
     {% endif %}
 </head>
