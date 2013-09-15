@@ -3,18 +3,11 @@ layout: default
 title: MV* GitHub Stargazers
 angular: 1.2.0-rc.2
 ---
-<style>
-    .dl-horizontal dd {
-        width: 48px;
-        text-align: right;
-    }
-</style>
-
 <h2>{{ page.title }}</h2>
 
 <div class="row" ng-app="mvstar">
 
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <h3>References</h3>
         <ul>
         <li>
@@ -36,29 +29,32 @@ angular: 1.2.0-rc.2
 
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-6" ng-controller="mvstarCtrl">
 
-        <div ng-controller="mvstarCtrl">
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="repoOrderBy" value="-watchers">
+                Sort projects by watchers
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-model="repoOrderBy" value="name">
+                Sort projects by name
+            </label>
+        </div>
 
-            <div class="radio">
-                <label>
-                    <input type="radio" ng-model="repoOrderBy" value="-watchers">
-                    Sort projects by watchers
-                </label>
-            </div>
-            <div class="radio">
-                <label>
-                    <input type="radio" ng-model="repoOrderBy" value="name">
-                    Sort projects by name
-                </label>
-            </div>
-            <dl class="dl-horizontal">
-                <span ng-repeat="repo in reposInfo | orderBy:repoOrderBy">
-                    <dt><a href="{[ repo.html_url ]}">{[ repo.name ]}</a></dt>
-                    <dd>{[ repo.watchers ]}</dd>
-                </span>
-            </dl>
-
+        <div class="row">
+            <span ng-repeat="column in [1, -1]">
+                <div class="col-lg-4">
+                    <dl class="dl-horizontal">
+                        <span ng-repeat="repo in reposInfo | orderBy:repoOrderBy | limitTo:(reposInfo.length / 2) * column">
+                            <dt><a href="{[ repo.html_url ]}">{[ repo.name ]}</a></dt>
+                            <dd>{[ repo.watchers ]}</dd>
+                        </span>
+                   </dl>
+                </div>
+            </span>
         </div>
 
     </div>
