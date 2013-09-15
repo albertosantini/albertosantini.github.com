@@ -46,7 +46,7 @@ angular: 1.2.0-rc.2
 
         <div class="row">
             <span ng-repeat="column in [1, -1]">
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <dl class="dl-horizontal">
                         <span ng-repeat="repo in reposInfo | orderBy:repoOrderBy | limitTo:(reposInfo.length / 2) * column">
                             <dt><a href="{[ repo.html_url ]}">{[ repo.name ]}</a></dt>
