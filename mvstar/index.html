@@ -31,20 +31,17 @@ angular: 1.2.0-rc.2
 
     <div class="col-lg-6" ng-controller="mvstarCtrl">
 
-        <div class="radio">
-            <label>
-                <input type="radio" ng-model="repoOrderBy" value="-watchers">
-                Sort projects by watchers
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" ng-model="repoOrderBy" value="name">
-                Sort projects by name
-            </label>
-        </div>
+        <label class="radio-inline">
+            <input type="radio" ng-model="repoOrderBy" value="name">
+            Sort projects by name
+        </label>
+        <label class="radio-inline">
+            <input type="radio" ng-model="repoOrderBy" value="-watchers">
+            Sort projects by watchers
+        </label>
 
         <div class="row">
+
             <span ng-repeat="column in [1, -1]">
                 <div class="col-lg-5">
                     <dl class="dl-horizontal">
@@ -54,6 +51,15 @@ angular: 1.2.0-rc.2
                         </span>
                    </dl>
                 </div>
+            </span>
+            <span ng-show="!reposInfo[0].name">
+                <div class="col-lg-5">
+                    <dl class="dl-horizontal">
+                        <dt title="{[ reposInfo[0].message ]}">
+                            {[ reposInfo[0].message ]}
+                        </dt>
+                    </dl>
+                 <div>
             </span>
         </div>
 
