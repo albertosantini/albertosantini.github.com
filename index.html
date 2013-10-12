@@ -13,11 +13,6 @@ title: Alberto Santini
         cursor: pointer;
     }
 
-    .myhero {
-        position: absolute;
-        bottom: 20%;
-        right: 10%;
-    }
     .networks {
         border-top: 1px solid #ccc;
         margin: 0;
@@ -35,7 +30,9 @@ title: Alberto Santini
     }
 </style>
 
-<div>
+<div class="row">
+
+<div class="col-md-6">
     <blockquote>
         <p>
         She sat behind the black pieces and said carefully in Russian, "Would
@@ -66,7 +63,9 @@ title: Alberto Santini
             <a href="/" class="previous">Previous</a>
         {% else %}
             {% if paginator.previous_page %}
-                <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
+                <a href="/page{{paginator.previous_page}}" class="previous">
+                    Previous
+                </a>
             {% else %}
                 <span class="previous">Previous</span>
             {% endif %}
@@ -82,9 +81,53 @@ title: Alberto Santini
             <span class="next ">Next</span>
         {% endif %}
     </div>
+
 </div>
 
-<div class="myhero">
+<div class="col-md-6">
+
+    <h2>Live Projects</h2>
+    <ul>
+
+    <li><a href="http://conpa.jit.su">ConPA</a>
+    <li><a href="http://trammi.jit.su">tramMI</a></li>
+    <li><a href="./mvstar/">MV* GitHub Stargazers</a></li>
+    <li><a href="./mataf/">Mataf Analysis</a></li>
+
+    </ul>
+
+    <h2>YUI3 Examples</h2>
+    <ul>
+
+    <li><a href="./examples/getquote/ac_getquote_yahoo.html">
+    Yahoo! Finances</a> and
+    <a href="./examples/getquote/ac_getquote_google.html">
+    Google Finance</a>
+    Get Quotes AutoComplete</li>
+
+    <li><a href="./examples/team4545/games.html">
+    Html scraping with YQL, DataTable and AutoComplete</a>
+    </li>
+
+    </ul>
+
+    <h2>YUI3 Gallery Examples</h2>
+    <ul>
+
+    <li>Tag Cloud: <a href="./examples/gallery-tagcloud/">
+    gallery-tagcloud</a>
+    </li>
+
+    <li>Tag Cloud: <a href="./examples/gallery-tagcloud/crema.html">
+    Html scraping with YQL and AsyncQueue</a>
+    </li>
+
+    <li>YQL Finance: <a href="./examples/gallery-yql-finance/">
+    gallery-yql-finance</a>
+    </li>
+
+    </ul>
+
     <h1>Alberto Santini</h1>
     <ul class="networks">
         <li>
@@ -97,5 +140,8 @@ title: Alberto Santini
             <a href="https://github.com/albertosantini">github</a>
         </li>
     </ul>
+
+</div>
+
 </div>
 
