@@ -3,6 +3,26 @@ layout: default
 title: MV* GitHub Stargazers
 angular: 1.2.0-rc.2
 ---
+<style>
+    .pace .pace-progress {
+        background: #29d;
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        height: 2px;
+
+        -webkit-transition: width 1s;
+        -moz-transition: width 1s;
+        -o-transition: width 1s;
+        transition: width 1s;
+    }
+
+    .pace-inactive {
+        display: none;
+    }
+</style>
+
 <h2>{{ page.title }}</h2>
 
 <div class="row" ng-app="mvstar">
@@ -67,4 +87,5 @@ angular: 1.2.0-rc.2
 
 </div>
 
+<script src="pace-0.4.14.min.js"></script>
 <script src="mvstar.js"></script>

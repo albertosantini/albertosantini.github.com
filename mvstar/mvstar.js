@@ -32,7 +32,7 @@
         };
     });
 
-    app.controller("mvstarCtrl", function ($scope, ghService) {
+    app.controller("mvstarCtrl", function ($scope, $q, $filter, ghService) {
         var mvstarRepos = [
             {repo: "arturadib/agility"},
             {repo: "angular/angular.js"},
@@ -75,15 +75,31 @@
             {repo: "walmartlabs/thorax"},
             {repo: "troopjs/troopjs-core"},
             {repo: "yui/yui3"}
-        ];
+        ],
+            ghCalls = [];
 
         $scope.reposInfo = [];
         $scope.repoOrderBy = "name";
 
+        // display repo info when available
         mvstarRepos.forEach(function (repo) {
-            ghService.getRepoInfo(repo).then(function (repoInfo) {
+            var ghCall = ghService.getRepoInfo(repo);
+
+            ghCall.then(function (repoInfo) {
                 $scope.reposInfo.push(repoInfo);
             });
+
+            ghCalls.push(ghCall);
+        });
+
+        // called when ghCalls are completed: maybe to save the standings
+        $q.all(ghCalls).then(function () {
+            // var mvstarRepos;
+
+            // mvstarRepos = $filter("orderBy")($scope.reposInfo, "-watchers");
+            // mvstarRepos.forEach(function (repo, index) {
+            //     console.log(index + 1, repo.name);
+            // });
         });
 
     });
