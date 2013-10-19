@@ -66,9 +66,10 @@ angular: 1.2.0-rc.3
                 <div class="col-lg-5">
                     <dl class="dl-horizontal">
                         <span ng-repeat="repo in reposInfo | orderBy:repoOrderBy | limitTo:(reposInfo.length / 2) * column">
-                            <dt><a href="{[ repo.html_url ]}"
-                                ng-bind="repo.name">Loading projects...</a></dt>
-                            <dd ng-bind="repo.watchers"></dd>
+                            <dt><a href="{[ repo.html_url ]}">
+                                {[ repo.name ]}
+                            </a></dt>
+                            <dd>{[ repo.watchers ]}</dd>
                         </span>
                    </dl>
                 </div>
