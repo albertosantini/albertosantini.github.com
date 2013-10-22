@@ -23,11 +23,50 @@ angular: 1.2.0-rc.3
     }
 </style>
 
-<h2>{{ page.title }}</h2>
-
-<div class="row" ng-app="mvstar">
+<div class="row" ng-app="mvstar" ng-controller="mvstarCtrl">
 
     <div class="col-lg-6">
+
+        <h3>{{ page.title }}</h3>
+
+        <label class="radio-inline">
+            <input type="radio" ng-model="repoOrderBy" value="name">
+            Sort projects by name
+        </label>
+        <label class="radio-inline">
+            <input type="radio" ng-model="repoOrderBy" value="-watchers">
+            Sort projects by watchers
+        </label>
+
+        <div class="row">
+
+            <span ng-repeat="column in [1, -1]">
+                <div class="col-lg-5">
+                    <dl class="dl-horizontal">
+                        <span ng-repeat="repo in mvstarReposInfo | orderBy:repoOrderBy | limitTo:(mvstarReposInfo.length / 2) * column">
+                            <dt><a href="{[ repo.html_url ]}">
+                                {[ repo.name ]}
+                            </a></dt>
+                            <dd>{[ repo.watchers ]}</dd>
+                        </span>
+                   </dl>
+                </div>
+            </span>
+            <span ng-show="!mvstarReposInfo[0].name">
+                <div class="col-lg-5">
+                    <dl class="dl-horizontal">
+                        <dt title="{[ mvstarReposInfo[0].message ]}">
+                            {[ reposInfo[0].message ]}
+                        </dt>
+                    </dl>
+                 </div>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
         <h3>References</h3>
         <ul>
         <li>
@@ -47,47 +86,17 @@ angular: 1.2.0-rc.3
         </li>
         </ul>
 
-    </div>
+        <h3>CSS* GitHub Stargazers</h3>
 
-    <div class="col-lg-6" ng-controller="mvstarCtrl">
-
-        <label class="radio-inline">
-            <input type="radio" ng-model="repoOrderBy" value="name">
-            Sort projects by name
-        </label>
-        <label class="radio-inline">
-            <input type="radio" ng-model="repoOrderBy" value="-watchers">
-            Sort projects by watchers
-        </label>
-
-        <div class="row">
-
-            <span ng-repeat="column in [1, -1]">
-                <div class="col-lg-5">
-                    <dl class="dl-horizontal">
-                        <span ng-repeat="repo in reposInfo | orderBy:repoOrderBy | limitTo:(reposInfo.length / 2) * column">
-                            <dt><a href="{[ repo.html_url ]}">
-                                {[ repo.name ]}
-                            </a></dt>
-                            <dd>{[ repo.watchers ]}</dd>
-                        </span>
-                   </dl>
-                </div>
+        <dl class="dl-horizontal">
+            <span ng-repeat="repo in cssReposInfo | orderBy:repoOrderBy">
+                <dt><a href="{[ repo.html_url ]}">
+                    {[ repo.name ]}
+                </a></dt>
+                <dd>{[ repo.watchers ]}</dd>
             </span>
-            <span ng-show="!reposInfo[0].name">
-                <div class="col-lg-5">
-                    <dl class="dl-horizontal">
-                        <dt title="{[ reposInfo[0].message ]}">
-                            {[ reposInfo[0].message ]}
-                        </dt>
-                    </dl>
-                 <div>
-            </span>
-        </div>
+       </dl>
 
     </div>
 
 </div>
-
-<script src="pace-0.4.14.min.js"></script>
-<script src="mvstar.js"></script>
