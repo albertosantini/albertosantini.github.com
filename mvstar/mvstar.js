@@ -78,6 +78,7 @@
             ],
             cssRepos = [
                 {repo: "twbs/bootstrap"},
+                {repo: "sourcebitsllc/chocolatechip-ui"},
                 {repo: "zurb/foundation"},
                 {repo: "yui/pure"},
                 {repo: "jlukic/Semantic-UI"},
