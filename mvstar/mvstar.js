@@ -8,6 +8,63 @@
         $interpolateProvider.endSymbol("]}");
     });
 
+    app.factory("mvstarRepos", function () {
+        return [
+            {repo: "arturadib/agility"},
+            {repo: "angular/angular.js"},
+            {repo: "jashkenas/backbone"},
+            {repo: "batmanjs/batman"},
+            {repo: "brokenseal/broke-client"},
+            {repo: "bitovi/canjs"},
+            {repo: "chaplinjs/chaplin"},
+            {repo: "cujojs/cujo"},
+            {repo: "wearefractal/dermis"},
+            {repo: "creynders/dijon"},
+            {repo: "dojo/dojo"},
+            {repo: "emberjs/ember.js"},
+            {repo: "epitome-mvc/Epitome"},
+            {repo: "jgallen23/fidel"},
+            {repo: "flightjs/flight"},
+            {repo: "marcuswestin/fun"},
+            {repo: "weepy/o_O"},
+            {repo: "bitovi/javascriptmvc"},
+            {repo: "jquery/jquery"},
+            {repo: "kmalakoff/knockback"},
+            {repo: "knockout/knockout"},
+            {repo: "petermichaux/maria"},
+            {repo: "marionettejs/backbone.marionette"},
+            {repo: "meteor/meteor"},
+            {repo: "montagejs/montage"},
+            {repo: "flams/olives"},
+            {repo: "polymer/polymer"},
+            {repo: "rhysbrettbowen/PlastronJS"},
+            {repo: "puremvc/puremvc-js-multicore-framework"},
+            {repo: "facebook/react"},
+            {repo: "Rich-Harris/Ractive"},
+            {repo: "rappid/rAppid.js"},
+            {repo: "jrburke/requirejs"},
+            {repo: "quirkey/sammy"},
+            {repo: "elabs/serenade.js"},
+            {repo: "somajs/somajs"},
+            {repo: "spine/spine"},
+            {repo: "hay/stapes"},
+            {repo: "walmartlabs/thorax"},
+            {repo: "troopjs/troopjs-core"},
+            {repo: "yui/yui3"}
+        ];
+    });
+
+    app.factory("cssRepos", function () {
+        return [
+            {repo: "twbs/bootstrap"},
+            {repo: "sourcebitsllc/chocolatechip-ui"},
+            {repo: "zurb/foundation"},
+            {repo: "yui/pure"},
+            {repo: "jlukic/Semantic-UI"},
+            {repo: "topcoat/topcoat"}
+        ];
+    });
+
     // AngularJS: Creating A Service With $http
     // http://www.benlesh.com/2013/02/angularjs-creating-service-with-http.html
     app.factory("ghService", function ($http, $q) {
@@ -32,59 +89,10 @@
         };
     });
 
-    app.controller("mvstarCtrl", function ($scope, $q, $filter, ghService) {
-        var mvstarRepos = [
-                {repo: "arturadib/agility"},
-                {repo: "angular/angular.js"},
-                {repo: "jashkenas/backbone"},
-                {repo: "batmanjs/batman"},
-                {repo: "brokenseal/broke-client"},
-                {repo: "bitovi/canjs"},
-                {repo: "chaplinjs/chaplin"},
-                {repo: "cujojs/cujo"},
-                {repo: "wearefractal/dermis"},
-                {repo: "creynders/dijon"},
-                {repo: "dojo/dojo"},
-                {repo: "emberjs/ember.js"},
-                {repo: "epitome-mvc/Epitome"},
-                {repo: "jgallen23/fidel"},
-                {repo: "flightjs/flight"},
-                {repo: "marcuswestin/fun"},
-                {repo: "weepy/o_O"},
-                {repo: "bitovi/javascriptmvc"},
-                {repo: "jquery/jquery"},
-                {repo: "kmalakoff/knockback"},
-                {repo: "knockout/knockout"},
-                {repo: "petermichaux/maria"},
-                {repo: "marionettejs/backbone.marionette"},
-                {repo: "meteor/meteor"},
-                {repo: "montagejs/montage"},
-                {repo: "flams/olives"},
-                {repo: "polymer/polymer"},
-                {repo: "rhysbrettbowen/PlastronJS"},
-                {repo: "puremvc/puremvc-js-multicore-framework"},
-                {repo: "facebook/react"},
-                {repo: "Rich-Harris/Ractive"},
-                {repo: "rappid/rAppid.js"},
-                {repo: "jrburke/requirejs"},
-                {repo: "quirkey/sammy"},
-                {repo: "elabs/serenade.js"},
-                {repo: "somajs/somajs"},
-                {repo: "spine/spine"},
-                {repo: "hay/stapes"},
-                {repo: "walmartlabs/thorax"},
-                {repo: "troopjs/troopjs-core"},
-                {repo: "yui/yui3"}
-            ],
-            cssRepos = [
-                {repo: "twbs/bootstrap"},
-                {repo: "sourcebitsllc/chocolatechip-ui"},
-                {repo: "zurb/foundation"},
-                {repo: "yui/pure"},
-                {repo: "jlukic/Semantic-UI"},
-                {repo: "topcoat/topcoat"}
-            ],
-            ghCalls = [];
+    app.controller("mvstarCtrl",
+            ["$scope", "$q", "$filter", "ghService", "mvstarRepos", "cssRepos",
+            function ($scope, $q, $filter, ghService, mvstarRepos, cssRepos) {
+        var ghCalls = [];
 
         $scope.mvstarReposInfo = [];
         $scope.cssReposInfo = [];
@@ -119,5 +127,6 @@
             // });
         });
 
-    });
+    }]);
+
 }(angular));
