@@ -43,6 +43,7 @@
             {repo: "Rich-Harris/Ractive"},
             {repo: "rappid/rAppid.js"},
             {repo: "jrburke/requirejs"},
+            {repo: "moot/riotjs"},
             {repo: "quirkey/sammy"},
             {repo: "elabs/serenade.js"},
             {repo: "somajs/somajs"},
