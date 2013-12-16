@@ -62,7 +62,8 @@
             {repo: "zurb/foundation"},
             {repo: "yui/pure"},
             {repo: "jlukic/Semantic-UI"},
-            {repo: "topcoat/topcoat"}
+            {repo: "topcoat/topcoat"},
+            {repo: "uikit/uikit"}
         ];
     });
 
