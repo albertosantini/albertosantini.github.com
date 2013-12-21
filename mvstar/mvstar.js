@@ -61,7 +61,7 @@
             {repo: "sourcebitsllc/chocolatechip-ui"},
             {repo: "zurb/foundation"},
             {repo: "yui/pure"},
-            {repo: "jlukic/Semantic-UI"},
+            {repo: "Semantic-Org/Semantic-UI"},
             {repo: "topcoat/topcoat"},
             {repo: "uikit/uikit"}
         ];
