@@ -100,23 +100,21 @@
         $scope.cssReposInfo = [];
         $scope.repoOrderBy = "name";
 
-        mvstarRepos.forEach(function (repo) {
+        function pushRepoInfo(repo, arr) {
             var ghCall = ghService.getRepoInfo(repo);
 
             ghCall.then(function (repoInfo) {
-                $scope.mvstarReposInfo.push(repoInfo);
+                arr.push(repoInfo);
             });
 
             ghCalls.push(ghCall);
+        }
+
+        mvstarRepos.forEach(function (repo) {
+            pushRepoInfo(repo, $scope.mvstarReposInfo);
         });
         cssRepos.forEach(function (repo) {
-            var ghCall = ghService.getRepoInfo(repo);
-
-            ghCall.then(function (repoInfo) {
-                $scope.cssReposInfo.push(repoInfo);
-            });
-
-            ghCalls.push(ghCall);
+            pushRepoInfo(repo, $scope.cssReposInfo);
         });
 
         // called when ghCalls are completed: maybe to save the standings
