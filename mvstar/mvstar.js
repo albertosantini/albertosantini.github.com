@@ -40,7 +40,7 @@
             {repo: "rhysbrettbowen/PlastronJS"},
             {repo: "puremvc/puremvc-js-multicore-framework"},
             {repo: "facebook/react"},
-            {repo: "Rich-Harris/Ractive"},
+            {repo: "RactiveJS/Ractive"},
             {repo: "rappid/rAppid.js"},
             {repo: "jrburke/requirejs"},
             {repo: "moot/riotjs"},
