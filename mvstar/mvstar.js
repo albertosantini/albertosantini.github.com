@@ -104,6 +104,9 @@
             var ghCall = ghService.getRepoInfo(repo);
 
             ghCall.then(function (repoInfo) {
+                repoInfo.name = repoInfo.name || repo.repo;
+                repoInfo.watchers = repoInfo.watchers || repoInfo.message;
+
                 arr.push(repoInfo);
             });
 
