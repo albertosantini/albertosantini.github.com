@@ -9,8 +9,7 @@
     <meta name="description" content="Private Practice">
     <meta name="author" content="Alberto Santini">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         body {
@@ -20,18 +19,6 @@
         }
     </style>
 
-    {% assign yui = page.yui %}
-    {% assign yuiskin = page.yuiskin %}
-    {% assign jquery = page.jquery %}
-
-    {% if yui %}
-    <script src="http://yui.yahooapis.com/{{ yui }}/build/yui/yui-min.js">
-    </script>
-    {% endif %}
-    {% if jquery %}
-    <script src="http://code.jquery.com/jquery-{{ jquery }}.min.js">
-    </script>
-    {% endif %}
 </head>
 
 <body>
@@ -44,7 +31,7 @@
     </div>
 </div>
 
-<div class="container {% if yuiskin %} {{ yuiskin }}{% endif %}">
+<div class="container">
 {{content}}
 </div>
 
