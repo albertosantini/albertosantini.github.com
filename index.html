@@ -35,14 +35,6 @@ title: Alberto Santini
 <div class="col-md-6">
     <blockquote>
         <p>
-        She sat behind the black pieces and said carefully in Russian, "Would
-        you like to play chess?"
-        </p>
-        <small>Walter Tevis, <cite>The Queen's Gambit</cite>, 1983</small>
-    </blockquote>
-
-    <blockquote>
-        <p>
         There's so many different worlds<br />
         So many different suns<br />
         And we have just one world<br />
@@ -50,41 +42,6 @@ title: Alberto Santini
         </p>
         <small>Dire Straits, <cite>Brothers in Arms</cite>, 1985</small>
     </blockquote>
-
-    <dl class="posts dl-horizontal">
-         {% for post in paginator.posts %}
-             <dt class="muted"> {{ post.date | date_to_string }} </dt>
-             <dd><a href="{{ post.url }}"> {{ post.title }} </a></dd>
-         {% endfor %}
-    </dl>
-
-    <div class="pagination">
-        {% if paginator.previous_page == 1 %}
-            <a href="/" class="previous">Previous</a>
-        {% else %}
-            {% if paginator.previous_page %}
-                <a href="/page{{paginator.previous_page}}" class="previous">
-                    Previous
-                </a>
-            {% else %}
-                <span class="previous">Previous</span>
-            {% endif %}
-        {% endif %}
-
-        <span class="page_number ">
-            Page: {{paginator.page}} of {{paginator.total_pages}}
-        </span>
-
-        {% if paginator.next_page %}
-            <a href="/page{{paginator.next_page}}" class="next ">Next</a>
-        {% else %}
-            <span class="next ">Next</span>
-        {% endif %}
-    </div>
-
-</div>
-
-<div class="col-md-6">
 
     <h1>Alberto Santini</h1>
     <ul class="networks">
@@ -99,16 +56,59 @@ title: Alberto Santini
         </li>
     </ul>
 
-    <h2>Live Projects</h2>
+    <!-- Live Pages  -->
     <ul>
-
         <li><a href="http://conpa.jit.su">ConPA</a>
         <li><a href="http://trammi.jit.su">tramMI</a></li>
-        <li><a href="./mvstar/">MV* GitHub Stargazers</a></li>
+        <li><a href="http://albertosantini.github.io/mvstar/">
+        MV* GitHub Stargazers</a></li>
         <li><a href="http://albertosantini.github.io/yui3-gallery-contrib/">
         YUI3 Contrib Examples</a></li>
-
     </ul>
+
+</div>
+
+<div class="col-md-6">
+    <blockquote>
+        <p>
+            She sat behind the black pieces and said carefully in Russian,
+            "Would you like to play chess?"
+        </p>
+        <small>Walter Tevis, <cite>The Queen's Gambit</cite>, 1983</small>
+    </blockquote>
+
+    <!-- Flowered Poems and Casual Bytes - Carezze in versi e Bytes a caso -->
+    <dl class="posts dl-horizontal">
+         {% for post in paginator.posts %}
+             <dt class="muted"> {{ post.date | date_to_string }} </dt>
+             <dd><a href="{{ post.url }}"> {{ post.title }} </a></dd>
+         {% endfor %}
+
+        <dd>
+            <ul class="pagination">
+                {% if paginator.previous_page == 1 %}
+                    <li><a href="/">&laquo;</a></li>
+                {% else %}
+                    {% if paginator.previous_page %}
+                        <li><a href="/page{{paginator.previous_page}}">
+                        &laquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><a href="/">&laquo;</a></li>
+                    {% endif %}
+                {% endif %}
+
+                <li class="active">
+                    <span>{{paginator.page}} of {{paginator.total_pages}}</span>
+                </li>
+
+                {% if paginator.next_page %}
+                    <li><a href="/page{{paginator.next_page}}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><a class="next ">&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </dd>
+    </dl>
 
 </div>
 
