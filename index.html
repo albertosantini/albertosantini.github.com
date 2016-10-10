@@ -81,31 +81,6 @@ title: Alberto Santini
              <dt class="muted"> {{ post.date | date_to_string }} </dt>
              <dd><a href="{{ post.url }}"> {{ post.title }} </a></dd>
          {% endfor %}
-
-        <dd>
-            <ul class="pagination pagination-sm">
-                {% if paginator.previous_page == 1 %}
-                    <li><a href="/">&laquo;</a></li>
-                {% else %}
-                    {% if paginator.previous_page %}
-                        <li><a href="/page{{paginator.previous_page}}">
-                        &laquo;</a></li>
-                    {% else %}
-                        <li class="disabled"><a href="/">&laquo;</a></li>
-                    {% endif %}
-                {% endif %}
-
-                <li class="active">
-                    <span>{{paginator.page}} of {{paginator.total_pages}}</span>
-                </li>
-
-                {% if paginator.next_page %}
-                    <li><a href="/page{{paginator.next_page}}">&raquo;</a></li>
-                {% else %}
-                    <li class="disabled"><a class="next ">&raquo;</a></li>
-                {% endif %}
-            </ul>
-        </dd>
     </dl>
 
 </div>
