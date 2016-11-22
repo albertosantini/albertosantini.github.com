@@ -2,87 +2,65 @@
 layout: default
 title: Alberto Santini
 ---
-<style>
-   h1 {
-        font-size: 6em;
-        font-weight: normal;
-        margin-top: 32px;
-    }
-    a {
-        text-decoration: none;
-        cursor: pointer;
-    }
+<article class="cf">
 
-    .networks {
-        border-top: 1px solid #ccc;
-        margin-bottom: 48px;
-        padding: 0;
-    }
-    .networks li {
-        display: inline-block;
-        float: right;
-    }
-    .networks a {
-        display: block;
-        font-size: 1.3em;
-        color: #444;
-        padding: 5px 0 0 25px;
-    }
-</style>
+    <div class="fl w-100 w-50-ns">
 
-<div class="row">
+        <article class="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10 shadow-3">
+            <div class="tc">
+                <h1 class="f1">Alberto Santini</h1>
+                <hr class="mw3 bb bw1 b--black-10">
+            </div>
+            <p class="lh-copy measure center f6 black-70">
+                <a class="link underline-hover" href="https://github.com/albertosantini">GitHub</a>
+                <a class="link underline-hover" href="https://twitter.com/santinialberto">Twitter</a>
+                <a class="link underline-hover" href="http://it.linkedin.com/in/santinialberto/">Linkedin</a>
+            </p>
+        </article>
 
-<div class="col-md-6">
-    <blockquote>
-        <p>
-        There's so many different worlds<br />
-        So many different suns<br />
-        And we have just one world<br />
-        But we live in different ones<br />
-        </p>
-        <small>Dire Straits, <cite>Brothers in Arms</cite>, 1985</small>
-    </blockquote>
+        <ul class="list pv4">
+            <li class="dib mr2"><a href="http://argo.js.org" class="f6 f5-ns b db pa2 link dim mid-gray">
+                Quest in pursuit of the Golden Fleece in Forex chaos.</a>
+            </li>
+            <li class="dib mr2"><a href="https://github.com/albertosantini/node-rio" class="f6 f5-ns b db pa2 link dim mid-gray">
+                Integration with Rserve, a TCP/IP server for R framework.</a>
+            </li>
+        </ul>
 
-    <h1>Alberto Santini</h1>
-    <ul class="networks">
-        <li>
-            <a href="http://it.linkedin.com/in/santinialberto/">linkedin</a>
-        </li>
-        <li>
-            <a href="https://twitter.com/santinialberto">twitter</a>
-        </li>
-        <li>
-            <a href="https://github.com/albertosantini">github</a>
-        </li>
-    </ul>
+        <div class="pa4">
+            <blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue">
+                <p class="f6 f5-m f4-l lh-copy measure mt0">
+                    There's so many different worlds<br />
+                    So many different suns<br />
+                    And we have just one world<br />
+                    But we live in different ones<br />
+                </p>
+                <cite class="f6 ttu tracked fs-normal">―Dire Straits, Brothers in Arms, 1985</cite>
+            </blockquote>
+        </div>
 
-    <blockquote>
-        <small><a href="http://argo.js.org">Quest in pursuit of the Golden Fleece in Forex chaos</a></small>
-        <small><a href="https://github.com/albertosantini/node-rio">Integration with Rserve, a TCP/IP server for R framework</a></small>
-    </blockquote>
+    </div>
 
-</div>
+    <div class="fl w-100 w-50-ns">
 
-<div class="col-md-6">
-    <blockquote>
-        <p>
-            She sat behind the black pieces and said carefully in Russian,
-            "Would you like to play chess?"
-        </p>
-        <small>Walter Tevis, <cite>The Queen's Gambit</cite>, 1983</small>
-    </blockquote>
+        <div class="pa4">
+            <blockquote class="athelas ml0 mt0 pl4 black-90 bl bw2 b--blue">
+                <p class="f6 f5-m f4-l lh-copy measure mt0">
+                    She sat behind the black pieces and said carefully in Russian,
+                    "Would you like to play chess?"
+                </p>
+                <cite class="f6 ttu tracked fs-normal">―Walter Tevis, The Queen's Gambit, 1983</cite>
+            </blockquote>
+        </div>
 
-    <blockquote>
-        <small>Flowered Poems and Casual Bytes</small>
-        <small>Carezze in versi e Bytes a caso</small>
-    </blockquote>
-    <dl class="posts dl-horizontal">
-         {% for post in paginator.posts %}
-             <dt class="muted"> {{ post.date | date_to_string }} </dt>
-             <dd><a href="{{ post.url }}"> {{ post.title }} </a></dd>
-         {% endfor %}
-    </dl>
+        <dl class="lh-copy pa2 mt0">
+            <dt class="f6">Flowered Poems and Casual Bytes<dt>
+            <dt class="f6">Carezze in versi e Bytes a caso<dt>
+            {% for post in paginator.posts %}
+            <dt class="f6">{{ post.date | date_to_string }} <a class="link underline-hover" href="{{ post.url }}">{{ post.title }}</a></dt>
+            {% endfor %}
+        </dl>
 
-</div>
+    </div>
 
-</div>
+</article>
