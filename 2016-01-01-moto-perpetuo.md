@@ -1,9 +1,3 @@
----
-layout: post
-name: moto-perpetuo
-title: Moto Perpetuo
-time: 2016-01-01 12:00:00.000000000 +01:00
----
 No (30/01/2018)
 <br /><br /><br />
 No bytes, no rhymes<br />

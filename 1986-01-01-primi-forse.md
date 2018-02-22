@@ -1,9 +1,3 @@
----
-layout: post
-name: primi-forse
-title: Primi? Forse.
-time: 1986-01-01 10:00:00.000000000 +01:00
----
 Era l'estate del razzo, il razzo che avrebbe portato l'uomo sulla luna. Il
 centro spaziale americano era un formicaio di tecnici, di mezzi, di spettatori.
 Tutto era pronto; il conto alla rovescia procedeva. Zero.<br /><br /><br />Al
@@ -76,8 +70,7 @@ il casco; si agit&ograve; per qualche secondo e poi cess&ograve; di muoversi.
 Non si vedeva anima viva intorno e Givi junior non ci pens&ograve; due volte a
 correre verso il bidone, caricarselo in spalla e scappare a casa.<br /><br /><br
 />- Allora Givi junior cosa aspetti a spogliarti ed a raggiungerci a tavola, la
-minestra si raffredda; sempre con la testa fra le nuvole. A cosa stavi pensando?
-- chiese la mamma insistendo.<br /><br /><br />Givi junior non poteva dire
+minestra si raffredda; sempre con la testa fra le nuvole. A cosa stavi pensando? - chiese la mamma insistendo.<br /><br /><br />Givi junior non poteva dire
 quello che aveva visto, perch&eacute; avrebbe confessato che aveva giocato con
 il bidone e lo avrebbero punito non permettendogli di uscire all'esterno.<br
 /><br /><br />- Niente, mamma. Ora vengo - ment&igrave; Givi junior.<br />-
