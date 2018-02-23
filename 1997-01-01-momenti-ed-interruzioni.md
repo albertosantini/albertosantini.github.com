@@ -1,1 +1,95 @@
-Goccia (23-10-1997)<br /><br /><br />Forse &egrave; gi&agrave; primavera<br />che appare all'improvviso<br />il mio fiore preferito<br />come una goccia<br />di rugiada al mattino?<br /><br /><br /><br />Lacrime (01-10-1997)<br /><br /><br />Le goccie di pioggia<br />non bagnano il mio viso<br />rigato senza senso<br />da lacrime che<br />chiamo<br />amore.<br /><br /><br /><br />Bella (01-10-1997)<br /><br /><br />Tu che sei cos&igrave; bella<br />non lasciarmi qui da solo<br />a guardare il sole<br />che bagna la spiaggia<br />bianca; tu che sei <br />cos&igrave; vicino abbracciami<br />forte.<br /><br /><br /><br />Bacio A Chiara (12-07-1997)<br /><br /><br />Con un bacio e un sogno<br />toccare una rosa d'estate<br />scivolare sulla sua pelle<br />dimenticare chi sei<br />e volare insieme a lei.<br />Correre a perdi fiato<br />gi&ugrave; per una collina<br />d'erba medica<br />con le braccia aperte<br />per stringerla e baciare<br />labbra di velluto che<br />alzano il vento, che muovono<br />le nuvole.<br />Verso un viso pi&ugrave; luminoso<br />del sole, pi&ugrave; invitante della<br />luna mi getto senza testa<br />come un bambino e il cioccolato;<br />inseguo per il cielo<br />quella stella che mi fa<br />l'occhiolino e all'alba<br />se ne va.<br /><br /><br /><br />Brivido (27-05-1997)<br /><br /><br />Quel brivido che<br />mi prende ed<br />esplode nel basso<br />ventre; continua fino<br />ai piedi, poi torna<br />verso la testa. La<br />pelle cambia di colore<br />un paio di volte al<br />ritmo di un'onda<br />che non controllo.<br />Tutto in un momento<br />mi accorgo che <br />qualcosa &egrave; cambiato.<br />Dentro, non fuori.<br /><br /><br /><br />Strappo (23-05-1997)<br /><br /><br />La vecchia luna<br />sorride mentre solo<br />al buio piango<br />aspettando l'alba.<br />Il tuo volto reclinato<br />sulla spalla &egrave; l'unico<br />punto di contatto con<br />il mondo, che <br />sento scivolare via<br />lontano. So<br />che quando ti sveglierai<br />gi&agrave; non sarai qui<br />con me ed allora<br />vorrei strappare la luna<br />dal cielo; buttarla<br />in terra ed urlare:<br />&quot;E adesso piangi con me&quot;.<br /><br /><br /><br />Vaso (23-05-1997)<br /><br /><br />Ogni pezzo di un<br />oggetto rotto, frammento,<br />si muove in una esigua <br />frazione di tempo, momento,<br />senza un continuo, interruzione.
+## Goccia `23-10-1997`
+
+Forse &egrave; gi&agrave; primavera
+che appare all'improvviso
+il mio fiore preferito
+come una goccia
+di rugiada al mattino?
+
+## Lacrime `01-10-1997`
+
+Le goccie di pioggia
+non bagnano il mio viso
+rigato senza senso
+da lacrime che
+chiamo
+amore.
+
+## Bella `01-10-1997`
+
+Tu che sei cos&igrave; bella
+non lasciarmi qui da solo
+a guardare il sole
+che bagna la spiaggia
+bianca; tu che sei
+cos&igrave; vicino abbracciami
+forte.
+
+## Bacio A Chiara `12-07-1997`
+
+Con un bacio e un sogno
+toccare una rosa d'estate
+scivolare sulla sua pelle
+dimenticare chi sei
+e volare insieme a lei.
+Correre a perdi fiato
+gi&ugrave; per una collina
+d'erba medica
+con le braccia aperte
+per stringerla e baciare
+labbra di velluto che
+alzano il vento, che muovono
+le nuvole.
+Verso un viso pi&ugrave; luminoso
+del sole, pi&ugrave; invitante della
+luna mi getto senza testa
+come un bambino e il cioccolato;
+inseguo per il cielo
+quella stella che mi fa
+l'occhiolino e all'alba
+se ne va.
+
+## Brivido `27-05-1997`
+
+Quel brivido che
+mi prende ed
+esplode nel basso
+ventre; continua fino
+ai piedi, poi torna
+verso la testa. La
+pelle cambia di colore
+un paio di volte al
+ritmo di un'onda
+che non controllo.
+Tutto in un momento
+mi accorgo che
+qualcosa &egrave; cambiato.
+Dentro, non fuori.
+
+## Strappo `23-05-1997`
+
+La vecchia luna
+sorride mentre solo
+al buio piango
+aspettando l'alba.
+Il tuo volto reclinato
+sulla spalla &egrave; l'unico
+punto di contatto con
+il mondo, che
+sento scivolare via
+lontano. So
+che quando ti sveglierai
+gi&agrave; non sarai qui
+con me ed allora
+vorrei strappare la luna
+dal cielo; buttarla
+in terra ed urlare:
+&quot;E adesso piangi con me&quot;.
+
+## Vaso `23-05-1997`
+
+Ogni pezzo di un
+oggetto rotto, frammento,
+si muove in una esigua
+frazione di tempo, momento,
+senza un continuo, interruzione.
