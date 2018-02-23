@@ -1,1 +1,153 @@
-Blues per Francis (1991)<br /><br /><br />Suono le tue parole<br />lacrime assolate<br />rigo il crudo volto<br />mentre sotto la pioggia<br />ti vedo allontanare.<br />Socchiudo la mia bocca<br />per dirti torna indietro<br />ma ora &egrave; troppo tardi<br />perch&eacute; tu non mi senti.<br />Ripeto a nessuno<br />un addio di saluto<br />quanto mi manchi, adDIO.<br /><br /><br /><br />Disperazione (1991)<br /><br /><br />La brezza di consenso<br />con applausi sudati<br />d'ipocrite cravatte<br />che allora t'ha commosso<br />che ora disprezza anche<br />un languido sorriso<br />spezza la truce calma<br />d'una bonaccia stanca.<br /><br /><br /><br />Eroe (1991)<br /><br /><br />Un eroe &egrave; un<br />errore<br />che ha il terrore<br />di commettere un <br />errore.<br /><br /><br /><br />Lifo (1991)<br /><br /><br />I cinerei fumi di porte logiche<br />comprendono il mondo<br />e lo gettano nel bidone della<br />spazzatura, una biglia frantumata.<br />Divide et impera:<br />tagliala a pezzettini<br />neurone per neurone<br />tutti i sentimenti, ogni sentimento<br />per scoprire la scintilla che, dal caos<br />all'ordine, in principio<br />ha generato il mondo,<br />ma ancora la cercano, per fortuna.<br /><br /><br /><br />Maschera (1991)<br /><br /><br />La maschera ripongo<br />nel cassetto aspettando<br />trepidamente l'alba<br />per vedere di nuovo<br />una giornata pallida;<br />cos&igrave; per rinnovare<br />la maschera bugiarda<br />recito una parte<br />che non scopre le carte.<br /><br /><br /><br />Promises (1991)<br /><br /><br />Promises to keep<br />I find in the deep<br />when I see<br />my soul and no the world<br />(eyes ad sights)<br />in the air I can fly<br />I don't pay: all is free.<br /><br /><br /><br />28/09/1991<br /><br /><br />La scorza travolgono<br />di creta che avvolge<br />le arterie doloranti<br />inciampano sui petali<br />della memoria atroce<br />penetrano le vene delle foglie<br />raggiungono crac il ramo spezzato<br /><br />due goccie di rugiada;<br /><br />cresce l'albero anche<br />quando il vento strappa<br />i pi&ugrave; lontani ricordi,<br />che adagio si posano<br />sullla sponda del fiume<br />e spariscono nelle rapide d'acqua<br />con una capriola come salutando.<br /><br /><br /><br />Sissy (1991)<br /><br /><br />Una sera d'agosto un caldo sospiro<br />mi colse d'improvviso<br />a ricordare il mio barboncino:<br />il suo nome era Sissy.<br />Giocavo con la palla da una parte<br />all'altra della stanza, senza fine;<br />non vedevo la scrivania o la sedia<br />o l&agrave; il letto, ma un campo d'erba<br />con una macchia nera che s'avvicina<br />per riportarmi la gialla pallina.<br />Le carezze su quei riccioli neri,<br />quante coccole per i baci teneri.<br /><br /><br /><br />Storia di un bambino (1991)<br /><br /><br />Quando ero un bambino<br />vivevo in un mondo<br />che conoscevo solo io.<br />Per qualche anno<br />sono cresciuto<br />nella torbida bolla<br />senza vedere nulla.<br />Mi sono ritrovato<br />grande fuori dal mondo<br />che avevo visto solo<br />con occhi da bambino.<br /><br /><br /><br />Per i ventiquattro (18-10-1991)<br /><br /><br />Non lo so<br />se i ladri di parole<br />rinunciano a <br />trarre vantaggi dalla verit&agrave;:<br />che cosa sono?<br />se non pezzi<br />a incastro di un gioco<br />le cui regole ignoro;<br />al buio<br />solo la luce della televisione<br />solo<br />vedo<br />penso a te.<br />Le ore scorrono<br />come le pagine bianche<br />di un diario,<br />anonime ed incerte;<br />un'ora<br />&egrave; un'intera vita. Nella...<br />Che cosa cerco?<br />se non risposte<br />a domande che non<br />esistono,<br />a cui non voglio rispondere;<br />trotterella un verme<br />nel cervello<br />insiste e martella<br />un tarlo<br />senza fine, senza vita:<br />ritorna a te.<br />Chi sei tu? Non lo so.
+## Blues per Francis `1991`
+
+Suono le tue parole
+lacrime assolate
+rigo il crudo volto
+mentre sotto la pioggia
+ti vedo allontanare.
+Socchiudo la mia bocca
+per dirti torna indietro
+ma ora &egrave; troppo tardi
+perch&eacute; tu non mi senti.
+Ripeto a nessuno
+un addio di saluto
+quanto mi manchi, adDIO.
+
+## Disperazione `1991`
+
+La brezza di consenso
+con applausi sudati
+d'ipocrite cravatte
+che allora t'ha commosso
+che ora disprezza anche
+un languido sorriso
+spezza la truce calma
+d'una bonaccia stanca.
+
+## Eroe `1991`
+
+Un eroe &egrave; un
+errore
+che ha il terrore
+di commettere un
+errore.
+
+## Lifo `1991`
+
+I cinerei fumi di porte logiche
+comprendono il mondo
+e lo gettano nel bidone della
+spazzatura, una biglia frantumata.
+Divide et impera:
+tagliala a pezzettini
+neurone per neurone
+tutti i sentimenti, ogni sentimento
+per scoprire la scintilla che, dal caos
+all'ordine, in principio
+ha generato il mondo,
+ma ancora la cercano, per fortuna.
+
+## Maschera `1991`
+
+La maschera ripongo
+nel cassetto aspettando
+trepidamente l'alba
+per vedere di nuovo
+una giornata pallida;
+cos&igrave; per rinnovare
+la maschera bugiarda
+recito una parte
+che non scopre le carte.
+
+## Promises `1991`
+
+Promises to keep
+I find in the deep
+when I see
+my soul and no the world
+(eyes ad sights)
+in the air I can fly
+I don't pay: all is free.
+
+## 28/09/1991
+
+La scorza travolgono
+di creta che avvolge
+le arterie doloranti
+inciampano sui petali
+della memoria atroce
+penetrano le vene delle foglie
+raggiungono crac il ramo spezzato
+
+due goccie di rugiada;
+
+cresce l'albero anche
+quando il vento strappa
+i pi&ugrave; lontani ricordi,
+che adagio si posano
+sullla sponda del fiume
+e spariscono nelle rapide d'acqua
+con una capriola come salutando.
+
+## Sissy `1991`
+
+Una sera d'agosto un caldo sospiro
+mi colse d'improvviso
+a ricordare il mio barboncino:
+il suo nome era Sissy.
+Giocavo con la palla da una parte
+all'altra della stanza, senza fine;
+non vedevo la scrivania o la sedia
+o l&agrave; il letto, ma un campo d'erba
+con una macchia nera che s'avvicina
+per riportarmi la gialla pallina.
+Le carezze su quei riccioli neri,
+quante coccole per i baci teneri.
+
+## Storia di un bambino `1991`
+
+Quando ero un bambino
+vivevo in un mondo
+che conoscevo solo io.
+Per qualche anno
+sono cresciuto
+nella torbida bolla
+senza vedere nulla.
+Mi sono ritrovato
+grande fuori dal mondo
+che avevo visto solo
+con occhi da bambino.
+
+## Per i ventiquattro `18-10-1991`
+
+Non lo so
+se i ladri di parole
+rinunciano a
+trarre vantaggi dalla verit&agrave;:
+che cosa sono?
+se non pezzi
+a incastro di un gioco
+le cui regole ignoro;
+al buio
+solo la luce della televisione
+solo
+vedo
+penso a te.
+Le ore scorrono
+come le pagine bianche
+di un diario,
+anonime ed incerte;
+un'ora
+&egrave; un'intera vita. Nella...
+Che cosa cerco?
+se non risposte
+a domande che non
+esistono,
+a cui non voglio rispondere;
+trotterella un verme
+nel cervello
+insiste e martella
+un tarlo
+senza fine, senza vita:
+ritorna a te.
+Chi sei tu? Non lo so.
