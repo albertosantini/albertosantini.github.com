@@ -1,1 +1,101 @@
-Passione A Annamaria (12-05-1998)<br /><br /><br />Sei passione.<br />Sei un raggio di luce<br />che muore in un lago<br />al tramonto. Un cerbiatto<br />s'abbevera protetto dalla madre:<br />tutta dolcezza negli occhi grandi<br />che guardano teneramente il mondo.<br />Sei il respiro del cerbiatto,<br />sei il brivido che scorre nella schiena<br />quando mi tocchi e ti guardo<br />mentre bevi nell'acqua del lago<br />la vita.<br /><br />Sei nata oggi <br />e rinasci ogni giorno<br />al sorgere del sole:<br />la mattina ti coglie<br />imperiosamente bella.<br /><br /><br /><br />Vita A Chiara (10-04-1998)<br /><br /><br />A Chiara<br />che vive la vita<br />a colori, che non<br />cambia canale mai<br />perch&eacute; &egrave; una dura<br />disegno arcobaleni<br />nel cielo.<br />Dolci le sue parole<br />scivolano sulla mia<br />pelle ed io l'abbraccio<br />nei suoi occhi mentre<br />i capelli giocherellano<br />con i raggi del sole<br />al tramonto.<br />Mi piace Chiara<br />perch&eacute; &egrave; tenace<br />perch&eacute; ama Halle.<br />Una donna senza<br />storie senza scuse<br />dolce come un bacio<br />dato a chi si ama.<br /><br /><br /><br />Odio (12-02-1998)<br /><br /><br />Piagnucolare.<br />Odio.<br />Piagnucolare.<br />Schegge di inutile<br />pazzia invadono<br />il mio corpo.<br />Nuda.<br />Rovisto dentro di te<br />per trovare la <br />fine del mondo.<br /><br /><br /><br />Love for you (25-01-1998)<br /><br /><br />Mi ricordo di quel bacio<br />in riva al mare<br />con gli occhi stretti<br />e una mano sul cuore<br />mentre le conchiglie ci guardavano<br />e le onde del mare cantavano in coro.<br />La spiaggia, la luna, il mare<br />non ci sono pi&ugrave;<br />esisti soltanto tu<br />con quel bacio<br />in riva al mare.<br /><br /><br /><br />Sfumature (21-01-1998)<br /><br /><br />I riflessi rossi<br />di una conchiglia madreperla<br />baciano il sole<br />che annega nel tuo cuore<br />un bagliore...<br />un bacio rubato<br />non sono pi&ugrave; solo.<br /><br /><br /><br />Coccola (20-01-1998)<br /><br /><br />Mi piace accarezzare il cuore di <br />una donna come i suoi capelli al vento<br />e farla sentire veramente donna <br />al ritmo dell'onda che sale<br />per stringerla per sempre a me.<br /><br /><br /><br />Note nel vento (19-01-1998)<br /><br /><br />Note sull'acqua<br />spruzzate dal vento<br />negli occhi, cerco<br />fra il bianco del mare<br />la sirena che canta<br />note sull'acqua.<br />Scivolo in un sogno<br />di parole e musica...<br />non smettere di cantare.
+## Passione `A Annamaria 12-05-1998`
+
+Sei passione.
+Sei un raggio di luce
+che muore in un lago
+al tramonto. Un cerbiatto
+s'abbevera protetto dalla madre:
+tutta dolcezza negli occhi grandi
+che guardano teneramente il mondo.
+Sei il respiro del cerbiatto,
+sei il brivido che scorre nella schiena
+quando mi tocchi e ti guardo
+mentre bevi nell'acqua del lago
+la vita.
+
+Sei nata oggi
+e rinasci ogni giorno
+al sorgere del sole:
+la mattina ti coglie
+imperiosamente bella.
+
+## Vita A Chiara `10-04-1998`
+
+A Chiara
+che vive la vita
+a colori, che non
+cambia canale mai
+perch&eacute; &egrave; una dura
+disegno arcobaleni
+nel cielo.
+Dolci le sue parole
+scivolano sulla mia
+pelle ed io l'abbraccio
+nei suoi occhi mentre
+i capelli giocherellano
+con i raggi del sole
+al tramonto.
+Mi piace Chiara
+perch&eacute; &egrave; tenace
+perch&eacute; ama Halle.
+Una donna senza
+storie senza scuse
+dolce come un bacio
+dato a chi si ama.
+
+## Odio `12-02-1998`
+
+Piagnucolare.
+Odio.
+Piagnucolare.
+Schegge di inutile
+pazzia invadono
+il mio corpo.
+Nuda.
+Rovisto dentro di te
+per trovare la
+fine del mondo.
+
+## Love for you `25-01-1998`
+
+Mi ricordo di quel bacio
+in riva al mare
+con gli occhi stretti
+e una mano sul cuore
+mentre le conchiglie ci guardavano
+e le onde del mare cantavano in coro.
+La spiaggia, la luna, il mare
+non ci sono pi&ugrave;
+esisti soltanto tu
+con quel bacio
+in riva al mare.
+
+## Sfumature `21-01-1998`
+
+I riflessi rossi
+di una conchiglia madreperla
+baciano il sole
+che annega nel tuo cuore
+un bagliore...
+un bacio rubato
+non sono pi&ugrave; solo.
+
+## Coccola `20-01-1998`
+
+Mi piace accarezzare il cuore di
+una donna come i suoi capelli al vento
+e farla sentire veramente donna
+al ritmo dell'onda che sale
+per stringerla per sempre a me.
+
+## Note nel vento `19-01-1998`
+
+Note sull'acqua
+spruzzate dal vento
+negli occhi, cerco
+fra il bianco del mare
+la sirena che canta
+note sull'acqua.
+Scivolo in un sogno
+di parole e musica...
+non smettere di cantare.
