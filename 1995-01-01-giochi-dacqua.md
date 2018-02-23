@@ -19,7 +19,7 @@ toccano le corde dell'anima
 piangono brividi e
 scariche di adrenalina
 cadono nel baratro
-lasciando tutto  al
+lasciando tutto al
 piano superiore,
 gi&ugrave; un tonfo sordo.
 
