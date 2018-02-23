@@ -1,1 +1,207 @@
-Rocche (1989)<br /><br /><br />Rocche solitarie<br />fronte ai pugni del tempo,<br />sorridendo alle formiche<br />che rubano loro<br />le bricciole,<br />sognano la luna.<br /><br /><br /><br />Soldato di ventura (1989)<br /><br /><br />Gli hai dato una casa<br />prima che morisse<br />lontano dalla sua famiglia.<br />Mi hai dato una guerra<br />per amare una donna:<br />sopra pezzi di cielo<br />blu amaro<br />moltitudine di corpi<br />il vento delle tue dita<br />muove.<br />Una vecchia canzone<br />suona<br />fra i balli dei fiori;<br />una bomba di fuoco<br />grida<br />fra le macerie delle case.<br />Solo trovi silenzio<br />nella luce della morte,<br />sorridendo a una bambina<br />con un vestito rosso.<br />Negli occhi di gioco<br />e nel viso pieno<br />della piccola<br />ritrovi la fede di Dio<br />perduto<br />in un altro tempo<br />in un altro luogo.<br /><br /><br /><br />Relitto (1989)<br /><br /><br />Il relitto di un sogno<br />striscia nella sabbia<br />scavando buchi<br />in cerca di acqua<br />per affogare<br />il sogno di un relitto.<br /><br /><br /><br />Pianto di un epitaffio (1989)<br /><br /><br />I meravigliosi anni<br />delle bambole e dei trenini<br />dell corse e dei wow<br />delle dediche alla radio<br />e delle vacanze al mare<br />spengo <br />nel portacenere<br />oramai bruciati.<br />Il mondo in una lacrima<br />ricordo di peccati<br />passati<br />si consuma<br />sulla pelle bramata <br />muore<br />sulle labbra<br />di una donna forse amata.<br />Ora<br />un fiore<br />sulla tomba dei cari<br />nel silenzio rispetto<br />poso<br />e scivola<br />una farfalla<br />su un raggio di sole<br />che verso nel cuore<br />e vola via.<br /><br /><br /><br />La voce dell'anima (1989)<br /><br /><br />Vanit&agrave;.<br />Solo vanit&agrave;.<br />La vanagloria<br />di splendenti eroi<br />di cartauomini<br />brucia<br />i vortici pensieri<br />dell'anima,<br />la gioia<br />il sorriso<br />della natura<br />della natura<br />il respiro<br />sorge il sole<br />il sole tramonta<br />arsura e freddo<br />la musica degli alberi<br />il vento soffia,<br />e le lingue di fuoco<br />angeli guizzanti<br />spengono<br />i sogni degli uomini<br />che piangono<br />al chiaro di luna.<br /><br /><br /><br />LSD (1989)<br /><br /><br />Love is feeling:<br />gli alberi delle case<br />che sono sui tetti,<br />i fiocchi del cielo<br />che cadono a terra.<br />Love is a feeling:<br />il fumo delle fabbriche<br />terra aria,<br />fuoco acqua,<br />sai chi sono?<br />Love is a feeling:<br />&egrave; una bella giornata <br />per morire.<br /><br /><br /><br />Agonia (1989)<br /><br /><br />Deliziosa agonia<br />&egrave; l'amore<br />che ti prende<br />improvviso,<br />ti lascia straccio<br />alle onde di un mare <br />che non puoi fermare.<br /><br /><br /><br />Il fiore in bocca (1989)<br /><br /><br />Un amore non vissuto<br />un amore perduto,<br />una pagina di polvere<br />scossa<br />dai mulini a vento<br />soffia<br />nuvole confuse<br />di grovigli passioni.<br /><br /><br /><br />Romeo a Giulietta (1989)<br /><br /><br />Se potessi vivere<br />in un palazzo sulla luna<br />con le stelle nel giardino,<br />se potessi questa notte <br />aprir la tua finestra<br />mettermi piano nel letto<br />e toccare il tuo corpo<br />ti direi<br />che sono pazzo di te<br />e...<br /><br />Ti sussurro<br />un sospiro nell'orecchio<br />e leggo<br />la magia nei tuoi occhi.<br />Un ricordo, una bugia<br />una stella fulgente<br />brucia in un momento,<br />ma tu l'universo<br />solo tu...<br /><br />Lo sto cercando dentro di te<br />lo posso vedere nei tuoi occhi<br />lo posso vedere nel tuo sorriso<br />mille volte un battito d'ali<br />finalmente l'ho trovato:<br />un prezioso gioiello...<br /><br />il tuo amore.<br /><br /><br /><br />La mano della luna (1989)<br /><br /><br />Il pirata e la sua dama<br />volano per il mare<br />nel magico galeone,<br />guardando la scia d'amore<br />nel tramonto rosso sole.<br /><br /><br /><br />Un giorno di mezzaestate (1989)<br /><br /><br />Mi ricordo<br />di quelle notti<br />quando la vita<br />era una scommessa<br />su una corsa<br />fra i bagliori<br />delle esplosioni.<br />Incontravo<br />noccioline e semifreddi<br />pezzi di giovani soldati<br />sparsi sul campo<br />persi nelle carte della storia<br />che non ascolta<br />il grido della vita<br />fuggire<br />dai campi di vittoria.<br /><br /><br /><br />Pioggia (1989)<br /><br /><br />Con la pioggia di sole<br />nel lago infuocato<br />cadeva<br />il gelo del cuore<br />sul fiore di creta.
+## Rocche `1989`
+
+Rocche solitarie
+fronte ai pugni del tempo,
+sorridendo alle formiche
+che rubano loro
+le bricciole,
+sognano la luna.
+
+## Soldato di ventura `1989`
+
+Gli hai dato una casa
+prima che morisse
+lontano dalla sua famiglia.
+Mi hai dato una guerra
+per amare una donna:
+sopra pezzi di cielo
+blu amaro
+moltitudine di corpi
+il vento delle tue dita
+muove.
+Una vecchia canzone
+suona
+fra i balli dei fiori;
+una bomba di fuoco
+grida
+fra le macerie delle case.
+Solo trovi silenzio
+nella luce della morte,
+sorridendo a una bambina
+con un vestito rosso.
+Negli occhi di gioco
+e nel viso pieno
+della piccola
+ritrovi la fede di Dio
+perduto
+in un altro tempo
+in un altro luogo.
+
+## Relitto `1989`
+
+Il relitto di un sogno
+striscia nella sabbia
+scavando buchi
+in cerca di acqua
+per affogare
+il sogno di un relitto.
+
+## Pianto di un epitaffio `1989`
+
+I meravigliosi anni
+delle bambole e dei trenini
+dell corse e dei wow
+delle dediche alla radio
+e delle vacanze al mare
+spengo
+nel portacenere
+oramai bruciati.
+Il mondo in una lacrima
+ricordo di peccati
+passati
+si consuma
+sulla pelle bramata
+muore
+sulle labbra
+di una donna forse amata.
+Ora
+un fiore
+sulla tomba dei cari
+nel silenzio rispetto
+poso
+e scivola
+una farfalla
+su un raggio di sole
+che verso nel cuore
+e vola via.
+
+## La voce dell'anima `1989`
+
+Vanit&agrave;.
+Solo vanit&agrave;.
+La vanagloria
+di splendenti eroi
+di cartauomini
+brucia
+i vortici pensieri
+dell'anima,
+la gioia
+il sorriso
+della natura
+della natura
+il respiro
+sorge il sole
+il sole tramonta
+arsura e freddo
+la musica degli alberi
+il vento soffia,
+e le lingue di fuoco
+angeli guizzanti
+spengono
+i sogni degli uomini
+che piangono
+al chiaro di luna.
+
+## LSD `1989`
+
+Love is feeling:
+gli alberi delle case
+che sono sui tetti,
+i fiocchi del cielo
+che cadono a terra.
+Love is a feeling:
+il fumo delle fabbriche
+terra aria,
+fuoco acqua,
+sai chi sono?
+Love is a feeling:
+&egrave; una bella giornata
+per morire.
+
+## Agonia `1989`
+
+Deliziosa agonia
+&egrave; l'amore
+che ti prende
+improvviso,
+ti lascia straccio
+alle onde di un mare
+che non puoi fermare.
+
+## Il fiore in bocca `1989`
+
+Un amore non vissuto
+un amore perduto,
+una pagina di polvere
+scossa
+dai mulini a vento
+soffia
+nuvole confuse
+di grovigli passioni.
+
+## Romeo a Giulietta `1989`
+
+Se potessi vivere
+in un palazzo sulla luna
+con le stelle nel giardino,
+se potessi questa notte
+aprir la tua finestra
+mettermi piano nel letto
+e toccare il tuo corpo
+ti direi
+che sono pazzo di te
+e...
+
+Ti sussurro
+un sospiro nell'orecchio
+e leggo
+la magia nei tuoi occhi.
+Un ricordo, una bugia
+una stella fulgente
+brucia in un momento,
+ma tu l'universo
+solo tu...
+
+Lo sto cercando dentro di te
+lo posso vedere nei tuoi occhi
+lo posso vedere nel tuo sorriso
+mille volte un battito d'ali
+finalmente l'ho trovato:
+un prezioso gioiello...
+
+il tuo amore.
+
+## La mano della luna `1989`
+
+Il pirata e la sua dama
+volano per il mare
+nel magico galeone,
+guardando la scia d'amore
+nel tramonto rosso sole.
+
+## Un giorno di mezzaestate `1989`
+
+Mi ricordo
+di quelle notti
+quando la vita
+era una scommessa
+su una corsa
+fra i bagliori
+delle esplosioni.
+Incontravo
+noccioline e semifreddi
+pezzi di giovani soldati
+sparsi sul campo
+persi nelle carte della storia
+che non ascolta
+il grido della vita
+fuggire
+dai campi di vittoria.
+
+## Pioggia `1989`
+
+Con la pioggia di sole
+nel lago infuocato
+cadeva
+il gelo del cuore
+sul fiore di creta.
