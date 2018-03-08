@@ -1,5 +1,4 @@
-* [**Flowered Poems and Casual Bytes
-Carezze in versi e Bytes a caso**](README.md)
+* [**README**](README.md)
 
 * [Moto Perpetuo](2016-01-01-moto-perpetuo.md)
 * [Abisso](2008-05-17-abisso.md)
