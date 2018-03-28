@@ -1,5 +1,4 @@
 * [**README**](README.md)
-
 * [Moto Perpetuo](2016-01-01-moto-perpetuo.md)
 * [Abisso](2008-05-17-abisso.md)
 * [NY Marathon 2007](2007-11-04-ny-marathon-2007.md)
