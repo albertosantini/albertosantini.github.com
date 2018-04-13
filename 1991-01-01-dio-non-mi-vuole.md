@@ -1,17 +1,17 @@
-> Non ho voglia
-> di tuffarmi
-> in un gomitolo
-> di strade.
-> Ho tanta
-> stanchezza
-> sulle spalle.
-> Lasciatemi cos&igrave;
-> come una
-> cosa
-> posata
-> in un
-> angolo
-> e dimenticata.
+> Non ho voglia  
+> di tuffarmi  
+> in un gomitolo  
+> di strade.  
+> Ho tanta  
+> stanchezza  
+> sulle spalle.  
+> Lasciatemi cos&igrave;  
+> come una  
+> cosa  
+> posata  
+> in un  
+> angolo  
+> e dimenticata.  
 
 -- `Ungaretti`
 
