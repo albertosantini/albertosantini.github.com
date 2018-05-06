@@ -25,7 +25,7 @@ bianca; tu che sei
 cos&igrave; vicino abbracciami  
 forte.  
   
-## Bacio A Chiara `12-07-1997`  
+## Bacio `A Chiara 12-07-1997`  
   
 Con un bacio e un sogno  
 toccare una rosa d'estate  
