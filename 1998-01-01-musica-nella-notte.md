@@ -19,7 +19,7 @@ al sorgere del sole:
 la mattina ti coglie  
 imperiosamente bella.  
   
-## Vita A Chiara `10-04-1998`  
+## Vita `A Chiara 10-04-1998`  
   
 A Chiara  
 che vive la vita  
