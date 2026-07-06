@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <title>Alberto Santini</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="Description">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-    <style>
-        body { font-family: "IBM Plex Mono", monospace; }
-    </style>
+    <meta name="description" content="Flowered Poems and Casual Bytes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://albertosantini.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alberto Santini">
+    <meta property="og:description" content="Flowered Poems and Casual Bytes">
+    <meta property="og:url" content="https://albertosantini.github.io/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="app"></div>
+    <div class="site-shell">
+        <div class="reader-shell">
+            <header class="topbar">
+                <a class="topbar-title" href="#/" aria-label="Torna alla pagina iniziale">Alberto Santini</a>
+            </header>
 
-    <script>
-        window.$docsify = {
-            name: "Alberto Santini",
-            repo: "albertosantini/albertosantini.github.com",
-            coverpage: true,
-            onlyCover: true,
-            autoHeader: true,
-            auto2top: true,
-            subMaxLevel: 2,
-            loadSidebar: true
-        }
-    </script>
+            <main class="reader" id="reader">
+                <article class="content" id="content" aria-live="polite"></article>
+                <nav class="pager" aria-label="Navigazione testi">
+                    <a class="pager-link" id="previousLink" href="#" aria-label="Testo precedente">
+                        <span aria-hidden="true">&lsaquo;</span>
+                        <span id="previousText">Precedente</span>
+                    </a>
+                    <a class="pager-link" id="nextLink" href="#" aria-label="Testo successivo">
+                        <span id="nextText">Successivo</span>
+                        <span aria-hidden="true">&rsaquo;</span>
+                    </a>
+                </nav>
+            </main>
+        </div>
+    </div>
 
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+    <script src="vendor/marked.umd.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
