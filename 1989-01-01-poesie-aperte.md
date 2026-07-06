@@ -4,7 +4,7 @@ Rocche solitarie
 fronte ai pugni del tempo,  
 sorridendo alle formiche  
 che rubano loro  
-le bricciole,  
+le briciole,  
 sognano la luna.  
   
 ## Soldato di ventura `1989`  
@@ -50,7 +50,7 @@ il sogno di un relitto.
   
 I meravigliosi anni  
 delle bambole e dei trenini  
-dell corse e dei wow  
+delle corse e dei wow  
 delle dediche alla radio  
 e delle vacanze al mare  
 spengo  

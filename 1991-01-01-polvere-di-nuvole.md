@@ -79,13 +79,13 @@ della memoria atroce
 penetrano le vene delle foglie  
 raggiungono crac il ramo spezzato  
   
-due goccie di rugiada;  
+due gocce di rugiada;  
   
 cresce l'albero anche  
 quando il vento strappa  
 i pi&ugrave; lontani ricordi,  
 che adagio si posano  
-sullla sponda del fiume  
+sulla sponda del fiume  
 e spariscono nelle rapide d'acqua  
 con una capriola come salutando.  
   

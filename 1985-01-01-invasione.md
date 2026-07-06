@@ -15,10 +15,10 @@ ribelli, schizzavano da una parte all'altra della Flotta. Era un vespaio, un
 vespaio pronto a pungere. Gli abitanti del pianeta Barnard avevano abbandonato
 il proprio pianeta, oramai morente, alla ricerca di un altro che li potesse
 accogliere. Lo sbarco su un nuovo pianeta consisteva nella distruzione totale
-degli essere viventi che lo abitavano: niente cerimonie di benvenuto, niente
+degli esseri viventi che lo abitavano: niente cerimonie di benvenuto, niente
 relazioni diplomatiche, niente scambio di prigionieri, niente. Un'avanzatissima
 tecnologia al servizio di crudeli guerrafondai annientava e rivoltava il
-pianeta, cancellando ogni segno di civilt&agrave;precedente.
+pianeta, cancellando ogni segno di civilt&agrave; precedente.
 
 Dopo l'avvicinamento al punto di controllo, seguiva nel piano strategico la
 prima fase: osservazione e studio. I telescopi elettronici a cristalli rarefatti
@@ -31,7 +31,7 @@ dell'osservazione fu che l'annientamento sarebbe durato dodici minuti.
 Era arrivato il momento di passare alla seconda fase: raggiungimento della
 distanza orbitale in formazione di attacco. Il quartiere generale decise di
 lasciare le navi-citt&agrave; dietro Giove, spost&ograve; le
-navi-trasportotruppa dietro la Luna, come riserva; schier&ograve; i caccia alle
+navi-trasporto truppa dietro la Luna, come riserva; schier&ograve; i caccia alle
 ali per scortare gli incrociatori e le tre ammiraglie in posizione arretrata;
 v'erano due linee di droidi per l'assalto iniziale.
 
@@ -52,7 +52,7 @@ aree. Gli invasori sfrecciavano su oggetti volanti a forma di disco, di color
 nero; volavano rasi al suolo e quando si alzavano, puntualmente, venivano
 disintegrati dai terrestri. Quest'ultimi impiegavano un'arma segreta, mai vista
 prima, manuale, molto efficace, con una potenza distruttrice incredibile. Per
-tre giorni la Flotta assistette incredula alla sconfitta di quei sconosciuti
+tre giorni la Flotta assistette incredula alla sconfitta di quegli sconosciuti
 invasori che li avevano preceduti.
 
 Cos&igrave; i Generali decisero che era pi&ugrave; prudente trovare un altro
@@ -62,4 +62,4 @@ solare in direzione di Alfa Centauri.
 Intanto i campionati mondiali di tiro al piattello terminarono con la vittoria
 di un italiano. Ignari della minaccia passata, i terrestri celebrarono il
 vincitore osannando il suo talento, quattrocentonovantanove piattelli su
-cinquecento, un'ottimo punteggio.
+cinquecento, un ottimo punteggio.

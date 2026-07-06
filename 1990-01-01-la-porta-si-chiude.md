@@ -58,7 +58,7 @@ ma ho te accanto.
   
 sotto la luce di una lampadina  
 la calda luce della lampadina  
-odo il suonno della luce vicina  
+odo il suono della luce vicina  
   
 triclope tenebroso stringi i denti  
 e vai  
@@ -150,9 +150,9 @@ che ingarbuglia i fili dello stomaco
 che tormenta il nodo alla gola;  
 luccicano gli occhi  
 con le lacrime spente  
-al lievo poggiare di soli tocchi:  
+al lieve poggiare di soli tocchi:  
 cieco rapito da tortuose labbra  
-rimango invanghito,  
+rimango invaghito,  
 sempre pi&ugrave; m'avvicino  
 velocemente al dolce serpente.  
   
@@ -168,7 +168,7 @@ torbidi, a infierire sui granchi
 con le chele vuote di sola acqua;  
 scompaiono i castelli e le scritte  
 d'un tratto lasciando orme di ricordi  
-fatue forme di un speciale ricatto:  
+fatue forme di uno speciale ricatto:  
 pezzi di legno e gusci senza vita.  
   
 ## Speranza di un sacrificio `A Lilli 1990`  
@@ -195,7 +195,7 @@ il profumo di
 tante risate perse.  
 Mi giro attorno nella vuota  
 stanza, vedo che non &egrave; pi&ugrave; vuota:  
-la riempe una musica soave  
+la riempie una musica soave  
 una voce di donna adorabile.  
   
 Mi travolge un fiume che scorre  

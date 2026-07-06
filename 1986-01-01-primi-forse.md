@@ -13,7 +13,7 @@ stridevano per lo sforzo di spingere, lass&ugrave; nel cielo, una manica di
 uomini, alla conquista della terra dei sogni e dei desideri, la Luna.
 
 Primo stadio, secondo stadio, terzo stadio. La capsula spaziale era in orbita;
-gli uomini della torre di controllo applaudirono.Il capitano manovr&ograve; per
+gli uomini della torre di controllo applaudirono. Il capitano manovr&ograve; per
 inserirsi nell'orbita lunare. Si trovarono ben presto in caduta libera.
 L'equipaggio si concesse una pausa, gironzolando per la strettissima navicella.
 Si avvicinarono al punto in cui il modulo lunare, con a bordo due uomini, si

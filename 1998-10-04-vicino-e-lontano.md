@@ -4,7 +4,7 @@ In una notte calda
 la crosta marcia  
 della ferita si stacca  
 e vomita nei meandri  
-sotteranei della citt&agrave;.  
+sotterranei della citt&agrave;.  
 Le mani senza speranza  
 si protendono verso un  
 pezzo di pane o qualsiasi  

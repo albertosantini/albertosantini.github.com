@@ -13,7 +13,7 @@ una ragazza che non era ancora andata a dormire.
 Erica conosceva il mondo per lo schifo che era. Desiderava rimuovere il marcio
 dell'uomo e rimboccare le coperte alla luna. Tutta casa e chiesa, sembrava. Ma
 se qualcuno l'avesse osservata in quel momento, avrebbe notato che aveva appena
-inizializzato un codice di tipo Blowfish in un area sei nove. Era penetrata in
+inizializzato un codice di tipo Blowfish in un'area sei nove. Era penetrata in
 una banca dati militare senza autorizzazione. Non era un caso che si trovasse da
 quelle parti.
 
@@ -36,7 +36,7 @@ non aveva fatto in tempo a passare per il laboratorio. La parte razionale di lei
 era completamente assorta dal compito che stava svolgendo, il suo corpo, il suo
 cuore era con Andy.
 
-Lo aveva conosciuto attraverso la rete informatica universitaria, chiaccherando
+Lo aveva conosciuto attraverso la rete informatica universitaria, chiacchierando
 qua e l&agrave; con IRC; era entrata nel canale "#Italia" per verificare la sua
 relazione di storia, o forse era soltanto una scusa. Cominci&ograve; a scrivere
 le solite sequenze di sigle e frasi di convenienza per salutare i presenti. Il
@@ -60,14 +60,14 @@ completare la mia relazione di storia e tu?"
 "Non mi riferivo a niente in particolare, ma al cielo amaro ed ai miei occhi."
 "Ah... mi piace scrivere cose cos&igrave;."
 "Cos&igrave; come? Senza senso? Non mi hai mai visto."
-"Devo andare... Inizia una lezione. Scusa, ma ti devo lasciare. Ci sentiamo pi&
-ugrave; tardi?"
+"Devo andare... Inizia una lezione. Scusa, ma ti devo lasciare. Ci sentiamo
+pi&ugrave; tardi?"
 "Forse, se trovo il terminale. Ciao." - scrisse, mentendo spudoratamente.
 
 Fu uno scambio di messaggi anonimo, ma cattur&ograve; la curiosit&agrave; di
 Erica; desiderava scoprire qualcosa di pi&ugrave; su Albatros.
 
-Accanton&ograve; il pensiero e si concentr di nuovo al massimo sui dati che
+Accanton&ograve; il pensiero e si concentr&ograve; di nuovo al massimo sui dati che
 sgorgavano dal video. Sfior&ograve; una tripla chiave e si butt&ograve; dentro
 ad una retroporta. Sudava. Ogni tanto si masticava un dito, mentre si fermava a
 pensare sul da farsi. Finalmente in un grattacielo d'informazioni, sotto una
@@ -95,7 +95,7 @@ qualsiasi strumento. Era lontano dai tempi in cui quando la gente lo incontrava
 nel corridoio lo guardava con quell'aria di stupore e ammirazione. Era lontano
 dal giorno in cui gli dettero il Nobel per la teoria dell'identit&agrave; nei
 viaggi spazio-temporali, conosciuta meglio come test di Levrentief. Gi&agrave;
-Andy era quel professor Andy Levrentief. Ora, per trovare un idea appena
+Andy era quel professor Andy Levrentief. Ora, per trovare un'idea appena
 accettabile, doveva sforzarsi oltre l'immaginabile, aveva esaurito la carica per
 andare avanti, vagava in un mare buio e viscoso. Andy non aspettava altro che
 dire alla donna che amava, su una spiaggia, all'alba, "sei pi&ugrave; bella con

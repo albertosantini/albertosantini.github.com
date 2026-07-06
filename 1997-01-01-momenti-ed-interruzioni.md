@@ -8,7 +8,7 @@ di rugiada al mattino?
   
 ## Lacrime `01-10-1997`  
   
-Le goccie di pioggia  
+Le gocce di pioggia  
 non bagnano il mio viso  
 rigato senza senso  
 da lacrime che  

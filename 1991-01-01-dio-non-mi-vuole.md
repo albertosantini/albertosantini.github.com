@@ -31,7 +31,7 @@ dello schermo. La realt&agrave;, ora, sono le immagini bidimensionali che vedo
 muoversi nel tubo catodico. Le immagini parlano e ciascuna crea una
 verit&agrave; plausibile. Forse vivono? Amano? Amare significa non trarre mai
 vantaggi dalla realt&agrave; o dalla verit&agrave;? Ma dove vivo? Penso
-sempre, ma non so cosa penso. Finalmente ho capito. E' cos&igrave; bello
+sempre, ma non so cosa penso. Finalmente ho capito. &Egrave; cos&igrave; bello
 rimanere in silenzio mentre un amico ascolta la musica della tua anima.
 
 Era notte. Faceva caldo nella stanza dell'albergo Royal Dutch. Dalla finestra
@@ -45,7 +45,7 @@ sono cambiato, la guerra mi ha trasformato. Ti prego, ritorniamo insieme e
 proviamo di nuovo." - continu&ograve; Sik.
 
 "Non lo so, Sik. Sono confusa. Hai sempre dimenticato il compleanno di nostro
-figlio. E' nato quando tu eri qui, a migliaia di chilometri di distanza. Hai
+figlio. &Egrave; nato quando tu eri qui, a migliaia di chilometri di distanza. Hai
 preferito la guerra alla famiglia, l'avventura alla responsabilit&agrave;, e,
 ora, ti dovrei anche credere. Perch&eacute; saresti cambiato?" - chiese Patty
 con il tono di voce di chi abbia gi&agrave; preso una decisione.
@@ -63,20 +63,20 @@ pallottola non ti trovi. Capisci, non &egrave; una questione di addestramento,
 d'abilit&agrave;, d'esperienza. No, no. La pallottola ti scova e sei morto. Non
 hai la possibilit&agrave; di decidere. Dai, Patty, torniamo insieme."
 
-"Ho poco tempo Sik. E' gi&agrave; stato difficile venire qui e ho chiesto molti
+"Ho poco tempo Sik. &Egrave; gi&agrave; stato difficile venire qui e ho chiesto molti
 favori per tornare a casa con un aereo militare." - Sik continu&ograve; a
 parlare senza aver capito il senso delle parole della moglie.
 
 "Quando ho ricevuto la tua lettera, che diceva che volevi parlarmi e prendevi un
 aereo per raggiungermi, ho pensato che le cose sarebbero andate per il verso
 giusto. Ho pensato: non ho avuto molta fortuna con le donne, ma la fortuna, ora,
-sta girando. E' vero, non abbiamo molto tempo, ma &egrave; meraviglioso che
+sta girando. &Egrave; vero, non abbiamo molto tempo, ma &egrave; meraviglioso che
 stiamo insieme, parlando. Ho commesso molti errori da quando ci siamo
 conosciuti. Mi sono arruolato nell'esercito senza pensare al nostro futuro. Ti
 ricordi la notte prima che partissi, che scappassi: siamo andati al lago. Ti
 volevo dire che andavo via perch&eacute; avevo paura di amarti troppo e non ti
 dissi niente perch&eacute; avevo paura che smettessi di amarmi. Maledizione al
-gioco di parole. E' difficile spiegarlo. Siamo stati sdraiati sull'erba, mano
+gioco di parole. &Egrave; difficile spiegarlo. Siamo stati sdraiati sull'erba, mano
 nella mano, tutta la notte, mentre guardavamo le stelle. Venne l'alba e mi
 baciasti. Poi ti sei seduta sopra il mio corpo e mi hai sussurrato parole di un
 altro mondo. Ci siamo spogliati ed abbiamo spento la nostra passione nelle acque
@@ -99,7 +99,7 @@ un'altra vita: ho una casa, un'automobile, un lavoro, un conto in banca, molti
 amici. Sono felice. Quella notte tu hai scelto per entrambi, ora tocca a me
 decidere, per me e per te. Non voglio ritornare a vivere insieme. Ho gi&agrave;
 chiamato un avvocato per iniziare le pratiche del divorzio. Non prendertela Sik.
-Ho capito che sei cambiato, ma non sei il solo. Non siamo pi&ugrave; ragazzi. E'
+Ho capito che sei cambiato, ma non sei il solo. Non siamo pi&ugrave; ragazzi. &Egrave;
 passato il momento delle bravate, dei genitori che ci tiravano fuori dai guai."
 
 Sik si mise a piangere, singhiozzava.
@@ -171,9 +171,9 @@ preoccupandosi.
 
 Il tecnico si lanci&ograve; sulla leva e l'abbass&ograve;; poi corse al pannello
 comandi e mosse velocemente alcuni interruttori. L'allarme continuava a suonare
-e le luci non si spegnevano. I sensori erano al rosso vivo, i casco emanava
+e le luci non si spegnevano. I sensori erano al rosso vivo, il casco emanava
 scintille bioenergetiche. E, mentre Bruce e Bill osservavano Sik avvolto in un
-aurea elettromagnetica, successe di nuovo.
+aura elettromagnetica, successe di nuovo.
 
 Swap. Zap, zapping, zap za z...
 
@@ -181,9 +181,9 @@ Il film &egrave; interrotto dall'ennesima pubblicit&agrave;. Cambio canale e le
 immagini sbiadiscono nella mia mente e sulla retina s'imprimono le noiose
 nozioni pubblicitarie. I canali della televisione sono i burattini del
 telecomando, ma, fuori di me, non esiste la pubblicit&agrave;. Penso alla mia
-storia ed alle storie che scrivo per gli amici: non ho ancora scritto la mia. E'
+storia ed alle storie che scrivo per gli amici: non ho ancora scritto la mia. &Egrave;
 la storia di un bambino. Mentre scrivo, sento la lucida presenza della pistola
-automatica, appoggiata sulla scrivania. E' carica, colpo in canna; la pistola
+automatica, appoggiata sulla scrivania. &Egrave; carica, colpo in canna; la pistola
 &egrave; nel mondo dei grandi e, quando avr&ograve; finito di raccontare, quando
 non sar&ograve; pi&ugrave; un bambino, mi sparer&ograve;. Non ho ancora deciso
 se &egrave; meglio puntare la canna alla tempia, il colpo potrebbe anche non
@@ -220,7 +220,7 @@ spalle il maglioncino; il colore blu dei pantaloni e l'odore di gomma delle
 scarpe nuove da ginnastica si mescolavano con la maglietta bianca, che
 rifletteva una strana assenza di tensione. Avevo vissuto il momento della
 partenza mille volte: caricare i muscoli fino allo spasmo, scaricarli al via in
-una corsa di centro metri senza fiato, ed io che alla fine tagliavo il traguardo
+una corsa di cento metri senza fiato, ed io che alla fine tagliavo il traguardo
 per primo. Le congratulazioni degli amici.
 
 Lo sguardo compiaciuto e soddisfatto dei miei, che, con una pacca virile sulla
@@ -368,7 +368,7 @@ odiava sentir piangere.
 "Non piangere. Dimmi che non &egrave; vero quello che mi hai detto."
 
 Patty si mise decisamente a piangere pi&ugrave; forte. Adirato Sik disse
-seccamente si smetterla. Egli cerc&ograve; di spingerla su per le scale,
+seccamente di smetterla. Egli cerc&ograve; di spingerla su per le scale,
 affinch&eacute; andasse di sopra e non la sentisse pi&ugrave;. Ma Patty non si
 muoveva; era seduta sull'ultimo scalino con in mano il fazzoletto, trattenendo
 invano i singhiozzi. In quel momento Sik si trasform&ograve; in un animale.
@@ -387,7 +387,7 @@ perdutamente di un uomo che non avevo visto prima. Ci trovavamo in un locale
 lungo l'argine d'un fiume. Non avevo fame, n&eacute; sete. C'era molta gente,
 soprattutto attorno ad un tavolo in particolare. Ho capito soltanto pi&ugrave;
 tardi il significato della parola amore. Sembrava di stare davanti al televisore
-e rivedere uno di quei insopportabili film, visti e rivisti, scambiando gli
+e rivedere uno di quegli insopportabili film, visti e rivisti, scambiando gli
 attori con attori di altri film, mescolando le battute e situazioni di altri
 come se le avessi gi&agrave; dette tempo addietro.
 
@@ -536,7 +536,7 @@ essere legato alla viscida realt&agrave;. Cerco di risalire il palo, che mi trae
 alla salvezza, ma non ho nessun appiglio e continuo a scivolare. Anche ora
 vorrei lacerare la maschera che mi tiene prigioniero e gridare che tutto
 &egrave; falso, che &egrave; un'invenzione letteraria... sarebbe un'altra pedina
-che si sposta sulla grande scacchiera, un mossa in pi&ugrave; che non cambia la
+che si sposta sulla grande scacchiera, una mossa in pi&ugrave; che non cambia la
 situazione, una mossa calcolata. Come mi posso disfare dei fili che muovono il
 burattino che &egrave; dentro di me, che controllano i miei nervi: devo buttare
 lontano il mio corpo, devo gettarlo, devo rimanere spirito per librarmi libero
@@ -564,7 +564,7 @@ testa, la realt&agrave; e la mia testa, una buffa compagnia. Non riesco voler
 bene ad una persona senza ferirla. Sempre arrivo ad un momento di tensione in
 cui dico o faccio qualcosa che compromette la relazione stabilita; subito dopo
 mi pento di aver detto quelle cose senza senso e, sebbene chieda scusa, mi sento
-un verme; il peso di aver sbagliato un'altra volta mi opprime, perch&eacute;'
+un verme; il peso di aver sbagliato un'altra volta mi opprime, perch&eacute;
 sono disorientato, non riesco a prendere una decisione.
 
 Aspettare che il giorno finisca, che il sole tramonti dietro la collina, che la
@@ -601,15 +601,15 @@ ritrovo di notte a scrivere quando tutto tace, ma non la mia coscienza, che
 perfino insegue la mia ombra. Cerco di pulirmi dallo sporco del giorno, che
 rimane attaccato sui pori della pelle, che non mi lascia respirare, che mi
 chiude la bocca quando ho voglia di gridare. Allora mi butto sotto il letto,
-come da bambino, per credere di essere in una astronave; quanto e' passato dal
+come da bambino, per credere di essere in una astronave; quanto &egrave; passato dal
 biscotto perso nel tempo? Comincio a grattare la rete del materasso, ipnotizzo
-il rantolo di polvere che si e' formato in un angolo della stanza, il ballo del
+il rantolo di polvere che si &egrave; formato in un angolo della stanza, il ballo del
 raggio di sole fra i drappeggi della tenda. Ma ancora penso a lei, perch&eacute;
 lei mi ha dato tutto, lei &egrave; tutto quello che ho di mio dentro di me. Non
 posso dimenticare, scoppiare il palloncino e puff soltanto l'aria rimane fra
 l'aria ancora. Sospiro emb&egrave;; dietro la luna ci sono i sogni; forse
-sognare non e' la stessa barca di vivere? Permetto al mio cuore di battere
-perch&eacute;' ho bisogno di amarla e di nuovo amarla finche' strizzo il mio
+sognare non &egrave; la stessa barca di vivere? Permetto al mio cuore di battere
+perch&eacute; ho bisogno di amarla e di nuovo amarla finch&eacute; strizzo il mio
 odio fino all'ultima goccia. Che bello rimanere abbracciati, mano nella mano,
 gustando i momenti passati, i momenti che verranno. Veramente la pace avvolge
 non solo le persone ma anche il mondo, perfino il tempo colorandolo con l'iride
@@ -663,7 +663,7 @@ rumore, forse? O il rumore del conflitto, mi sembra. Un assonanza senza senso.
 Sto guardando la vetrina di un negozio che vende cappelli e vedo due ragazze che
 ne stanno provando alcuni. Sto a guardarla. Passano i minuti ed io fuori come un
 ebete guardo due ragazze che si divertono, mentre s'infilano sulla testa i
-pi&ugrave; buffi cappelli. Non si accorgono di me. O forse s&igrave; pero non lo
+pi&ugrave; buffi cappelli. Non si accorgono di me. O forse s&igrave; per&ograve; non lo
 danno a vedere. Mi domando se mi sto innamorando.
 
 Sik Sullivan era un quattro occhi di origine italiana. Era seduto davanti al
@@ -691,7 +691,7 @@ il livello sette, il livello del presidente.
 Ma tutto questo &egrave; una grande illusione. Pacchetti, sorprese, regali,
 auguri danno per scontato l'esistenza di qualche pezzo di carne comandato da
 qualche altro pezzo di neurone. La coscienza di una richiesta: soltanto
-l'evoluzioni pindariche di un pensiero, uno stato comune di felicit&agrave;, una
+le evoluzioni pindariche di un pensiero, uno stato comune di felicit&agrave;, una
 forma colorata, una miniatura straordinaria. Non parlo dei ricordi, ma di
 quello che siamo ora, in questo momento, per quello che siamo stati, anche se,
 di chi o di cosa, sarebbe pi&ugrave; preciso parlare. I sentimenti che possiamo
@@ -743,7 +743,7 @@ Gironzolo tra i miei pensieri come un cane rabbioso, che sa di avere poco tempo
 a disposizione. Non confesso a me stesso che bisogna giocare il tutto per tutto
 per mantenere salda la dignit&agrave; di vivere. La sua voglia di me mi fa
 impazzire. Mi sento importante, richiesto, soprattutto e finalmente amato. Non
-domandarti perch&egrave;, dimentica questa domanda, per favore. Non
+domandarti perch&eacute;, dimentica questa domanda, per favore. Non
 risponderti. Prendi quello che senti senza compromessi, mi ripeto ogni secondo.
 Non voglio ritrovarmi riverso sulla scrivania con un buco alla tempia. Tengo
 stretto fra le mani le lettere che mi ha scritto. Non voglio fuggire dai miei
