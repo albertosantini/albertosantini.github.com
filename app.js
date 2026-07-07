@@ -71,7 +71,7 @@
                 if (currentFile === HOME_FILE) {
                     html += renderHomeIndex();
                 } else {
-                    html = renderPageHeader(currentFile) + html + renderPageFooter();
+                    html = renderPageHeader(currentFile) + html;
                 }
 
                 content.innerHTML = html;
@@ -162,15 +162,8 @@
             "<h1>" +
             escapeHtml(pageTitle(file)) +
             "</h1>" +
+            '<a class="page-home-link" href="#/" aria-label="Torna all&#39;indice dei testi">Alberto Santini</a>' +
             "</header>"
-        );
-    }
-
-    function renderPageFooter() {
-        return (
-            '<footer class="page-footer">' +
-            '<p class="page-copyright">&copy; Alberto Santini</p>' +
-            "</footer>"
         );
     }
 
@@ -184,10 +177,10 @@
                 return (
                     "<li><a href=\"" +
                     routeForFile(entry.file) +
-                    '"><span class="home-index-year">' +
-                    escapeHtml(year) +
-                    "</span><span>" +
+                    '"><span class="home-index-title">' +
                     escapeHtml(entry.title) +
+                    '</span><span class="home-index-rule" aria-hidden="true"></span><span class="home-index-year">' +
+                    escapeHtml(year) +
                     "</span></a></li>"
                 );
             })
@@ -195,7 +188,7 @@
 
         return (
             '<section class="home-index" aria-label="Indice dei testi">' +
-            "<h2>Testi</h2>" +
+            "<h2>Indice</h2>" +
             '<ul class="home-index-list">' +
             items +
             "</ul>" +
