@@ -287,6 +287,10 @@ a {
     margin: 28px auto 0;
 }
 
+.pager[hidden] {
+    display: none;
+}
+
 .pager-link {
     display: flex;
     align-items: center;

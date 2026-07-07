@@ -7,6 +7,7 @@
     var currentFile = HOME_FILE;
 
     var content = document.getElementById("content");
+    var pager = document.querySelector(".pager");
     var previousLink = document.getElementById("previousLink");
     var nextLink = document.getElementById("nextLink");
     var previousText = document.getElementById("previousText");
@@ -122,6 +123,8 @@
     }
 
     function setPager() {
+        pager.hidden = currentFile === HOME_FILE;
+
         var index = entries.findIndex(function (entry) {
             return entry.file === currentFile;
         });
