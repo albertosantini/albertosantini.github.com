@@ -24,18 +24,21 @@
 
 :root {
     color-scheme: light;
-    --bg: #e8e5df;
-    --paper: #fffefa;
-    --text: #23211d;
-    --muted: #706a61;
-    --line: #ddd7ce;
-    --link: #554337;
+    --bg: #ececea;
+    --paper: #fffefb;
+    --paper-edge: #ece8df;
+    --text: #22211e;
+    --muted: #696762;
+    --line: #e4e1da;
+    --link: #4f453d;
     --link-hover: #285c54;
-    --focus: #806848;
-    --shadow: rgba(36, 31, 24, 0.12);
-    --paper-grain: rgba(84, 71, 52, 0.038);
-    --paper-fiber: rgba(128, 108, 78, 0.05);
-    --paper-sheen: rgba(255, 255, 255, 0.7);
+    --focus: #6f6758;
+    --shadow-soft: rgba(22, 23, 24, 0.08);
+    --shadow-drop: rgba(22, 23, 24, 0.16);
+    --paper-dot: rgba(64, 60, 54, 0.052);
+    --paper-fiber: rgba(78, 74, 66, 0.03);
+    --paper-thread: rgba(128, 123, 112, 0.025);
+    --paper-sheen: rgba(255, 255, 255, 0.78);
 }
 
 * {
@@ -52,9 +55,10 @@ body {
     min-height: 100%;
     background-color: var(--bg);
     background-image:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.36), transparent 360px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 22%, transparent 78%, rgba(0, 0, 0, 0.025));
-    background-size: 100% 100%;
+        linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 340px),
+        radial-gradient(circle at 30% 18%, rgba(255, 255, 255, 0.46), transparent 280px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 24%, transparent 76%, rgba(28, 30, 31, 0.026));
+    background-size: 100% 100%, 100% 100%, 100% 100%;
     color: var(--text);
     font-family: "IBM Plex Mono", monospace;
     font-size: 16px;
@@ -113,16 +117,21 @@ a {
     width: min(100%, 820px);
     margin: 34px auto 0;
     padding: 56px 48px 72px;
+    border: 1px solid var(--paper-edge);
     background:
-        radial-gradient(circle at 18% 22%, var(--paper-grain) 0 0.8px, transparent 0.9px),
-        radial-gradient(circle at 76% 64%, var(--paper-grain) 0 0.7px, transparent 0.8px),
-        repeating-linear-gradient(97deg, transparent 0 13px, var(--paper-fiber) 13px 14px),
-        repeating-linear-gradient(2deg, transparent 0 19px, rgba(84, 71, 52, 0.018) 19px 20px),
-        linear-gradient(180deg, var(--paper-sheen), transparent 360px),
+        radial-gradient(circle at 12% 18%, var(--paper-dot) 0 0.55px, transparent 0.75px),
+        radial-gradient(circle at 68% 38%, var(--paper-dot) 0 0.48px, transparent 0.7px),
+        radial-gradient(circle at 42% 76%, rgba(54, 51, 47, 0.036) 0 0.42px, transparent 0.66px),
+        radial-gradient(ellipse at 24% 18%, var(--paper-fiber), transparent 34%),
+        radial-gradient(ellipse at 78% 72%, var(--paper-thread), transparent 38%),
+        radial-gradient(ellipse at 46% 58%, rgba(96, 91, 82, 0.022), transparent 42%),
+        linear-gradient(180deg, var(--paper-sheen), rgba(255, 255, 255, 0.16) 340px, transparent 620px),
         var(--paper);
-    background-size: 34px 34px, 46px 46px, 100% 17px, 100% 23px, 100% 100%, 100% 100%;
+    background-size: 29px 31px, 43px 47px, 61px 67px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
     box-shadow:
-        0 22px 46px var(--shadow);
+        0 1px 0 rgba(255, 255, 255, 0.82) inset,
+        0 18px 42px var(--shadow-soft),
+        0 34px 78px var(--shadow-drop);
 }
 
 .reader:focus {
@@ -272,8 +281,8 @@ a {
 
 .pager {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 18px;
     max-width: 680px;
     margin: 28px auto 0;
 }
@@ -289,7 +298,12 @@ a {
     text-decoration: none;
 }
 
-.pager-link:last-child {
+.pager-index {
+    justify-content: center;
+    text-align: center;
+}
+
+.pager-next {
     justify-content: end;
     text-align: right;
 }
@@ -327,6 +341,15 @@ a {
 
     .pager {
         grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .pager-index {
+        justify-content: center;
+    }
+
+    .pager-next {
+        justify-content: end;
     }
 }
 
