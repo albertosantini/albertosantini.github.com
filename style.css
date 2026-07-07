@@ -154,8 +154,13 @@ a {
 
 .content.is-home > blockquote + p {
     max-width: 560px;
+    margin-top: -0.7em;
     margin-right: auto;
+    margin-bottom: 2.1em;
     margin-left: auto;
+    color: var(--muted);
+    font-size: 0.78rem;
+    opacity: 0.68;
 }
 
 .page-header {
@@ -369,8 +374,8 @@ a {
     }
 
     .pager {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        gap: 12px;
     }
 
     .pager-index {
@@ -390,6 +395,19 @@ a {
     .reader {
         margin-top: 16px;
         padding-inline: 18px;
+    }
+
+    .pager {
+        gap: 10px;
+    }
+
+    .pager-link {
+        min-height: 34px;
+    }
+
+    #previousText,
+    #nextText {
+        display: none;
     }
 }
 
