@@ -118,6 +118,17 @@ a {
     outline: none;
 }
 
+.site-footer {
+    width: min(100%, 820px);
+    margin: 18px auto 28px;
+    padding: 0 48px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    text-align: center;
+    opacity: 0.68;
+}
+
 .content {
     max-width: 680px;
     margin: 0 auto;
@@ -357,6 +368,11 @@ a {
         padding: 38px 22px 56px;
     }
 
+    .site-footer {
+        margin-top: 14px;
+        padding-inline: 22px;
+    }
+
     .content {
         max-width: 100%;
     }
@@ -397,6 +413,10 @@ a {
         padding-inline: 18px;
     }
 
+    .site-footer {
+        padding-inline: 18px;
+    }
+
     .pager {
         gap: 10px;
     }
@@ -428,6 +448,10 @@ a {
     }
 
     .pager {
+        display: none;
+    }
+
+    .site-footer {
         display: none;
     }
 
