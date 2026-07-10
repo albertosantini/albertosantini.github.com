@@ -304,11 +304,12 @@ a {
 }
 
 .home-index-rule {
-    height: 1px;
-    align-self: end;
-    margin-bottom: 0.22em;
-    background-image: repeating-linear-gradient(90deg, rgba(105, 103, 98, 0.38) 0 1px, transparent 1px 6px);
-    opacity: 0.78;
+    height: 0.8em;
+    align-self: center;
+    background-image: radial-gradient(circle, rgba(105, 103, 98, 0.34) 0 0.75px, transparent 0.85px);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: 14px 0.8em;
 }
 
 .home-index-title {
